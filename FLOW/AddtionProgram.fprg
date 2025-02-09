@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="amber"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-05-24 08:09:46 AM"/>
+        <attribute name="created" value="YW1iZXI7QU1CRVJTLU1BQ0JPT0stOzIwMjQtMDUtMjQ7MDc6NTg6MjAgQU07MjgyOQ=="/>
+        <attribute name="edited" value="YW1iZXI7QU1CRVJTLU1BQ0JPT0stOzIwMjQtMDUtMjQ7MDg6MDk6NDYgQU07MTsyOTQy"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <call expression="DisplayMessage()"/>
+            <declare name="num1, num2, addtion" type="Integer" array="False" size=""/>
+            <input variable="num1"/>
+            <input variable="num2"/>
+            <assign variable="addtion" expression="num1+num2"/>
+            <output expression="&quot;The number added together: &quot;  &amp;addtion" newline="True"/>
+        </body>
+    </function>
+    <function name="DisplayMessage" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;Welcome to the addtion program&quot;" newline="True"/>
+            <output expression="&quot;Enter two number to be added&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

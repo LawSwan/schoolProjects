@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="amber"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-06-06 03:20:10 PM"/>
+        <attribute name="created" value="YW1iZXI7QU1CRVJTLU1BQ0JPT0stOzIwMjQtMDYtMDU7MTA6Mjk6MDYgQU07MjgyNQ=="/>
+        <attribute name="edited" value="YW1iZXI7QU1CRVJTLU1BQ0JPT0stOzIwMjQtMDYtMDY7MDM6MjA6MTAgUE07MjA7Mjk4Ng=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <call expression="Hie()"/>
+            <declare name="itemCount" type="Real" array="False" size=""/>
+            <assign variable="itemCount" expression="0"/>
+            <declare name="total" type="Real" array="False" size=""/>
+            <assign variable="total" expression="0"/>
+            <output expression="&quot;How many items will you be purchasing with us today? &quot;" newline="True"/>
+            <input variable="itemCount"/>
+            <output expression="&quot;We are sorry the scanner is broke today, Please enter the prices manually&quot;" newline="True"/>
+            <declare name="Prices" type="Real" array="True" size="itemCount"/>
+            <declare name="i" type="Real" array="False" size=""/>
+            <for variable="i" start="0" end="itemCount-1" direction="inc" step="1">
+                <output expression="&quot;Enter price&quot;" newline="True"/>
+                <input variable="prices[i]"/>
+                <while expression="(Prices[i]&gt;10)">
+                    <output expression="&quot;Please enter value less than 10$&quot;" newline="True"/>
+                    <input variable="Prices[i]"/>
+                </while>
+                <assign variable="total" expression="total+Prices[i]"/>
+            </for>
+            <call expression="grandTotal(prices)"/>
+            <output expression="&quot;Thank you for shopping with us! Have a nice day!&quot;" newline="True"/>
+        </body>
+    </function>
+    <function name="grandTotal" type="Real" variable="grandTotal">
+        <parameters>
+            <parameter name="prices" type="Real" array="True"/>
+        </parameters>
+        <body>
+            <declare name="taxIncluded, tax, total, grandTotal" type="Real" array="False" size=""/>
+            <assign variable="total" expression="0"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <assign variable="i" expression="0"/>
+            <for variable="i" start="0" end="Size(Prices)-1" direction="inc" step="1">
+                <assign variable="tax" expression="0.06"/>
+                <assign variable="total" expression="total+Prices[i]"/>
+            </for>
+            <output expression="&quot; Your total is: &quot; &amp;total&amp; &quot;$&quot;" newline="True"/>
+            <assign variable="taxIncluded" expression="total*0.06"/>
+            <output expression="&quot;Tax:  &quot; &amp;taxIncluded&amp; &quot;$&quot;" newline="True"/>
+            <assign variable="grandTotal" expression="taxIncluded+total"/>
+            <output expression="&quot;Your grand total is: &quot;   &amp;grandTotal&amp; &quot;$&quot;" newline="True"/>
+        </body>
+    </function>
+    <function name="Hie" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Message" type="String" array="False" size=""/>
+            <assign variable="Message" expression="&quot;Welcome to Hansen's Discount Suprermarket!&quot;"/>
+            <declare name="WelcomeCustomers" type="String" array="True" size="2"/>
+            <output expression="&quot;Welcome to Hansen's Discount Suprermarket!&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

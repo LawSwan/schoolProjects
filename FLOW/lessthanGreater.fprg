@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="amber"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-05-19 08:57:29 PM"/>
+        <attribute name="created" value="YW1iZXI7QU1CRVJTLU1BQ0JPT0stOzIwMjQtMDUtMTc7MDM6MDU6MzEgUE07MjgzNg=="/>
+        <attribute name="edited" value="YW1iZXI7QU1CRVJTLU1BQ0JPT0stOzIwMjQtMDUtMTk7MDg6NTc6MjkgUE07MjsyOTY2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="num, num2" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter the first number.&quot;" newline="True"/>
+            <input variable="num"/>
+            <output expression="&quot;Enter the second number&quot;" newline="True"/>
+            <input variable="num2"/>
+            <if expression="num &gt; num2">
+                <then>
+                    <output expression="num&amp; &quot; is greater than &quot; &amp;num2" newline="True"/>
+                </then>
+                <else>
+                    <if expression="num &lt; num2">
+                        <then>
+                            <output expression="num&amp; &quot; is less than &quot; &amp;num2" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="NUM&amp; &quot; is equal to &quot; &amp;num" newline="True"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

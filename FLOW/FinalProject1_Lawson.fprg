@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="ecpi"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-05-03 09:03:04 PM"/>
+        <attribute name="created" value="ZWNwaTtNQVNURVJNVlMxNVAxMDsyMDI0LTA1LTAyOzA5OjUwOjE0IEFNOzI2NjU="/>
+        <attribute name="edited" value="ZWNwaTtNQVNURVJNVlMxNVAxMDsyMDI0LTA1LTAzOzA5OjAzOjA0IFBNOzE4OzI4NDI="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="CustomerName" type="String" array="False" size=""/>
+            <declare name="numMessages" type="Integer" array="False" size=""/>
+            <declare name="Tax" type="Real" array="False" size=""/>
+            <assign variable="Tax" expression="0.12"/>
+            <declare name="Total" type="Real" array="False" size=""/>
+            <declare name="MonthlyBill" type="Real" array="False" size=""/>
+            <output expression="&quot;Welcome! Please enter your name.&quot;" newline="True"/>
+            <input variable="CustomerName"/>
+            <output expression="&quot;Enter how many txt you sent this month.&quot;" newline="True"/>
+            <input variable="numMessages"/>
+            <if expression="numMessages&lt;=60">
+                <then>
+                    <output expression="&quot;You have stayed with in the 60 text messages a month alloted for your basic plan&quot;" newline="True"/>
+                    <assign variable="Total" expression="5"/>
+                </then>
+                <else>
+                    <if expression="numMessages &gt;60 AND numMessages &lt;200">
+                        <then>
+                            <assign variable="Total" expression="(numMessages - 60 *0.10)+5"/>
+                        </then>
+                        <else>
+                            <if expression="numMessages&gt;=200">
+                                <then>
+                                    <assign variable="Total" expression="(numMessages-200*0.25)+5+(140*0.10)"/>
+                                </then>
+                                <else/>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <output expression="&quot;Your total for this month&quot;" newline="True"/>
+            <assign variable="Tax" expression="Tax*Total"/>
+            <assign variable="MonthlyBill" expression="Tax+Total"/>
+            <output expression="&quot;Customer: &quot; &amp;customerName" newline="True"/>
+            <output expression="&quot;Before tax is: $&quot; &amp;Total" newline="True"/>
+            <output expression="&quot;Addtional state and federal tax : $&quot; &amp;Tax" newline="True"/>
+            <output expression="&quot;Your monthly bill after tax is:&quot; &amp;MonthlyBill" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

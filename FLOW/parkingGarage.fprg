@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="amber"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-05-23 04:44:52 PM"/>
+        <attribute name="created" value="YW1iZXI7QU1CRVJTLU1BQ0JPT0stOzIwMjQtMDUtMjM7MDk6NTU6NTEgQU07MjgzMQ=="/>
+        <attribute name="edited" value="YW1iZXI7QU1CRVJTLU1BQ0JPT0stOzIwMjQtMDUtMjM7MDQ6NDQ6NTIgUE07MTsyOTQ4"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="hours1, hours2, hours3" type="Integer" array="False" size=""/>
+            <declare name="charge1, charge2, charge3" type="Real" array="False" size=""/>
+            <output expression="&quot;Parking Charges&quot;" newline="True"/>
+        </body>
+    </function>
+    <function name="calculateCharges" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="hours1" type="Real" array="False" size=""/>
+        </body>
+    </function>
+</flowgorithm>

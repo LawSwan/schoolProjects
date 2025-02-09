@@ -1,0 +1,54 @@
+import turtle
+
+# Function to draw a square
+def draw_square(t, size):
+    for _ in range(4):
+        t.forward(size)
+        t.right(90)
+
+# Function to draw a circle
+def draw_circle(t, size):
+    t.circle(size)
+
+# Function to draw an octagon
+def draw_octagon(t, size):
+    for _ in range(8):
+        t.forward(size)
+        t.right(45)
+
+def main():
+    screen = turtle.Screen()
+    screen.title("Turtle Graphics")
+
+    # Write student ID to the turtle screen
+    t = turtle.Turtle()
+    t.penup()
+    t.goto(-100, 200)
+    t.pendown()
+    t.write("AmbLaw9047", font=("Arial", 16, "normal"))
+
+    # Draw a square
+    t.penup()
+    t.goto(-50, 100)
+    t.pendown()
+    t.color("red")
+    draw_square(t, 100)
+
+    # Draw a circle
+    t.penup()
+    t.goto(100, 100)
+    t.pendown()
+    t.color("blue")
+    draw_circle(t, 50)
+
+    # Draw an octagon
+    t.penup()
+    t.goto(0, -100)
+    t.pendown()
+    t.color("green")
+    draw_octagon(t, 50)
+
+    turtle.done()
+
+if __name__ == "__main__":
+    main()

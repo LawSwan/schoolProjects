@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="amber"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-05-15 08:23:22 PM"/>
+        <attribute name="created" value="YW1iZXI7QU1CRVJTLU1BQ0JPT0stOzIwMjQtMDUtMTU7MDQ6MjY6MjMgUE07MjgzOQ=="/>
+        <attribute name="edited" value="YW1iZXI7QU1CRVJTLU1BQ0JPT0stOzIwMjQtMDUtMTU7MDg6MjM6MjIgUE07MzsyOTQ5"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="weightLBS, BMI, HeightInches" type="Real" array="False" size=""/>
+            <output expression="&quot;Enter your weight in pounds&quot;" newline="True"/>
+            <input variable="weightLBS"/>
+            <output expression="&quot;Enter your height in inches&quot;" newline="True"/>
+            <input variable="HeightInches"/>
+            <assign variable="BMI" expression="(weightLBS * 703) / (HeightInches * HeightInches)"/>
+            <if expression="BMI &lt;=18.5">
+                <then>
+                    <output expression="&quot;Underweight&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="BMI &gt; 18.5 AND BMI &lt; 24.9">
+                        <then>
+                            <output expression="&quot;NORMAL&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="BMI &gt;=25 AND BMI &lt;= 29.0">
+                                <then>
+                                    <output expression="&quot;OverWeight&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <if expression="BMI &gt;= 30">
+                                        <then>
+                                            <output expression="&quot;Obese&quot;" newline="True"/>
+                                        </then>
+                                        <else/>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <output expression="&quot;thankssss&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

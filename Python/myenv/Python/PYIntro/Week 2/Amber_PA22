@@ -1,0 +1,22 @@
+#Amber J Lawson
+#June 19,2024
+
+import random
+
+# Initialize an empty list
+list = []
+
+# Append 1000 random numbers to the list
+for i in range(1000):
+    list.append(random.randint(1, 100))
+
+# Print the list of numbers in its original order
+print("Original list of numbers:")
+print(list)
+
+# Sort the list
+list.sort()
+
+# Print the sorted list of numbers
+print("Sorted list of numbers:")
+print(list)

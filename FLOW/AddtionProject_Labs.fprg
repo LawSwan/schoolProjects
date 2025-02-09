@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="amber"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-05-15 09:29:50 PM"/>
+        <attribute name="created" value="YW1iZXI7QU1CRVJTLU1BQ0JPT0stOzIwMjQtMDUtMTU7MDk6MDY6NTAgUE07Mjg0Mg=="/>
+        <attribute name="edited" value="YW1iZXI7QU1CRVJTLU1BQ0JPT0stOzIwMjQtMDUtMTU7MDk6Mjk6NTAgUE07MTsyOTU1"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="num1, num2, sum" type="Real" array="False" size=""/>
+            <declare name="sentinelValue" type="Integer" array="False" size=""/>
+            <assign variable="sentinelValue" expression="-1"/>
+            <while expression="(sentinelValue!= -1)">
+                <output expression="&quot;Enter the first number&quot;" newline="True"/>
+                <input variable="num1"/>
+                <output expression="&quot;Enter the second number&quot;" newline="True"/>
+                <input variable="num2"/>
+                <assign variable="sum" expression="num1 + num2"/>
+                <output expression="&quot;The sum is &quot;  &amp;sum" newline="True"/>
+                <output expression="&quot;Enter any number to continue or enter -1 to exit the program&quot;" newline="True"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>

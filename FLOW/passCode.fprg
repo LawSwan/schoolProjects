@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="amber"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-05-20 12:12:03 PM"/>
+        <attribute name="created" value="YW1iZXI7QU1CRVJTLU1BQ0JPT0stOzIwMjQtMDUtMjA7MTA6MTk6MTIgQU07MjgxNw=="/>
+        <attribute name="edited" value="YW1iZXI7QU1CRVJTLU1BQ0JPT0stOzIwMjQtMDUtMjA7MTI6MTI6MDMgUE07MTI7Mjk4NQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <call expression="passCode()"/>
+        </body>
+    </function>
+    <function name="passCode" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="passCode" type="Integer" array="False" size=""/>
+            <declare name="attempts" type="Integer" array="False" size=""/>
+            <assign variable="attempts" expression="0"/>
+            <declare name="maxAttempts" type="Real" array="False" size=""/>
+            <assign variable="maxAttempts" expression="3"/>
+            <declare name="secretPasscode" type="Integer" array="False" size=""/>
+            <assign variable="secretPasscode" expression="11862"/>
+            <declare name="userPasscode" type="Integer" array="False" size=""/>
+            <assign variable="userPasscode" expression="0"/>
+            <while expression="(attempts &lt; maxAttempts)">
+                <output expression="&quot;Enter the passcode&quot;" newline="True"/>
+                <input variable="userPasscode"/>
+                <if expression="(userPasscode == secretPasscode)">
+                    <then>
+                        <output expression="&quot;Correct passcode&quot;" newline="True"/>
+                    </then>
+                    <else>
+                        <output expression="&quot;try again&quot;" newline="True"/>
+                    </else>
+                </if>
+            </while>
+            <output expression="&quot;Out of attempts&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

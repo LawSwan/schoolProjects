@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="amber"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-05-04 09:11:36 PM"/>
+        <attribute name="created" value="YW1iZXI7QU1CRVJTLU1BQ0JPT0stOzIwMjQtMDUtMDQ7MDQ6NTY6NTYgUE07Mjg0Ng=="/>
+        <attribute name="edited" value="YW1iZXI7QU1CRVJTLU1BQ0JPT0stOzIwMjQtMDUtMDQ7MDk6MTE6MzYgUE07MjA7Mjk5Nw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="age" type="Integer" array="False" size=""/>
+            <declare name="itemsPurchased" type="Integer" array="False" size=""/>
+            <declare name="totalAge" type="Integer" array="False" size=""/>
+            <declare name="totalItems" type="Integer" array="False" size=""/>
+            <declare name="customerCount" type="Integer" array="False" size=""/>
+            <assign variable="customerCount" expression="0"/>
+            <assign variable="age" expression="0"/>
+            <assign variable="totalAge" expression="0"/>
+            <assign variable="totalItems" expression="0"/>
+            <declare name="aveAge" type="Real" array="False" size=""/>
+            <declare name="zipcode, sentinelValue" type="Integer" array="False" size=""/>
+            <assign variable="sentinelValue" expression="1"/>
+            <output expression="&quot;Alexanders Coffee Shop: Please eneter customers  zipcode&quot;" newline="True"/>
+            <input variable="zipcode"/>
+            <while expression="(sentinelValue != -1)">
+                <output expression="&quot;Enter customers age&quot;" newline="True"/>
+                <input variable="age"/>
+                <if expression="zipcode!=-1 AND age&gt;=10 AND age&lt;=100">
+                    <then>
+                        <output expression="&quot;Enter how many items customer purchased&quot;" newline="True"/>
+                        <input variable="itemsPurchased"/>
+                        <assign variable="totalAge" expression="totalAge + age"/>
+                        <assign variable="customerCount" expression="customerCount + 1"/>
+                        <assign variable="totalItems" expression="totalItems + itemsPurchased"/>
+                    </then>
+                    <else>
+                        <output expression="&quot;Invaild age: Please enter a vaild age (10-100)&quot;" newline="True"/>
+                    </else>
+                </if>
+                <output expression="&quot;For end of day operations, enter =1 to exit program or enter any number to continue&quot;" newline="True"/>
+                <input variable="sentinelValue"/>
+            </while>
+            <if expression="customerCount&gt;0">
+                <then>
+                    <assign variable="aveAge" expression="totalAge/ customerCount"/>
+                </then>
+                <else>
+                    <assign variable="aveAge" expression="0"/>
+                </else>
+            </if>
+            <output expression="&quot;Average customer age:  &quot;  &amp; aveAge" newline="True"/>
+            <output expression="&quot;Total number of items purchased:  &quot;  &amp; totalItems" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

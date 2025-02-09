@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.18">
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="CAPACITY" type="Integer" array="False" size=""/>
+            <declare name="seats" type="Integer" array="True" size="10"/>
+            <declare name="choice" type="Integer" array="False" size=""/>
+            <declare name="seatAssigned" type="Integer" array="False" size=""/>
+            <assign variable="CAPACITY" expression="10"/>
+            <assign variable="seats[0]" expression="0"/>
+            <assign variable="seats[1]" expression="0"/>
+            <assign variable="seats[2]" expression="0"/>
+            <assign variable="seats[3]" expression="0"/>
+            <assign variable="seats[4]" expression="0"/>
+            <assign variable="seats[5]" expression="0"/>
+            <assign variable="seats[6]" expression="0"/>
+            <assign variable="seats[7]" expression="0"/>
+            <assign variable="seats[8]" expression="0"/>
+            <assign variable="seats[9]" expression="0"/>
+            <while expression="True">
+                <then>
+                    <output expression="&quot;Please type 1 for &#39;first-class.&#39;&quot;" newline="True"/>
+                    <output expression="&quot;Please type 2 for &#39;economy.&#39;&quot;" newline="True"/>
+                    <output expression="&quot;Enter your choice: &quot;" newline="False"/>
+                    <input variable="choice"/>
+                    <if expression="choice == 1">
+                        <then>
+                            <assign variable="seatAssigned" expression="assignSeat(seats, 0, 5)"/>
+                            <if expression="seatAssigned == 0">
+                                <then>
+                                    <output expression="&quot;First-class is full. Would you like to be placed in the economy section? (1 for yes, 0 for no): &quot;" newline="True"/>
+                                    <input variable="choice"/>
+                                    <if expression="choice == 1">
+                                        <then>
+                                            <assign variable="seatAssigned" expression="assignSeat(seats, 5, CAPACITY)"/>
+                                        </then>
+                                    </if>
+                                </then>
+                            </if>
+                        </then>
+                        <else>
+                            <if expression="choice == 2">
+                                <then>
+                                    <assign variable="seatAssigned" expression="assignSeat(seats, 5, CAPACITY)"/>
+                                    <if expression="seatAssigned == 0">
+                                        <then>
+                                            <output expression="&quot;Economy is full. Would you like to be placed in the first-class section? (1 for yes, 0 for no): &quot;" newline="True"/>
+                                            <input variable="choice"/>
+                                            <if expression="choice == 1">
+                                                <then>
+                                                    <assign variable="seatAssigned" expression="assignSeat(seats, 0, 5)"/>
+                                                </then>
+                                            </if>
+                                        </then>
+                                    </if>
+                                </then>
+                                <else>
+                                    <output expression="&quot;Invalid choice. Please type 1 for &#39;first-class&#39; or 2 for &#39;economy.&#39;&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                    <if expression="seatAssigned != 0">
+                        <then>
+                            <call function="printBoardingPass">
+                                <arguments>
+                                    <argument expression="seatAssigned"/>
+                                    <argument expression="seatAssigned &lt;= 5"/>
+                                </arguments>
+                            </call>
+                        </then>
+                        <else>
+                            <output expression="&quot;Next flight leaves in 3 hours.&quot;" newline="True"/>
+                        </else>
+                    </if>
+                    <declare name="full" type="Integer" array="False" size=""/>
+                    <assign variable="full" expression="1"/>
+                    <for name="i" init="0" to="CAPACITY - 1" step="1">
+                        <if expression="seats[i] == 0">
+                            <then>
+                                <assign variable="full" expression="0"/>
+                                <break/>
+                            </then>
+                        </if>
+                    </for>
+                    <if expression="full == 1">
+                        <then>
+                            <output expression="&quot;Flight is full&quot;" newline="True"/>
+                            <break/>
+                        </then>
+                    </if>
+                </then>
+            </while>
+        </body>
+    </function>
+    <function name="printBoardingPass" type="None" variable="">
+        <parameters>
+            <parameter name="seat" type="Integer"/>
+            <parameter name="isFirstClass" type="Boolean"/>
+        </parameters>
+        <body>
+            <output expression="&quot;Boarding Pass:&quot;" newline="True"/>
+            <output expression="&quot;Seat Number: &quot; &amp; seat" newline="True"/>
+            <output expression="&quot;Section: &quot; &amp; (isFirstClass ? &quot;First-Class&quot; : &quot;Economy&quot;)" newline="True"/>
+        </body>
+    </function>
+    <function name="assignSeat" type="Integer" variable="">
+        <parameters>
+            <parameter name="seats" type="Integer" array="True"/>
+            <parameter name="start" type="Integer"/>
+            <parameter name="end" type="Integer"/>
+        </parameters>
+        <body>
+            <for name="i" init="start" to="end - 1" step="1">
+                <if expression="seats[i] == 0">
+                    <then>
+                        <assign variable="seats[i]" expression="1"/>
+                        <return expression="i + 1"/>
+                    </then>
+                </if>
+            </for>
+            <return expression="0"/>
+        </body>
+    </function>
+</flowgorithm>

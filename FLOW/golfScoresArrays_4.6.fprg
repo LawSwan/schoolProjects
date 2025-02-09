@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="amber"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-06-02 07:12:45 PM"/>
+        <attribute name="created" value="YW1iZXI7QU1CRVJTLU1BQ0JPT0stOzIwMjQtMDYtMDI7MDQ6MjU6NDIgUE07MjgzNg=="/>
+        <attribute name="edited" value="YW1iZXI7QU1CRVJTLU1BQ0JPT0stOzIwMjQtMDYtMDI7MDc6MTI6NDUgUE07OTsyOTU0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Scores" type="Integer" array="True" size="9"/>
+            <declare name="intialize" type="Integer" array="False" size=""/>
+            <declare name="total" type="Integer" array="False" size=""/>
+            <for variable="intialize" start="0" end="8" direction="inc" step="1">
+                <output expression="&quot;Enter scores&quot;" newline="True"/>
+                <input variable="scores[scores]"/>
+            </for>
+            <call expression="computeTotal()"/>
+            <output expression="&quot;hole&quot;" newline="True"/>
+        </body>
+    </function>
+    <function name="computeTotal" type="Integer" variable="9">
+        <parameters>
+            <parameter name="scores" type="Integer" array="True"/>
+        </parameters>
+        <body>
+            <declare name="Size" type="Integer" array="False" size=""/>
+            <declare name="Total" type="Integer" array="False" size=""/>
+            <assign variable="total" expression="total+scores/9"/>
+        </body>
+    </function>
+</flowgorithm>

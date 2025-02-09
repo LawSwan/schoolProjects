@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="amber"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-05-21 09:36:22 AM"/>
+        <attribute name="created" value="YW1iZXI7QU1CRVJTLU1BQ0JPT0stOzIwMjQtMDUtMTc7MTE6NDE6NTUgQU07MjgyNg=="/>
+        <attribute name="edited" value="YW1iZXI7QU1CRVJTLU1BQ0JPT0stOzIwMjQtMDUtMjE7MDk6MzY6MjIgQU07MzsyOTM2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="accountNumber" type="Integer" array="False" size=""/>
+            <declare name="beginningBalance, creditLimit, newBalance" type="Real" array="False" size=""/>
+            <declare name="totalCredits" type="Real" array="False" size=""/>
+            <assign variable="totalCredits" expression="0"/>
+            <declare name="totalCharges" type="Real" array="False" size=""/>
+            <assign variable="totalCharges" expression="0"/>
+            <output expression="&quot;Enter account number &quot;" newline="True"/>
+            <input variable="accountNumber"/>
+            <while expression="(accountNumber != -1)">
+                <output expression="&quot;Enter beginning balance: &quot;" newline="True"/>
+                <input variable="beginningBalance"/>
+                <output expression="&quot;Enter total charges&quot;" newline="True"/>
+                <input variable="totalCharges"/>
+                <output expression="&quot;Enter credit limit &quot;" newline="True"/>
+                <input variable="creditLimit"/>
+                <assign variable="newBalance" expression="beginningBalance + totalCharges - totalCredits"/>
+                <output expression="&quot; New balance is:  &quot; &amp;newBalance" newline="True"/>
+                <if expression="(newBalance &gt; creditLimit)">
+                    <then>
+                        <output expression="&quot;Acconut Number: &quot; &amp;accountNumber" newline="True"/>
+                        <output expression="&quot;Credit limit: &quot;  &amp;creditLimit" newline="True"/>
+                        <output expression="&quot;Balance: &quot; &amp;newBalance" newline="True"/>
+                        <output expression="&quot;Credit Limit Exceeded: &quot;" newline="True"/>
+                        <output expression="&quot;Enter account number (-1 to end): &quot;" newline="True"/>
+                    </then>
+                    <else/>
+                </if>
+            </while>
+            <output expression="&quot;Have a nice day! &quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

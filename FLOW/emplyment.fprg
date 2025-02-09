@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="amber"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-05-18 03:19:39 PM"/>
+        <attribute name="created" value="YW1iZXI7QU1CRVJTLU1BQ0JPT0stOzIwMjQtMDUtMTc7MDQ6Mjg6MjYgUE07Mjg0Ng=="/>
+        <attribute name="edited" value="YW1iZXI7QU1CRVJTLU1BQ0JPT0stOzIwMjQtMDUtMTg7MDM6MTk6MzkgUE07OTsyOTY2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="years" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter the number of years of employment&quot;" newline="True"/>
+            <input variable="years"/>
+            <if expression="years &gt;= 25">
+                <then>
+                    <output expression="&quot;You receive a gold watch.&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="years &gt;= 15 AND years &lt; 25">
+                        <then>
+                            <output expression="&quot;You received a silver pen&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="years &gt;= 5 and years &lt; 15">
+                                <then>
+                                    <output expression="&quot;you received a bronze pin&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;You receive a happy meal!&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

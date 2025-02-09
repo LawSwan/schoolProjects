@@ -1,0 +1,40 @@
+Mindfire Solutions Case Study
+MMORPG Game Testing on Windows, Mac & Linux
+Quality Assurance Testing in Game Testing Domain– A Case Study
+Executive Summary
+With its teams already spread across United States,
+United Kingdom, Asia and China, working with a remote
+team wasn’t new for our client. But for obvious reasons
+there’s always inertia that ‘first’ time. Here too, there
+were apprehensions initially about outsourcing their
+testing work to India, concerns about the quality of
+work, the lack of ‘complete’ control, data privacy and
+integrity, concerns and questions about the team that
+would be working on the application. To add to it,
+Mindfire was a green horn to the MMORPG (Massively
+Multiple Online Role Playing Games) genre.
+Nevertheless, with our certified and experienced team
+of members and proven results in the past, it wasn’t long before we had established an association with the client. What
+started as a pilot project with 3 team members for regression tests, to be reconsidered later, went to become a full
+fledged project with 9 members on board within a year’s time. In addition to the testing services, the team is now also
+involved in every QA decision made for the application. With its feet strong in the ground and several successful releases
+and accomplishments, Mindfire continues to adhere to the client needs, with all gusto and consistency.
+About our Client
+Client A leading developer of PC web-based games | Location Europe | Industry Online / Video games
+Business Situation
+Outsourcing the testing services, gave the client all the time to concentrate on their core designing and development
+activities while the Mindfire team would help handle the validation work. With the client’s openness and Mindfire’s rich
+experience with the remote work protocol, Mindfire soon earned the client’s confidence.
+• Initial discussions included interview and access proposed resources: A software test lead and 2 software testers.
+• Co-ordinate with the clients QA point of contact and thoroughly study the test requirements (releases, builds,
+defect tracker, product knowledge, workflow).
+• Test planning, testing schedule, chalk down risks involved with contingency plans.
+Technologies
+The architecture mostly deployed for MMORPG’s is the client server architecture. The software that generates and
+persists the virtual "world" runs continuously on a server, and players connect to it via client software.
+Customer Benefits
+The client continues to benefit from the services provided by the virtual team with its available as and when needed
+considering the new methodology adapted. Its already rich data repository has grown richer with the virtual teams’
+interference!
+info@mindfiresolutions.com www.mindfiresolutions.com
+

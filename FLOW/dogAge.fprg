@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="amber"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-05-26 10:01:07 PM"/>
+        <attribute name="created" value="YW1iZXI7QU1CRVJTLU1BQ0JPT0stOzIwMjQtMDUtMjY7MDg6NDc6MDMgUE07Mjg0Ng=="/>
+        <attribute name="edited" value="YW1iZXI7QU1CRVJTLU1BQ0JPT0stOzIwMjQtMDUtMjY7MTA6MDE6MDcgUE07MTsyOTQx"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <call expression="displayMessage()"/>
+            <call expression="dogAge()"/>
+            <output expression="&quot;End Of Program&quot;" newline="True"/>
+        </body>
+    </function>
+    <function name="displaymessage" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="dogAge" type="Integer" array="False" size=""/>
+            <output expression="&quot;What is the age of your dog?&quot;" newline="True"/>
+            <input variable="dogAge"/>
+        </body>
+    </function>
+    <function name="dogAge" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="dogAge" type="Real" array="False" size=""/>
+            <assign variable="dogAge" expression="1"/>
+            <declare name="computeHumanYears" type="Integer" array="False" size=""/>
+            <assign variable="computeHumanYears" expression="dogAge * 7"/>
+        </body>
+    </function>
+</flowgorithm>

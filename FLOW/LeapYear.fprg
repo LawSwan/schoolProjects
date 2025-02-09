@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="amber"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-05-24 08:54:22 AM"/>
+        <attribute name="created" value="YW1iZXI7QU1CRVJTLU1BQ0JPT0stOzIwMjQtMDUtMjQ7MDg6MTA6MjAgQU07MjgxOA=="/>
+        <attribute name="edited" value="YW1iZXI7QU1CRVJTLU1BQ0JPT0stOzIwMjQtMDUtMjQ7MDg6NTQ6MjIgQU07MjsyOTM3"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="year, answer" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter a year&quot;" newline="True"/>
+            <input variable="year"/>
+            <assign variable="answer" expression="LeapYear(year)"/>
+            <if expression="answer == 1">
+                <then>
+                    <output expression="year&amp; &quot; is a leap year&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="year&amp; &quot; is not a leap year&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="LeapYear" type="Integer" variable="ans">
+        <parameters/>
+        <body>
+            <declare name="year" type="Integer" array="False" size=""/>
+            <assign variable="year" expression="0"/>
+            <declare name="ans" type="Integer" array="False" size=""/>
+            <if expression="year% 100  == 0">
+                <then>
+                    <if expression="year% 400 == 0">
+                        <then>
+                            <assign variable="ans" expression="1"/>
+                        </then>
+                        <else>
+                            <assign variable="ans" expression="0"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <if expression="year% 4 ==0">
+                        <then>
+                            <assign variable="ans" expression="1"/>
+                        </then>
+                        <else>
+                            <assign variable="ans" expression="0"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

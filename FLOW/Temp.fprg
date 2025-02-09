@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="amber"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-05-17 04:16:26 PM"/>
+        <attribute name="created" value="YW1iZXI7QU1CRVJTLU1BQ0JPT0stOzIwMjQtMDUtMTc7MDM6NTg6MTUgUE07Mjg0Ng=="/>
+        <attribute name="edited" value="YW1iZXI7QU1CRVJTLU1BQ0JPT0stOzIwMjQtMDUtMTc7MDQ6MTY6MjYgUE07NDsyOTU0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="num, temp" type="Integer" array="False" size=""/>
+            <declare name="total, average" type="Real" array="False" size=""/>
+            <assign variable="total" expression="0.0"/>
+            <assign variable="num" expression="1"/>
+            <output expression="&quot;Enter five tempertures to average.&quot;" newline="True"/>
+            <while expression="(num &lt;=5)">
+                <output expression="&quot; What is the daily temperature: &quot;" newline="True"/>
+                <input variable="temp"/>
+                <assign variable="num" expression="num+1"/>
+                <assign variable="total" expression="total+temp"/>
+            </while>
+            <assign variable="average" expression="total/5.0"/>
+            <output expression="&quot;The average temperature is: &quot; &amp;average" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

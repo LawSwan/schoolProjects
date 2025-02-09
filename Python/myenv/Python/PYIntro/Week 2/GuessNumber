@@ -1,0 +1,17 @@
+from random import randint
+
+print("9047")
+num = randint(1, 9)
+user_guess = 0
+guess = 0
+
+while user_guess != num:
+    guess += 1
+    user_guess = int(input("Enter a guess from 1 to 9: "))
+    if user_guess < num:
+        print("Guess is low")
+    elif user_guess > num:
+        print("Guess is high")
+    else:
+        print(f"You guessed it! You won in {guess} guesses!")
+        

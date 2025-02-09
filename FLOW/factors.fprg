@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="amber"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-05-17 03:52:34 PM"/>
+        <attribute name="created" value="YW1iZXI7QU1CRVJTLU1BQ0JPT0stOzIwMjQtMDUtMTc7MDM6MzI6MTIgUE07MjgzNQ=="/>
+        <attribute name="edited" value="YW1iZXI7QU1CRVJTLU1BQ0JPT0stOzIwMjQtMDUtMTc7MDM6NTI6MzQgUE07MjsyOTUw"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="count, num" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter any numbers to find factors.&quot;" newline="True"/>
+            <input variable="num"/>
+            <output expression="&quot; The factors of &quot; &amp;num&amp; &quot; are &quot;" newline="True"/>
+            <for variable="count" start="1" end="num" direction="inc" step="1">
+                <if expression="num %count == 0">
+                    <then>
+                        <output expression="count" newline="True"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

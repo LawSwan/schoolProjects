@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="amber"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-05-29 02:25:59 PM"/>
+        <attribute name="created" value="YW1iZXI7QU1CRVJTLU1BQ0JPT0stOzIwMjQtMDUtMjk7MDE6NTg6NDcgUE07Mjg1Mg=="/>
+        <attribute name="edited" value="YW1iZXI7QU1CRVJTLU1BQ0JPT0stOzIwMjQtMDUtMjk7MDI6MjU6NTkgUE07MTsyOTU4"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="values" type="Integer" array="True" size="3"/>
+            <declare name="counter" type="Integer" array="False" size=""/>
+            <assign variable="values[0]" expression="0"/>
+            <assign variable="values[1]" expression="10"/>
+            <assign variable="values[2]" expression="6"/>
+            <for variable="counter" start="0" end="2" direction="inc" step="1">
+                <output expression="&quot;The value in element&quot; &amp; counter &amp; &quot;of the intialized array is: &quot; &amp; values [counter]" newline="True"/>
+            </for>
+            <assign variable="values[0]" expression="15"/>
+            <assign variable="values[1]" expression="18"/>
+            <assign variable="values[2]" expression="19"/>
+            <for variable="counter" start="0" end="2" direction="inc" step="1">
+                <output expression="&quot;The value in element &quot; &amp; counter &amp; &quot; of the intialized array is: &quot; &amp; values [counter]" newline="True"/>
+            </for>
+            <for variable="counter" start="0" end="2" direction="inc" step="1">
+                <output expression="&quot;Enter three values&quot;" newline="True"/>
+                <input variable="values[counter]"/>
+            </for>
+            <for variable="counter" start="0" end="2" direction="inc" step="1">
+                <output expression="&quot;The value in element&quot; &amp; counter &amp; &quot;of the user input is: &quot; &amp; values [counter]" newline="True"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

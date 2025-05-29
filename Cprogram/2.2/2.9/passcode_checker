@@ -1,0 +1,29 @@
+// Amber Lawson
+// CIS126:2.9
+//
+//
+
+#include <stdio.h>
+#include "passcode_checker.h"
+
+void check_passcode()void {
+    const int secretPasscode = 11862;
+    int userPasscode;
+    int attempts = 0;
+    int maxAttempts = 3;
+
+    while (attempts < maxAttempts) {
+        printf("Enter the passcode: ");
+        scanf("%d", &userPasscode);
+
+        if (userPasscode == secretPasscode) {
+            printf("Correct passcode!\n");
+            return;
+        } else {
+            printf("Try Again\n");
+            attempts++;
+        }
+    }
+
+    printf("Out of attempts\n");
+}

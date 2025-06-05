@@ -1,0 +1,305 @@
+-----Display every USERNAME and the lowest RATING they have left in a review.-----
+SELECT DISTINCT A.USERNAME, B.REVIEW, B.RATING
+FROM USERBASE A, REVIEWS B 
+WHERE A.USERID = B.USERID
+ORDER BY B.RATING;
+
+----Display every user’s EMAIL, QUESTION, and ANSWER.----
+SELECT DISTINCT A.EMAIL, B.QUESTION, B.ANSWER
+FROM USERBASE A, SECURITYQUESTION B 
+WHERE A.USERID = B.USERID
+ORDER BY EMAIL;
+
+----Display the FIRSTNAME, EMAIL, and  WALLETFUNDS of every user that does not have a WISHLIST---
+SELECT DISTINCT A.FIRSTNAME, A.EMAIL, A.WALLETFUNDS
+FROM USERBASE A
+LEFT JOIN WISHLIST B ON A.USERID = B.USERID
+WHERE B.USERID IS NULL
+ORDER BY FIRSTNAME;
+
+-- Q4: Display every USERNAME and number of products they have ordered.
+SELECT 
+  u.USERNAME,
+  COUNT(o.ORDERID) AS PRODUCT_COUNT
+FROM 
+  USERBASE u
+  JOIN ORDERS o
+    ON u.USERID = o.USERID
+GROUP BY 
+  u.USERNAME
+ORDER BY 
+  u.USERNAME;
+
+---Q5:
+SELECT DISTINCT
+  TRUNC(MONTHS_BETWEEN(TO_DATE('31-DEC-2022', 'DD-MON-YYYY'), A.BIRTHDAY) / 12) AS AGE
+FROM USERBASE A
+JOIN ORDERS B ON A.USERID = B.USERID
+WHERE B.PURCHASEDATE >= ADD_MONTHS(TO_DATE('31-DEC-2022', 'DD-MON-YYYY'), -6);
+
+-- Q6: Display the USERNAME and BIRTHDAY of the user who has the highest friend count.
+SELECT 
+  u.USERNAME,
+  u.BIRTHDAY
+FROM 
+  USERBASE u
+  JOIN FRIENDSLIST f
+    ON u.USERID = f.USERID
+GROUP BY 
+  u.USERNAME,
+  u.BIRTHDAY
+HAVING 
+  COUNT(f.FRIENDID) = (
+    SELECT 
+      MAX(friend_count)
+    FROM (
+      SELECT 
+        COUNT(FRIENDID) AS friend_count
+      FROM 
+        FRIENDSLIST
+      GROUP BY 
+        USERID
+    )
+  );
+
+  -- Q7: Display the PRODUCTNAME, RELEASEDATE, PRICE, and DESCRIPTION for any product found in the WISHLIST.
+SELECT 
+  p.PRODUCTNAME,
+  p.RELEASEDATE,
+  p.PRICE,
+  p.DESCRIPTION
+FROM 
+  PRODUCTLIST p
+  JOIN WISHLIST w
+    ON p.PRODUCTCODE = w.PRODUCTCODE
+ORDER BY 
+  p.PRODUCTNAME;
+
+  -- Q8: Display the PRODUCTNAME, highest RATING, and number of reviews for each product in the REVIEWS table.
+SELECT 
+  p.PRODUCTNAME,
+  MAX(r.RATING)        AS HIGHEST_RATING,
+  COUNT(r.RATING)      AS REVIEW_COUNT
+FROM 
+  PRODUCTLIST p
+  JOIN REVIEWS r
+    ON p.PRODUCTCODE = r.PRODUCTCODE
+GROUP BY 
+  p.PRODUCTNAME
+ORDER BY 
+  HIGHEST_RATING DESC;
+
+  -- Q9: Create a view that displays the PRODUCTNAME, GENRE, and RATING for every product with a 5 or a 1 RATING. 
+--     Order the results in ascending order of the RATING.
+CREATE OR REPLACE VIEW VIEW_PRODUCT_1_5_RATINGS AS
+SELECT 
+  p.PRODUCTNAME,
+  p.GENRE,
+  r.RATING
+FROM 
+  PRODUCTLIST p
+  JOIN REVIEWS r
+    ON p.PRODUCTCODE = r.PRODUCTCODE
+WHERE 
+  r.RATING IN (1, 5)
+ORDER BY 
+  r.RATING ASC;
+
+
+-- Q10: Display the count of products ordered, grouped by GENRE. Order the results in alphabetical order of GENRE.
+SELECT 
+  p.GENRE,
+  COUNT(o.ORDERID) AS ORDER_COUNT
+FROM 
+  PRODUCTLIST p
+  JOIN ORDERS o
+    ON p.PRODUCTCODE = o.PRODUCTCODE
+GROUP BY 
+  p.GENRE
+ORDER BY 
+  p.GENRE ASC;
+
+--Q11 Create a view that displays each PUBLISHER, the average PRICE, and the sum of HOURSPLAYED for their products.
+CREATE OR REPLACE VIEW PUBLISHER_INFO AS
+SELECT 
+  A.PUBLISHER, 
+  AVG(A.PRICE) AS AVG_PRICE, 
+  SUM(B.HOURSPLAYED) AS SUM_HOURSPLAYED
+FROM PRODUCTLIST A
+JOIN USERLIBRARY B ON A.PRODUCTCODE = B.PRODUCTCODE
+GROUP BY A.PUBLISHER, A.PRICE;
+
+--Q12 Display the sum of money spent on products and their corresponding PUBLISHER, from the ORDERS table. Order the results in descending order of the sum of money spent.
+SELECT 
+  A.PUBLISHER, 
+  SUM(B.PRICE) AS TOTAL_SPENT
+FROM ORDERS B
+JOIN PRODUCTLIST A ON B.PRODUCTCODE = A.PRODUCTCODE
+GROUP BY A.PUBLISHER
+ORDER BY TOTAL_SPENT DESC;
+
+--Q13 Display the TICKETID, USERNAME,EMAIL, ISSUE only for tickets with a status of new or in progress, sorted by the latest Datesubmitted
+SELECT 
+  A.TICKETID,
+  B.USERNAME,
+  A.EMAIL,
+  A.ISSUE
+FROM USERSUPPORT A
+JOIN USERBASE B ON A.EMAIL = B.EMAIL
+WHERE A.STATUS IN ('NEW', 'IN PROGRESS')
+ORDER BY A.DATEUPDATED DESC;
+
+-Q14 Display the USERNAME and count of TICKETID that users have submitted for user support.
+SELECT 
+  U.USERNAME,
+  COUNT(S.TICKETID) AS TICKET_COUNT
+FROM USERBASE U
+JOIN USERSUPPORT S ON U.EMAIL = S.EMAIL
+GROUP BY U.USERNAME;
+
+--Q15 Display the userid and email of any user who has submitted a support ticket that used their firstname , lastname, or a comination of the two in their email addres.
+SELECT DISTINCT 
+  A.USERID,
+  A.EMAIL
+FROM USERBASE A
+JOIN USERSUPPORT B ON A.EMAIL = B.EMAIL
+WHERE LOWER(B.EMAIL) LIKE '%' || LOWER(A.FIRSTNAME) || '%'
+   OR LOWER(B.EMAIL) LIKE '%' || LOWER(A.LASTNAME) || '%'
+   OR LOWER(B.EMAIL) LIKE '%' || LOWER(A.FIRSTNAME || A.LASTNAME) || '%';
+
+--Q16 Display the EMAIL address of any user who has a ‘NEW’ or ‘IN PROGRESS’ support ticket STATUS, where the EMAIL is not currently saved in the USERBASE table.
+SELECT DISTINCT S.EMAIL
+FROM USERSUPPORT S
+WHERE S.STATUS IN ('NEW', 'IN PROGRESS')
+  AND S.EMAIL NOT IN (
+    SELECT U.EMAIL
+    FROM USERBASE U
+  );
+
+  --Q17 Display the TICKETID, FIRSTNAME, LASTNAME, and USERNAME of any user whose USERNAME is mentioned in the ISSUE of a support ticket
+SELECT 
+  S.TICKETID,
+  U.FIRSTNAME,
+  U.LASTNAME,
+  U.USERNAME
+FROM USERSUPPORT A, USERBASE B 
+WHERE INSTR(A.ISSUE, B.USERNAME) > 0
+
+
+---Q18 Display the USERNAME and PASSWORD associated with the EMAIL address provided in the support tickets.
+SELECT 
+  U.USERNAME,
+  U.PASSWORD,
+  S.EMAIL
+FROM USERSUPPORT S
+LEFT JOIN USERBASE U
+  ON UPPER(U.EMAIL) = UPPER(S.EMAIL);
+
+--Q19 19.	Create a view that displays the USERNAME, DATEASSIGNED,
+-- and PENALTY for any user whose PENALTY is not null and the 
+--infraction was assigned within the last month. 
+
+CREATE OR REPLACE VIEW RecentInfractions AS
+SELECT
+  U.USERNAME,
+  RPV.DATEASSIGNED,
+  RPV.PENALTY
+FROM RECENT_PENALTIES_VIEW RPV
+JOIN USERBASE U
+  ON RPV.USERID = U.USERID;
+
+
+  -- Q20: Display USERNAME and EMAIL of users who are ≥18 years old 
+--      and have NOT received an infraction in the last 4 months.
+
+SELECT 
+  U.USERNAME,
+  U.EMAIL
+FROM USERBASE U
+WHERE U.BIRTHDAY <= ADD_MONTHS(TRUNC(SYSDATE), -12 * 18)
+  AND NOT EXISTS (
+    SELECT 1
+    FROM INFRACTIONS I
+    WHERE I.USERID = U.USERID
+      AND I.DATEASSIGNED >= ADD_MONTHS(TRUNC(SYSDATE), -4)
+  );
+
+
+-- Q21: Display the USERNAME, DATEASSIGNED, and full guideline name 
+--      (RULENUM and TITLE separated by a space) for every community‐rule violation.
+
+SELECT
+  U.USERNAME,
+  I.DATEASSIGNED,
+  I.RULENUM || ' ' || R.TITLE AS FULL_GUIDELINE_NAME
+FROM INFRACTIONS       I
+JOIN USERBASE          U ON I.USERID   = U.USERID
+JOIN COMMUNITYRULES    R ON I.RULENUM  = R.RULENUM;
+
+
+
+--22.	Display the USERID, USERNAME, EMAIL, and sum of all SEVERITYPOINTS each user has received
+SELECT
+  U.USERID,
+  U.USERNAME,
+  U.EMAIL,
+  SUM(C.SEVERITYPOINT) AS TOTAL_SEVERITY
+FROM INFRACTIONS      I
+JOIN USERBASE         U ON I.USERID      = U.USERID
+JOIN COMMUNITYRULES   C ON I.RULENUM     = C.RULENUM
+GROUP BY
+  U.USERID,
+  U.USERNAME,
+  U.EMAIL;
+
+
+SELECT DISTINCT
+  C.TITLE,
+  C.DESCRIPTION,
+  RP.PENALTY
+FROM INFRACTIONS           I
+JOIN COMMUNITYRULES        C 
+  ON I.RULENUM      = C.RULENUM
+JOIN RECENT_PENALTIES_VIEW RP 
+  ON I.USERID       = RP.USERID
+ AND I.DATEASSIGNED = RP.DATEASSIGNED;
+
+
+--2323.	Display the TITLE, DESCRIPTION, 
+--and PENALTY for all infractions assigned
+
+SELECT DISTINCT
+  C.TITLE,
+  C.DESCRIPTION,
+  RP.PENALTY
+FROM INFRACTIONS           I
+JOIN COMMUNITYRULES        C 
+  ON I.RULENUM      = C.RULENUM
+JOIN RECENT_PENALTIES_VIEW RP 
+  ON I.USERID       = RP.USERID
+ AND I.DATEASSIGNED = RP.DATEASSIGNED;
+
+
+
+--24.	Display the USERNAME and count of infractions for users who have violated 
+--the community rules at least 15 times.
+SELECT
+  U.USERNAME,
+  COUNT(*) AS INFRACTION_COUNT
+FROM INFRACTIONS I
+JOIN USERBASE U
+  ON I.USERID = U.USERID
+GROUP BY
+  U.USERNAME
+HAVING
+  COUNT(*) >= 15; ---results will be "no data found" since no user has 15 infractions
+
+
+
+
+
+
+
+
+
+

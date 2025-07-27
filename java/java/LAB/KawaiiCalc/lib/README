@@ -1,0 +1,12 @@
+READ ME
+
+# KawaiiKalc 🐰✨  
+A cute pink-and-mint Java Swing calculator that doubles as a discreet support tool for women in need.
+
+## ✨  Key Features
+- **Basic Math** – add, subtract, multiply, divide; smart “.0” trimming.  
+- **Memory Keys** – `MC`, `MR`, `M+` (indicator coming soon).  
+- **Custom Passcode** – set on first launch; type it and press `=` to enter the hidden chat.  
+- **Back-Door Chat** – private, local chat window (networking planned).  
+- **Error Handling** – graceful “Error” on divide-by-zero, `C` to reset.  
+- **Kawaii UI** – soft-pink frame (340 × 520 px), mint tool buttons, large right-aligned display.

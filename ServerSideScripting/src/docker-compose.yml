@@ -1,0 +1,37 @@
+version: '3.8'
+services:
+  www:
+    build: .
+    container_name: my_php_app
+    volumes:
+      - ./:/var/www/html
+    ports:
+      - "8080:80"
+      - "433:443"
+
+  db:
+    image: mysql:latest
+    container_name: my_mysql_db
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: mydatabase_php
+      MYSQL_USER: Amblaw
+      MYSQL_PASSWORD: password
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: arm64v8/phpmyadmin
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306  
+    ports:
+      - "8081:80"
+    depends_on:
+      - db
+    volumes:
+      - ./phpmyadmin-theme/blueberry:/var/www/html/themes/blueberry
+
+volumes:
+  mysql_data:

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.lawson.kawaiicalc.CalculatorController">
+
+    <center>
+        <!-- 8 px spacing; 10 px padding on all sides -->
+        <VBox spacing="8" padding="10">
+
+            <!-- Display -->
+            <TextField fx:id="display" text="0" editable="false"/>
+
+            <!-- Keypad -->
+            <GridPane hgap="5" vgap="5" alignment="CENTER">
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="25"/>
+                    <ColumnConstraints percentWidth="25"/>
+                    <ColumnConstraints percentWidth="25"/>
+                    <ColumnConstraints percentWidth="25"/>
+                </columnConstraints>
+
+                <!-- Row 0 -->
+                <Button text="⌫" GridPane.rowIndex="0" GridPane.columnIndex="0" onAction="#onBack"/>
+                <Button text="±" GridPane.rowIndex="0" GridPane.columnIndex="1" onAction="#onToggleSign"/>
+                <Button text="/" GridPane.rowIndex="0" GridPane.columnIndex="2" onAction="#onOp"/>
+                <Button text="C"  GridPane.rowIndex="0" GridPane.columnIndex="3" onAction="#onClear"/>
+
+                <!-- Row 1 -->
+                <Button text="7" GridPane.rowIndex="1" GridPane.columnIndex="0" onAction="#onDigit"/>
+                <Button text="8" GridPane.rowIndex="1" GridPane.columnIndex="1" onAction="#onDigit"/>
+                <Button text="9" GridPane.rowIndex="1" GridPane.columnIndex="2" onAction="#onDigit"/>
+                <Button text="*" GridPane.rowIndex="1" GridPane.columnIndex="3" onAction="#onOp"/>
+
+                <!-- Row 2 -->
+                <Button text="4" GridPane.rowIndex="2" GridPane.columnIndex="0" onAction="#onDigit"/>
+                <Button text="5" GridPane.rowIndex="2" GridPane.columnIndex="1" onAction="#onDigit"/>
+                <Button text="6" GridPane.rowIndex="2" GridPane.columnIndex="2" onAction="#onDigit"/>
+                <Button text="-" GridPane.rowIndex="2" GridPane.columnIndex="3" onAction="#onOp"/>
+
+                <!-- Row 3 -->
+                <Button text="1" GridPane.rowIndex="3" GridPane.columnIndex="0" onAction="#onDigit"/>
+                <Button text="2" GridPane.rowIndex="3" GridPane.columnIndex="1" onAction="#onDigit"/>
+                <Button text="3" GridPane.rowIndex="3" GridPane.columnIndex="2" onAction="#onDigit"/>
+                <Button text="+" GridPane.rowIndex="3" GridPane.columnIndex="3" onAction="#onOp"/>
+
+                <!-- Row 4 -->
+                <Button text="0" GridPane.rowIndex="4" GridPane.columnIndex="0" onAction="#onDigit"/>
+                <Button text="." GridPane.rowIndex="4" GridPane.columnIndex="1" onAction="#onDot"/>
+                <Button text="=" GridPane.rowIndex="4" GridPane.columnIndex="2" onAction="#onEquals"/>
+                <Button text="MS" GridPane.rowIndex="4" GridPane.columnIndex="3" onAction="#onMemStore"/>
+
+                <!-- Row 5 (memory shortcuts) -->
+                <Button text="MR" GridPane.rowIndex="5" GridPane.columnIndex="0" onAction="#onMemRecall"/>
+                <Button text="MC" GridPane.rowIndex="5" GridPane.columnIndex="1" onAction="#onMemClear"/>
+            </GridPane>
+
+            <!-- Memory list & status -->
+            <Label text="Memory:"/>
+            <ListView fx:id="memoryList" prefHeight="100"/>
+            <Label fx:id="status" style="-fx-text-fill: crimson;"/>
+
+        </VBox>
+    </center>
+</BorderPane>

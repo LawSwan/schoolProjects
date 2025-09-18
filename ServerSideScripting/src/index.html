@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Amber Lawson - Server Side Scripting Projects</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 20px;
+        }
+        .project-section {
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #007bff;
+        }
+        .project-section h2 {
+            color: #007bff;
+            margin-top: 0;
+        }
+        .project-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .project-link {
+            display: block;
+            padding: 12px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+        .project-link:hover {
+            background-color: #0056b3;
+        }
+        .setup-link {
+            background-color: #28a745;
+        }
+        .setup-link:hover {
+            background-color: #218838;
+        }
+        .admin-link {
+            background-color: #dc3545;
+        }
+        .admin-link:hover {
+            background-color: #c82333;
+        }
+        .info {
+            background-color: #e7f3ff;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 20px 0;
+            border-left: 4px solid #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Amber Lawson<br>Server Side Scripting Projects</h1>
+        
+        <div class="info">
+            <strong>Development Server:</strong> http://localhost:8080<br>
+            <strong>Database Admin:</strong> http://localhost:8081 (phpMyAdmin)
+        </div>
+
+        <div class="project-section">
+            <h2>Week 2 - PHP Forms & Input/Output</h2>
+            <div class="project-links">
+                <a href="Week2/input_output.php" class="project-link">Basic Input/Output</a>
+                <a href="Week2/LAWSON_wk2pa.php" class="project-link">Week 2 Assessment</a>
+            </div>
+        </div>
+
+        <div class="project-section">
+            <h2>Week 3 - Database Integration & CRUD</h2>
+            <div class="project-links">
+                <a href="Week 3/setup_performance.php" class="project-link setup-link">Setup Database</a>
+                <a href="Week 3/Lawson_performance.php" class="project-link">Week 3 Assessment (CRUD)</a>
+                <a href="Week 3/connectdb.php" class="project-link">Database Connection Demo</a>
+            </div>
+        </div>
+
+        <div class="project-section">
+            <h2>Development Tools</h2>
+            <div class="project-links">
+                <a href="http://localhost:8081" class="project-link admin-link" target="_blank">phpMyAdmin</a>
+                <a href="helloworld.php" class="project-link">Hello World Test</a>
+                <a href="index.php" class="project-link">Product List (MySQL Test)</a>
+            </div>
+        </div>
+
+        <div class="info">
+            <strong>Quick Access:</strong> Launch "Launch Chrome - Development Server" from VS Code to open this page, then click on any project link above!
+        </div>
+    </div>
+</body>
+</html>

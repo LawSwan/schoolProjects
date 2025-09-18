@@ -1,4 +1,3 @@
-/Users/ecpi/schoolProjects/ServerSideScripting/src/Week 2/input_output.php
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +12,9 @@
     <input type="submit" value="Submit Values">
 </form>
 <?php
+
 // Declare and clear variables for display
+
 $first_name = "";
 $last_name = "";
 $email = "";
@@ -22,6 +23,7 @@ $favorite = "";
 // Retrieve values from query string and store in a local variable
 if (isset($_POST['fname'])) {
     $first_name = $_POST['fname'];
+    echo "<p>fname is set in POST</p>";
 }
 if (isset($_POST['lname'])) {
     $last_name = $_POST['lname'];

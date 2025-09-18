@@ -1,0 +1,23 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Listen for XDebug",
+            "type": "php",
+            "request": "launch",
+            "port": 9000,
+            "log": true,
+            "pathMappings": {
+                "/var/www/html": "${workspaceFolder}"
+            },
+            "ignore": ["**/vendor/**/*.php"]
+        },
+        {
+            "name": "Launch Chrome - Development Server",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceFolder}"
+        }
+    ]
+}

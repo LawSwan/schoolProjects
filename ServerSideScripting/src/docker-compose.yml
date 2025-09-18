@@ -1,31 +1,36 @@
-version: '3.8'
 services:
   www:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: my_php_app
+    platform: linux/arm64/v8
     volumes:
-      - ./:/var/www/html
+      - .:/var/www/html
     ports:
       - "8080:80"
-      - "433:443"
+      - "443:443"
+      - "9003:9003"
 
   db:
-    image: mysql:latest
+    image: mysql:8.0                 # was: mysql:latest
     container_name: my_mysql_db
+    platform: linux/arm64/v8
     environment:
       MYSQL_ROOT_PASSWORD: rootpassword
       MYSQL_DATABASE: mydatabase_php
       MYSQL_USER: Amblaw
       MYSQL_PASSWORD: password
-      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      # MYSQL_ALLOW_EMPTY_PASSWORD removed since you set passwords
     volumes:
       - mysql_data:/var/lib/mysql
 
   phpmyadmin:
-    image: arm64v8/phpmyadmin
+    image: phpmyadmin:5.2.1
+    platform: linux/arm64/v8
     environment:
       PMA_HOST: db
-      PMA_PORT: 3306  
+      PMA_PORT: 3306
     ports:
       - "8081:80"
     depends_on:
@@ -35,3 +40,4 @@ services:
 
 volumes:
   mysql_data:
+

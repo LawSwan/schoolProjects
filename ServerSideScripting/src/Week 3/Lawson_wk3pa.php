@@ -113,9 +113,19 @@
         // Create connection
         $conn = mysqli_connect($hostname, $username, $password, $dbname);
 
-        // Check connection
+        // Check connection and provide helpful error message
         if (!$conn) {
-            die("Connection failed: " . mysqli_connect_error());
+            $error_msg = mysqli_connect_error();
+            if (strpos($error_msg, 'Unknown database') !== false) {
+                die("<div style='padding: 20px; background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; border-radius: 4px; margin: 20px;'>
+                     <h3>Database Not Found!</h3>
+                     <p>The database 'sdc310_wk3pa' doesn't exist yet.</p>
+                     <p><strong>Please run the setup script first:</strong></p>
+                     <p><a href='setup_wk3pa.php' style='background-color: #007bff; color: white; padding: 10px 15px; text-decoration: none; border-radius: 4px;'>Run Setup Script</a></p>
+                     </div>");
+            } else {
+                die("Connection failed: " . $error_msg);
+            }
         }
 
         // Initialize variables

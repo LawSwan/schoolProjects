@@ -1,21 +1,36 @@
 services:
-  www:
+  digital_store:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: my_php_app
+    container_name: digital_products_store
     platform: linux/arm64/v8
     volumes:
-      - .:/var/www/html
+      - ./Digital_Products_Store:/var/www/html
     ports:
       - "8080:80"
-      - "443:443"
-      - "9003:9003"
+    environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/html
+
+  final_project:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: final_project_app
+    platform: linux/arm64/v8
+    volumes:
+      - ./FinalProject:/var/www/html
+    ports:
+      - "8081:80"
+    environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/html
 
   db:
     image: mysql:8.0                 # was: mysql:latest
     container_name: my_mysql_db
     platform: linux/arm64/v8
+    ports:
+      - "3306:3306"  # Expose MySQL port to host
     environment:
       MYSQL_ROOT_PASSWORD: rootpassword
       MYSQL_DATABASE: mydatabase_php
@@ -26,17 +41,18 @@ services:
       - mysql_data:/var/lib/mysql
 
   phpmyadmin:
-    image: phpmyadmin:5.2.1
+    image: phpmyadmin:latest
     platform: linux/arm64/v8
     environment:
-      PMA_HOST: db
+      PMA_HOST: host.docker.internal
       PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+      PMA_USER: root
+      PMA_PASSWORD: rootpassword
     ports:
-      - "8081:80"
+      - "8084:80"
     depends_on:
       - db
-    volumes:
-      - ./phpmyadmin-theme/blueberry:/var/www/html/themes/blueberry
 
 volumes:
   mysql_data:

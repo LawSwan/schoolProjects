@@ -60,5 +60,4 @@ abstract class BaseController {
         return isset($_GET[$key]) ? $_GET[$key] : $default;
     }
 }
-?>
 

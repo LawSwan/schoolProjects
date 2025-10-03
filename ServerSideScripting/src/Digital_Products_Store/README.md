@@ -70,7 +70,7 @@ Digital_Products_Store/
 
 ## 🛍️ Products
 
-**Icon Packs (5):** Minimal Pastel, Dark Academia, Kawaii Konvert, Cottagecore Magic, Neon Tech  
+**Icon Packs (5):** Minimal Pastel, Dark Academia, Kawaii, Cottagecore Magic, Neon Tech  
 **Wallpapers (2):** Abstract Landscapes, Minimalist Gradients  
 **UI Kits (1):** Modern Dashboard UI  
 **Fonts (1):** Handwritten Script Collection  

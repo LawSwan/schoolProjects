@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo isset($title) ? $title . ' - ' : ''; ?>Digital Products Store</title>
+    <title><?php echo isset($title) ? $title . ' - ' : ''; ?>PixelCraft</title>
     <style>
         body {
             font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -116,10 +116,10 @@
 <body>
     <header class="elegant-header">
         <div class="container">
-            <a href="/Digital_Products_Store/" class="elegant-logo">DIGITAL STORE</a>
+            <a href="mvc.php" class="elegant-logo">PixelCraft</a>
             <nav class="elegant-nav">
-                <a href="/Digital_Products_Store/" class="<?php echo (!isset($currentPage) || $currentPage === 'home') ? 'active' : ''; ?>">All Products</a>
-                <a href="/Digital_Products_Store/cart" class="elegant-cart-link">
+                <a href="mvc.php" class="<?php echo (!isset($currentPage) || $currentPage === 'home') ? 'active' : ''; ?>">All Products</a>
+                <a href="mvc.php?page=cart" class="elegant-cart-link">
                     🛒 Cart <span class="elegant-cart-count" id="cartCount"><?php echo isset($cartCount) ? $cartCount : 0; ?></span>
                 </a>
             </nav>
@@ -132,14 +132,20 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Digital Products Store by Amber Lawson. Portfolio Project.</p>
+            <p>&copy; 2025 PixelCraft by Amber Lawson. Portfolio Project.</p>
         </div>
     </footer>
 
     <script>
         // Update cart count on page load
         document.addEventListener('DOMContentLoaded', function() {
-            fetch('/Digital_Products_Store/cart/count')
+            fetch('mvc.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: 'action=count'
+            })
                 .then(response => response.json())
                 .then(data => {
                     if (data.success) {

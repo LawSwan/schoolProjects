@@ -1,109 +1,24 @@
 <?php
 session_start();
 
-// Original sample data from your database
-$products = [
-    1 => [
-        'ProductID' => 1,
-        'ProductCode' => 'IP01',
-        'ProductName' => 'Minimal Pastel',
-        'ProductDescription' => 'Soft pastel icons for a clean home screen. Perfect for minimalist aesthetics.',
-        'CategoryName' => 'Icon Packs',
-        'Price' => 9.99,
-        'ImageURL' => 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop',
-        'FileSize' => '15MB'
-    ],
-    2 => [
-        'ProductID' => 2,
-        'ProductCode' => 'IP02',
-        'ProductName' => 'Dark Academia',
-        'ProductDescription' => 'Elegant, moody icons with a vintage feel. Inspired by classic literature and scholarly vibes.',
-        'CategoryName' => 'Icon Packs',
-        'Price' => 12.99,
-        'ImageURL' => 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop',
-        'FileSize' => '18MB'
-    ],
-    3 => [
-        'ProductID' => 3,
-        'ProductCode' => 'IP03',
-        'ProductName' => 'Kawaii Konvert',
-        'ProductDescription' => 'Cute pink and earthy icons inspired by kawaii style. Adorable and functional.',
-        'CategoryName' => 'Icon Packs',
-        'Price' => 8.99,
-        'ImageURL' => 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop',
-        'FileSize' => '12MB'
-    ],
-    4 => [
-        'ProductID' => 4,
-        'ProductCode' => 'IP04',
-        'ProductName' => 'Cottagecore Magic',
-        'ProductDescription' => 'Nature-inspired icons with cozy, cottage vibes. Brings the outdoors to your screen.',
-        'CategoryName' => 'Icon Packs',
-        'Price' => 11.99,
-        'ImageURL' => 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=300&fit=crop',
-        'FileSize' => '16MB'
-    ],
-    5 => [
-        'ProductID' => 5,
-        'ProductCode' => 'IP05',
-        'ProductName' => 'Neon Tech',
-        'ProductDescription' => 'Bright, glowing icons for a futuristic look. Perfect for tech enthusiasts.',
-        'CategoryName' => 'Icon Packs',
-        'Price' => 13.99,
-        'ImageURL' => 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=300&fit=crop',
-        'FileSize' => '20MB'
-    ],
-    6 => [
-        'ProductID' => 6,
-        'ProductCode' => 'WP01',
-        'ProductName' => 'Abstract Landscapes',
-        'ProductDescription' => 'Stunning abstract landscape wallpapers in 4K resolution.',
-        'CategoryName' => 'Wallpapers',
-        'Price' => 5.99,
-        'ImageURL' => 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop',
-        'FileSize' => '25MB'
-    ],
-    7 => [
-        'ProductID' => 7,
-        'ProductCode' => 'WP02',
-        'ProductName' => 'Minimalist Gradients',
-        'ProductDescription' => 'Clean gradient wallpapers for a modern look.',
-        'CategoryName' => 'Wallpapers',
-        'Price' => 4.99,
-        'ImageURL' => 'https://images.unsplash.com/photo-1557683316-973673baf926?w=400&h=300&fit=crop',
-        'FileSize' => '8MB'
-    ],
-    8 => [
-        'ProductID' => 8,
-        'ProductCode' => 'UK01',
-        'ProductName' => 'Modern Dashboard UI',
-        'ProductDescription' => 'Complete dashboard interface kit with components.',
-        'CategoryName' => 'UI Kits',
-        'Price' => 29.99,
-        'ImageURL' => 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop',
-        'FileSize' => '45MB'
-    ],
-    9 => [
-        'ProductID' => 9,
-        'ProductCode' => 'FT01',
-        'ProductName' => 'Handwritten Script Collection',
-        'ProductDescription' => 'Beautiful handwritten fonts for personal and commercial use.',
-        'CategoryName' => 'Fonts',
-        'Price' => 15.99,
-        'ImageURL' => 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=400&h=300&fit=crop',
-        'FileSize' => '5MB'
-    ],
-    10 => [
-        'ProductID' => 10,
-        'ProductCode' => 'GR01',
-        'ProductName' => 'Social Media Templates',
-        'ProductDescription' => 'Instagram and social media design templates.',
-        'CategoryName' => 'Graphics',
-        'Price' => 19.99,
-        'ImageURL' => 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop',
-        'FileSize' => '35MB'
-    ]
-];
+require_once __DIR__ . '/Model/ProductModel.php';
+
+// Get products from ProductModel to ensure consistency
+$productModel = new ProductModel();
+$allProducts = $productModel->getAll();
+$products = [];
+foreach ($allProducts as $product) {
+    $products[$product['id']] = [
+        'ProductID' => $product['id'],
+        'ProductCode' => $product['code'],
+        'ProductName' => $product['name'],
+        'ProductDescription' => $product['description'],
+        'CategoryName' => $product['category_name'],
+        'Price' => $product['price'],
+        'ImageURL' => $product['image_url'],
+        'FileSize' => $product['file_size']
+    ];
+}
 
 // Get cart items with product details
 $cartItems = [];

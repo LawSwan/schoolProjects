@@ -51,5 +51,4 @@ class CategoryModel extends BaseModel {
         return $this->getByField('name', $name);
     }
 }
-?>
 

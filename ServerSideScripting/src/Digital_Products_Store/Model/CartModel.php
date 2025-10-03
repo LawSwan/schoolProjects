@@ -116,4 +116,3 @@ class CartModel extends BaseModel {
         return array_sum($this->data);
     }
 }
-?>

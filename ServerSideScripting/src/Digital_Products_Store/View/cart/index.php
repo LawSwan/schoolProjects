@@ -76,12 +76,63 @@ ob_start();
         <div style="font-size: 4rem; margin-bottom: 1.5rem; opacity: 0.6;">🛒</div>
         <h3 style="font-size: 1.5rem; font-weight: 600; color: rgba(255, 255, 255, 0.95); margin-bottom: 1rem;">Your cart is empty</h3>
         <p style="color: rgba(255, 255, 255, 0.7); margin-bottom: 2rem;">Add some amazing digital products to get started!</p>
-        <a href="/Digital_Products_Store/" style="background: rgba(255, 255, 255, 0.2); color: white; text-decoration: none; padding: 0.75rem 2rem; border-radius: 8px; font-weight: 600; border: 1px solid rgba(255, 255, 255, 0.3);">Browse Products</a>
+        <a href="mvc.php" style="background: rgba(255, 255, 255, 0.2); color: white; text-decoration: none; padding: 0.75rem 2rem; border-radius: 8px; font-weight: 600; border: 1px solid rgba(255, 255, 255, 0.3);">Browse Products</a>
     </div>
 <?php endif; ?>
 
 <?php
 $content = ob_get_clean();
+
+$additionalJS = '
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelectorAll(".remove-item").forEach(btn => {
+            btn.addEventListener("click", function() {
+                const productId = this.dataset.productId;
+                const originalText = this.textContent;
+                
+                this.textContent = "×";
+                this.disabled = true;
+                
+                fetch("mvc.php", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded",
+                    },
+                    body: `action=remove&product_id=${productId}`
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Remove the item from the DOM
+                        this.closest("div[style*=\"grid-template-columns: 120px 1fr auto auto\"]").remove();
+                        
+                        // Update cart count in header
+                        const cartCountElement = document.getElementById("cartCount");
+                        if (cartCountElement) {
+                            cartCountElement.textContent = data.cartCount;
+                        }
+                        
+                        // Reload page if cart is empty
+                        if (data.cartCount == 0) {
+                            location.reload();
+                        }
+                    } else {
+                        this.textContent = originalText;
+                        this.disabled = false;
+                        alert(data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    this.textContent = originalText;
+                    this.disabled = false;
+                    alert("An error occurred");
+                });
+            });
+        });
+    });
+';
+
 include __DIR__ . '/../layout/base.php';
 ?>
 

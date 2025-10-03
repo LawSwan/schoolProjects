@@ -52,6 +52,11 @@ class Router {
             $path = '/';
         }
         
+        // Handle cart page via query parameter
+        if (isset($_GET['page']) && $_GET['page'] === 'cart') {
+            $path = '/cart';
+        }
+        
         // Handle root path
         if ($path === '') {
             $path = '/';
@@ -122,4 +127,3 @@ class Router {
         exit();
     }
 }
-?>

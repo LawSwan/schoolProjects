@@ -1,6 +1,6 @@
 <?php
 $currentPage = 'home';
-$pageTitle = isset($title) ? $title : 'Dynamic carousel';
+$pageTitle = isset($title) ? $title : 'PixelCraft';
 $pageSubtitle = 'Handpicked digital products to boost your creativity';
 
 $additionalCSS = '
@@ -31,10 +31,12 @@ $additionalCSS = '
         gap: 2rem;
         transition: transform 0.5s ease;
         padding: 0 1rem;
+        transform: translateX(0);
     }
     .elegant-carousel-item {
         flex: 0 0 350px;
         position: relative;
+        transition: all 0.3s ease;
     }
     .elegant-carousel-item.center {
         transform: scale(1.05);
@@ -322,6 +324,20 @@ $additionalJS = '
         const nextBtn = document.getElementById("carouselNext");
         
         function updateCarousel() {
+            
+            // Calculate the offset to center the current item
+            const itemWidth = 350; // Width of each carousel item
+            const gap = 32; // Gap between items (2rem = 32px)
+            const containerWidth = carouselContainer.offsetWidth;
+            const itemWithGap = itemWidth + gap;
+            
+            // Calculate the offset to center the current item
+            const offset = (containerWidth / 2) - (itemWithGap / 2) - (currentIndex * itemWithGap);
+            
+            // Apply the transform to move the carousel
+            carouselContainer.style.transform = `translateX(${offset}px)`;
+            
+            // Update the center/side classes for visual effects
             carouselItems.forEach((item, index) => {
                 item.classList.remove("center", "side");
                 if (index === currentIndex) {
@@ -342,7 +358,12 @@ $additionalJS = '
                 currentIndex = (currentIndex + 1) % carouselItems.length;
                 updateCarousel();
             });
+        } else {
+            console.error("Carousel navigation buttons not found!");
         }
+        
+        // Initialize the carousel position
+        updateCarousel();
         
         document.querySelectorAll(".elegant-product-image-nav").forEach(button => {
             button.addEventListener("click", function() {
@@ -394,12 +415,12 @@ $additionalJS = '
                 this.textContent = "Adding...";
                 this.disabled = true;
                 
-                fetch("/Digital_Products_Store/cart/add", {
+                fetch("mvc.php", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded",
                     },
-                    body: `product_id=${productId}&quantity=1`
+                    body: `action=add&product_id=${productId}&quantity=1`
                 })
                 .then(response => response.json())
                 .then(data => {

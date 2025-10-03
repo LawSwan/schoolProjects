@@ -1,19 +1,18 @@
 <?php
 session_start();
 
-// Original sample data from your database
-$products = [
-    1 => ['ProductName' => 'Minimal Pastel', 'Price' => 9.99],
-    2 => ['ProductName' => 'Dark Academia', 'Price' => 12.99],
-    3 => ['ProductName' => 'Kawaii Konvert', 'Price' => 8.99],
-    4 => ['ProductName' => 'Cottagecore Magic', 'Price' => 11.99],
-    5 => ['ProductName' => 'Neon Tech', 'Price' => 13.99],
-    6 => ['ProductName' => 'Abstract Landscapes', 'Price' => 5.99],
-    7 => ['ProductName' => 'Minimalist Gradients', 'Price' => 4.99],
-    8 => ['ProductName' => 'Modern Dashboard UI', 'Price' => 29.99],
-    9 => ['ProductName' => 'Handwritten Script Collection', 'Price' => 15.99],
-    10 => ['ProductName' => 'Social Media Templates', 'Price' => 19.99]
-];
+require_once __DIR__ . '/Model/ProductModel.php';
+
+// Get products from ProductModel to ensure consistency
+$productModel = new ProductModel();
+$allProducts = $productModel->getAll();
+$products = [];
+foreach ($allProducts as $product) {
+    $products[$product['id']] = [
+        'name' => $product['name'],
+        'price' => $product['price']
+    ];
+}
 
 $action = $_POST['action'] ?? $_GET['action'] ?? '';
 
@@ -38,7 +37,7 @@ switch ($action) {
             $cartCount = array_sum($_SESSION['cart']);
             echo json_encode([
                 'success' => true,
-                'message' => $products[$productId]['ProductName'] . ' added to cart!',
+                'message' => $products[$productId]['name'] . ' added to cart!',
                 'cartCount' => $cartCount
             ]);
         } else {

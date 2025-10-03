@@ -23,7 +23,7 @@ class ProductModel extends BaseModel {
                 'description' => 'Soft pastel icons for a clean home screen. Perfect for minimalist aesthetics.',
                 'category_id' => 1,
                 'price' => 9.99,
-                'image_url' => 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop',
+                'image_url' => 'PC-pixs/macaroons.png',
                 'file_size' => '15MB',
                 'category_name' => 'Icon Packs'
             ],
@@ -41,11 +41,11 @@ class ProductModel extends BaseModel {
             [
                 'id' => 3,
                 'code' => 'IP03',
-                'name' => 'Kawaii Konvert',
+                'name' => 'Kawaii',
                 'description' => 'Cute pink and earthy icons inspired by kawaii style. Adorable and functional.',
                 'category_id' => 1,
                 'price' => 8.99,
-                'image_url' => 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop',
+                'image_url' => 'PC-pixs/CuteSailorMoon.png',
                 'file_size' => '12MB',
                 'category_name' => 'Icon Packs'
             ],
@@ -67,7 +67,7 @@ class ProductModel extends BaseModel {
                 'description' => 'Bright, glowing icons for a futuristic look. Perfect for tech enthusiasts.',
                 'category_id' => 1,
                 'price' => 13.99,
-                'image_url' => 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=300&fit=crop',
+                'image_url' => 'PC-pixs/NeonTech.png',
                 'file_size' => '20MB',
                 'category_name' => 'Icon Packs'
             ],
@@ -122,7 +122,7 @@ class ProductModel extends BaseModel {
                 'description' => 'Instagram and social media design templates.',
                 'category_id' => 5,
                 'price' => 19.99,
-                'image_url' => 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop',
+                'image_url' => 'PC-pixs/SMedia.png',
                 'file_size' => '35MB',
                 'category_name' => 'Graphics'
             ]
@@ -143,5 +143,4 @@ class ProductModel extends BaseModel {
         return array_slice($this->data, 0, 6);
     }
 }
-?>
 

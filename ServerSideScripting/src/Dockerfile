@@ -1,7 +1,10 @@
 FROM php:8.2-apache
 
-# Install mysqli and xdebug
-RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli \
-    && pecl install xdebug && docker-php-ext-enable xdebug    http://localhost:8080/Week%203/midterm_setup.php
+# Enable Apache mod_rewrite
+RUN a2enmod rewrite
+
+# Install mysqli, pdo, pdo_mysql and xdebug
+RUN docker-php-ext-install mysqli pdo pdo_mysql && docker-php-ext-enable mysqli \
+    && pecl install xdebug && docker-php-ext-enable xdebug
 
 COPY php.ini /usr/local/etc/php/conf.d/

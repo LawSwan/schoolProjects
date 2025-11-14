@@ -1,63 +1,61 @@
 /*
- * Author: Amber Lawson
+ * Author: Your Name
  * Date: 11/13/2025
  * Assignment: SDC330 Performance Assessment - Inheritance
  * Description: Main application to test all classes.
  */
 
-// I understand: this imports the classes in the same package (if needed)
-// (If not using packages, this line is unnecessary.)
-
+// I understand: this defines the main application class
 public class App {
 
-    // I understand: this is the main entry point of the program
+    // I understand: this is the main entry point of the Java program
     public static void main(String[] args) {
 
-        // I understand: this prints the required first line of output
+        // I understand: this prints the required header line for the assignment
         System.out.println("Your Name - Week 1 Inheritance Performance Assessment\n");
 
-        // This is creating a Bicycle object with wheels, color, moving, seats, gears, seatHeight, tireSize
+        // I understand: this creates a Bicycle with 2 wheels, blue color, not moving, 1 seat, 6 gears, seat height 28.5, tire size 19.0
         Bicycle bicycle = new Bicycle(2, "Blue", false, 1,
                                       6, 28.5, 19.0);
 
-        // This is creating a Car object with wheels, color, moving, seats, engine, automatic, sunroof, storage
+        // I understand: this creates a Car with 4 wheels, red color, not moving, 5 seats, engine 2.5L V6, automatic, sunroof, small trunk storage
         Car car = new Car(4, "Red", false, 5,
                           "2.5L V6", true,
                           true, "Small Trunk");
 
-        // This is creating a Truck object with wheels, color, moving, seats, engine, automatic, load, towing
+        // I understand: this creates a Truck with 4 wheels, black color, not moving, 2 seats, engine 5.0L V8, not automatic, load 2 ton, towing enabled
         Truck truck = new Truck(4, "Black", false, 2,
                                 "5.0L V8", false,
                                 "2 ton", true);
 
-        // I understand: printing the Bicycle object's formatted details
+        // I understand: this prints the Bicycle object's string representation
         System.out.println(bicycle);
 
-        // This is printing the Car object's formatted details
+        // I understand: this prints the Car object's string representation
         System.out.println(car);
 
-        // This is printing the Truck object's formatted details
+        // I understand: this prints the Truck object's string representation
         System.out.println(truck);
 
-        // This is printing a section header for individual car details
+        // I understand: this prints a header for the detailed car info section
         System.out.println("\nCar Details Individually:");
 
-        // This is printing just the car's color
+        // I understand: this prints the car's color using the getter
         System.out.println("Color: " + car.getColor());
 
-        // This is printing just the car's number of seats
+        // I understand: this prints the car's number of seats using the getter
         System.out.println("Number of Seats: " + car.getSeats());
 
-        // This is printing just the engine size
+        // I understand: this prints the car's engine size using the getter
         System.out.println("Engine Size: " + car.getEngine());
 
-        // This is printing whether the car is automatic
+        // I understand: this prints whether the car is automatic using the getter
         System.out.println("Automatic: " + car.isAutomatic());
 
-        // This is printing whether the car has a sunroof
+        // I understand: this prints whether the car has a sunroof using the hasSunRoof method
         System.out.println("Sun Roof: " + car.hasSunRoof());
 
-        // This is printing the car's storage capacity
+        // I understand: this prints the car's storage capacity using the getter
         System.out.println("Storage: " + car.getStorage());
     }
 }

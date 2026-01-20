@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  cassandra:
+    image: cassandra:latest
+    container_name: cassandra
+    ports:
+      - "9042:9042"
+    environment:
+      - CASSANDRA_CLUSTER_NAME=GithubArchiveCluster
+      - CASSANDRA_DC=datacenter1
+      - CASSANDRA_RACK=rack1
+    volumes:
+      - cassandra_data:/var/lib/cassandra
+    networks:
+      - default
+
+volumes:
+  cassandra_data:
+
+networks:
+  default:
+    name: githubarchive-dataset_default
+    external: true

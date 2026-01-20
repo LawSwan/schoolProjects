@@ -1,0 +1,36 @@
+import turtle
+
+# Drawing the letter H
+turtle.left(90)      # Turn left by 90 degrees
+turtle.forward(100)  # Move forward by 100 units
+turtle.right(180)    # Turn right by 180 degrees
+turtle.forward(50)   # Move forward by 50 units
+turtle.left(90)      # Turn left by 90 degrees
+turtle.forward(50)   # Move forward by 50 units
+turtle.left(90)      # Turn left by 90 degrees
+turtle.forward(50)   # Move forward by 50 units
+turtle.right(180)    # Turn right by 180 degrees
+turtle.forward(100)  # Move forward by 100 units
+
+# Adding space between H and I
+turtle.penup()        # Lift the pen up
+turtle.left(90)       # Turn left by 90 degrees
+turtle.forward(25)    # Move forward by 25 units to create space
+turtle.left(90)       # Turn left by 90 degrees
+turtle.pendown()      # Put the pen down
+
+# Drawing the letter I
+turtle.right(90)      # Turn right by 90 degrees
+turtle.forward(50)    # Move forward by 50 units
+turtle.backward(25)   # Move backward by 25 units
+turtle.left(90)       # Turn left by 90 degrees
+turtle.forward(100)   # Move forward by 100 units
+turtle.right(90)      # Turn right by 90 degrees
+turtle.backward(25)   # Move backward by 25 units
+turtle.forward(50)    # Move forward by 50 units
+
+# Hiding the turtle cursor
+turtle.hideturtle()
+
+# Keep the window open
+turtle.done()

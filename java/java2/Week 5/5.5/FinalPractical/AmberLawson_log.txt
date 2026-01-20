@@ -1,0 +1,45 @@
+Application started.
+Five houses created and added to the list.
+This is a 5 room House.
+The door is 50 inches wide and is dark brown in color.
+The kitchen is a Modern styled kitchen with Whirlpool appliances.
+
+This is a 5 room House.
+The door is 52 inches wide and is green in color.
+The kitchen is a Country styled kitchen with Whirlpool appliances.
+
+This is a 5 room House.
+The door is 50 inches wide and is dark brown in color.
+The kitchen is a Modern styled kitchen with Bosch appliances.
+
+This is a 5 room House.
+The door is 48 inches wide and is red in color.
+The kitchen is a Farmhouse styled kitchen with Whirlpool appliances.
+
+This is a 5 room House.
+The door is 50 inches wide and is white in color.
+The kitchen is a Minimalist styled kitchen with Kenmore appliances.
+
+This is a 5 room House.
+The door is 50 inches wide and is dark brown in color.
+The kitchen is a Modern styled kitchen with Whirlpool appliances.
+
+This is a 5 room House.
+The door is 52 inches wide and is green in color.
+The kitchen is a Country styled kitchen with Whirlpool appliances.
+
+This is a 5 room House.
+The door is 50 inches wide and is dark brown in color.
+The kitchen is a Modern styled kitchen with Bosch appliances.
+
+This is a 5 room House.
+The door is 48 inches wide and is red in color.
+The kitchen is a Farmhouse styled kitchen with Whirlpool appliances.
+
+This is a 5 room House.
+The door is 50 inches wide and is white in color.
+The kitchen is a Minimalist styled kitchen with Kenmore appliances.
+
+Recursive print complete.
+Finished printing buildings iteratively and recursively.
+Application processing complete.

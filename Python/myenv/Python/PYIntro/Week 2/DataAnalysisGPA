@@ -1,0 +1,36 @@
+#Amber J Lawson
+#19June2024
+##Python
+
+
+import matplotlib.pyplot as plt
+
+# Sample data for individual GPAs of students in each department
+departments = ['Computer Science', 'Engineering', 'Business', 'Health Sciences', 'Criminal Justice']
+student_gpas = {
+    'Computer Science': [3.6, 3.8, 2.9, 3.4, 3.9, 4.0, 3.7],
+    'Engineering': [3.5, 3.6, 3.8, 2.9, 3.7, 3.2, 3.1, 3.9],
+    'Business': [2.8, 3.1, 3.6, 3.4, 3.8, 3.5, 3.0],
+    'Health Sciences': [3.9, 3.8, 3.7, 4.0, 3.2, 3.3],
+    'Criminal Justice': [2.7, 3.0, 3.5, 3.6, 3.8, 3.1, 2.9]
+}
+
+# Filter students with GPA > 3.5 rather than indexing each item on the list or "slicing" i created a dictionary filter. 
+filtered_num_students = {}
+for dept, gpas in student_gpas.items():
+    filtered_num_students[dept] = sum(1 for gpa in gpas if gpa > 3.5)
+
+# Calculate the total number of students with GPA > 3.5
+total_students_filtered = sum(filtered_num_students.values())
+
+# Calculate the percentage of students with GPA > 3.5 in each department
+student_percentages = []
+for dept in departments:
+    percentage = filtered_num_students[dept] * 100 / total_students_filtered
+    student_percentages.append(percentage)
+
+# Creating the pie chart
+plt.figure(figsize=(8, 8))  # Adjust the figure size for better readability
+plt.pie(student_percentages, labels=departments, autopct='%1.1f%%', startangle=140)
+plt.title('Percentage of Students by Department at ECPI University (GPA > 3.5)')
+plt.show()

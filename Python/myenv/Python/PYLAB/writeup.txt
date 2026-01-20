@@ -1,0 +1,7 @@
+
+ PYTHON FUN FACTS 
+1. Python was named after Monty Python, not the snake!  \
+2. Python is older than Google\'97created in 1991, while Google started in 1998.  \
+3. Instagram, Netflix, and Spotify all use Python in their backend systems.  \
+4. The Zen of Python is a hidden Easter egg\'97type "import this" in Python!  \
+5. Python can be used to program robots, AI, and even space missions!  }

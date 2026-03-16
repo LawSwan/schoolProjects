@@ -1,4 +1,4 @@
-# Amber Janelle's Software Development Portfolio
+# My Software Development Portfolio
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-amberjanelle.com-blue?style=for-the-badge)](https://amberjanelle.com)
 [![GitHub](https://img.shields.io/badge/GitHub-LawSwan-181717?style=for-the-badge&logo=github)](https://github.com/LawSwan)

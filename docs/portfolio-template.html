@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amber Janelle | Software Developer</title>
+    <style>
+        /* Early 2000s vibes but clean */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: Georgia, 'Times New Roman', serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fefefe;
+            color: #333;
+        }
+
+        header {
+            border-bottom: 2px solid #333;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 { font-size: 2em; }
+        h2 { margin: 30px 0 15px; border-bottom: 1px solid #ccc; padding-bottom: 5px; }
+        h3 { margin: 20px 0 10px; }
+
+        a { color: #0066cc; }
+        a:visited { color: #551a8b; }
+
+        .project {
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .tech {
+            font-size: 0.85em;
+            color: #666;
+            font-style: italic;
+        }
+
+        /* Code display - no JavaScript needed */
+        pre {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 15px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            border: 1px solid #333;
+            margin: 15px 0;
+        }
+
+        /* Basic syntax highlighting with just CSS */
+        .keyword { color: #569cd6; }
+        .string { color: #ce9178; }
+        .comment { color: #6a9955; }
+        .function { color: #dcdcaa; }
+
+        .screenshot {
+            max-width: 100%;
+            border: 1px solid #ccc;
+            margin: 15px 0;
+        }
+
+        .download {
+            display: inline-block;
+            background: #333;
+            color: #fff;
+            padding: 8px 16px;
+            text-decoration: none;
+            margin: 10px 0;
+        }
+        .download:visited { color: #fff; }
+        .download:hover { background: #555; }
+
+        footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 10px 0;
+        }
+        nav li {
+            display: inline;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Amber Janelle</h1>
+    <p>Software Developer</p>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="https://github.com/LawSwan">GitHub</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="about">
+    <h2>About Me</h2>
+    <p>
+        Software developer with experience in Java, Python, PHP, SQL, and NoSQL databases.
+        This portfolio showcases projects from my computer science education.
+    </p>
+</section>
+
+<section id="projects">
+    <h2>Projects</h2>
+
+    <!-- JAVA PROJECT -->
+    <div class="project">
+        <h3>Bank Account System</h3>
+        <p class="tech">Java | Object-Oriented Programming</p>
+        <p>
+            A banking simulation demonstrating inheritance, abstraction, and polymorphism.
+            Multiple account types (Checking, Savings, Premium) inherit from an abstract
+            BankAccount class.
+        </p>
+
+        <h4>Sample Code:</h4>
+        <pre><span class="keyword">public abstract class</span> <span class="function">BankAccount</span> <span class="keyword">implements</span> IAccountActions {
+
+    <span class="keyword">protected</span> String accountNumber;
+    <span class="keyword">protected double</span> balance;
+
+    <span class="comment">// Abstract method - each account type implements this</span>
+    <span class="keyword">public abstract void</span> <span class="function">processMonthlyUpdate</span>();
+
+    <span class="keyword">public void</span> <span class="function">deposit</span>(<span class="keyword">double</span> amount) {
+        <span class="keyword">if</span> (amount > 0) {
+            balance += amount;
+        }
+    }
+}</pre>
+
+        <h4>Terminal Output:</h4>
+        <pre>==========================================
+   Week 3 Project – Bank Account App
+   Enhanced Banking System
+==========================================
+
+Created user with parameterized constructor: Amber Lawson
+
+=== Account Summaries ===
+Checking Account
+Account Number: CHK1001
+Balance: $1750.00
+Monthly Fee: $5.00</pre>
+
+        <p>
+            <a href="https://github.com/LawSwan/schoolProjects/tree/java" class="download">View Source on GitHub</a>
+            <a href="downloads/bank-account.zip" class="download">Download ZIP</a>
+        </p>
+    </div>
+
+    <!-- PYTHON PROJECT -->
+    <div class="project">
+        <h3>Catch the Turtle Game</h3>
+        <p class="tech">Python | Turtle Graphics</p>
+        <p>
+            An interactive game with 200 animated turtles. Each turtle chases the next,
+            creating a mesmerizing chain effect.
+        </p>
+
+        <h4>Sample Code:</h4>
+        <pre><span class="keyword">import</span> turtle
+<span class="keyword">import</span> random
+<span class="keyword">import</span> colorsys
+
+<span class="comment"># Create 200 turtles with rainbow colors</span>
+n = 200
+chasers = []
+<span class="keyword">for</span> i <span class="keyword">in</span> range(n):
+    h = random.random()
+    c = colorsys.hsv_to_rgb(h, 1, 0.8)
+    chasers[i].color(c)
+    chasers[i].goto(random.uniform(-400, 400),
+                    random.uniform(-400, 400))</pre>
+
+        <!-- Screenshot goes here -->
+        <p><em>[Screenshot: catch-the-turtle.png]</em></p>
+
+        <p>
+            <a href="https://github.com/LawSwan/schoolProjects/tree/Python" class="download">View Source on GitHub</a>
+        </p>
+    </div>
+
+    <!-- PHP PROJECT -->
+    <div class="project">
+        <h3>Digital Products Store</h3>
+        <p class="tech">PHP | MVC Architecture | MySQL</p>
+        <p>
+            Full-stack e-commerce platform with product catalog, shopping cart,
+            and category filtering. Built with custom MVC framework.
+        </p>
+
+        <h4>Architecture:</h4>
+        <pre>Digital_Products_Store/
+├── Controller/
+│   ├── BaseController.php
+│   ├── ProductController.php
+│   └── CartController.php
+├── Model/
+│   ├── ProductModel.php
+│   └── CartModel.php
+├── View/
+│   ├── product/index.php
+│   └── cart/index.php
+└── Router/Router.php</pre>
+
+        <p>
+            <a href="https://github.com/LawSwan/schoolProjects/tree/server-side-scripting" class="download">View Source on GitHub</a>
+        </p>
+    </div>
+
+    <!-- DATABASE PROJECT -->
+    <div class="project">
+        <h3>Game Store Database</h3>
+        <p class="tech">Oracle SQL | Database Design</p>
+        <p>
+            Relational database for a digital game distribution platform.
+            Includes user management, product catalog, orders, and reviews.
+        </p>
+
+        <h4>Schema:</h4>
+        <pre><span class="keyword">CREATE TABLE</span> UserBase (
+    UserID      NUMBER(3),
+    UserName    VARCHAR2(25),
+    Email       VARCHAR2(100),
+    WalletFunds NUMBER(8,2),
+    <span class="keyword">CONSTRAINT</span> PK_UserBase <span class="keyword">PRIMARY KEY</span> (UserID)
+);
+
+<span class="keyword">CREATE TABLE</span> Orders (
+    OrderID      NUMBER(5),
+    UserID       NUMBER(3),
+    ProductCode  VARCHAR2(5),
+    Price        NUMBER(6,2),
+    PurchaseDate DATE
+);</pre>
+
+        <p>
+            <a href="https://github.com/LawSwan/schoolProjects/tree/sql" class="download">View Source on GitHub</a>
+        </p>
+    </div>
+
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <p>
+        Email: <a href="mailto:your-email@example.com">your-email@example.com</a><br>
+        GitHub: <a href="https://github.com/LawSwan">github.com/LawSwan</a>
+    </p>
+</section>
+
+<footer>
+    <p>&copy; 2026 Amber Janelle. Hand-coded with HTML and CSS.</p>
+</footer>
+
+</body>
+</html>

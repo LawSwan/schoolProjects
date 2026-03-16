@@ -4,275 +4,225 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amber Janelle | Software Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Early 2000s vibes but clean */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: Georgia, 'Times New Roman', serif;
-            line-height: 1.6;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            background: #fefefe;
-            color: #333;
-        }
-
-        header {
-            border-bottom: 2px solid #333;
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-        }
-
-        h1 { font-size: 2em; }
-        h2 { margin: 30px 0 15px; border-bottom: 1px solid #ccc; padding-bottom: 5px; }
-        h3 { margin: 20px 0 10px; }
-
-        a { color: #0066cc; }
-        a:visited { color: #551a8b; }
-
-        .project {
-            background: #f5f5f5;
-            border: 1px solid #ddd;
-            padding: 20px;
-            margin: 20px 0;
-        }
-
-        .tech {
-            font-size: 0.85em;
-            color: #666;
-            font-style: italic;
-        }
-
-        /* Code display - no JavaScript needed */
-        pre {
-            background: #1e1e1e;
-            color: #d4d4d4;
-            padding: 15px;
-            overflow-x: auto;
-            font-family: 'Courier New', monospace;
-            font-size: 13px;
-            border: 1px solid #333;
-            margin: 15px 0;
-        }
-
-        /* Basic syntax highlighting with just CSS */
-        .keyword { color: #569cd6; }
-        .string { color: #ce9178; }
-        .comment { color: #6a9955; }
-        .function { color: #dcdcaa; }
-
-        .screenshot {
-            max-width: 100%;
-            border: 1px solid #ccc;
-            margin: 15px 0;
-        }
-
-        .download {
-            display: inline-block;
-            background: #333;
-            color: #fff;
-            padding: 8px 16px;
-            text-decoration: none;
-            margin: 10px 0;
-        }
-        .download:visited { color: #fff; }
-        .download:hover { background: #555; }
-
-        footer {
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px solid #ccc;
-            font-size: 0.9em;
-            color: #666;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 10px 0;
-        }
-        nav li {
-            display: inline;
-            margin-right: 20px;
-        }
+        /* Code syntax highlighting */
+        .keyword { color: #c792ea; }
+        .string { color: #c3e88d; }
+        .comment { color: #546e7a; }
+        .function { color: #82aaff; }
     </style>
 </head>
-<body>
+<body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 min-h-screen text-gray-100">
 
-<header>
-    <h1>Amber Janelle</h1>
-    <p>Software Developer</p>
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="https://github.com/LawSwan">GitHub</a></li>
-        </ul>
-    </nav>
-</header>
+    <!-- Header -->
+    <header class="border-b border-purple-500/30 backdrop-blur-sm bg-slate-900/50 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div>
+                <h1 class="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                    Amber Janelle
+                </h1>
+                <p class="text-sm text-gray-400">Software Developer</p>
+            </div>
+            <nav class="flex gap-6 text-sm">
+                <a href="#about" class="hover:text-purple-400 transition">About</a>
+                <a href="#projects" class="hover:text-purple-400 transition">Projects</a>
+                <a href="#contact" class="hover:text-purple-400 transition">Contact</a>
+                <a href="https://github.com/LawSwan" class="hover:text-purple-400 transition" target="_blank">GitHub</a>
+            </nav>
+        </div>
+    </header>
 
-<section id="about">
-    <h2>About Me</h2>
-    <p>
-        Software developer with experience in Java, Python, PHP, SQL, and NoSQL databases.
-        This portfolio showcases projects from my computer science education.
-    </p>
-</section>
+    <main class="max-w-5xl mx-auto px-6 py-12">
 
-<section id="projects">
-    <h2>Projects</h2>
+        <!-- About -->
+        <section id="about" class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 flex items-center gap-3">
+                <span class="w-8 h-1 bg-purple-500 rounded"></span>
+                About Me
+            </h2>
+            <p class="text-lg text-gray-300 max-w-2xl">
+                Software developer with experience in Java, Python, PHP, SQL, and NoSQL databases.
+                This portfolio showcases projects from my computer science education.
+            </p>
+            <div class="flex gap-3 mt-6 flex-wrap">
+                <span class="px-3 py-1 bg-purple-500/20 border border-purple-500/30 rounded-full text-sm">Java</span>
+                <span class="px-3 py-1 bg-purple-500/20 border border-purple-500/30 rounded-full text-sm">Python</span>
+                <span class="px-3 py-1 bg-purple-500/20 border border-purple-500/30 rounded-full text-sm">PHP</span>
+                <span class="px-3 py-1 bg-purple-500/20 border border-purple-500/30 rounded-full text-sm">SQL</span>
+                <span class="px-3 py-1 bg-purple-500/20 border border-purple-500/30 rounded-full text-sm">MongoDB</span>
+                <span class="px-3 py-1 bg-purple-500/20 border border-purple-500/30 rounded-full text-sm">Neo4j</span>
+            </div>
+        </section>
 
-    <!-- JAVA PROJECT -->
-    <div class="project">
-        <h3>Bank Account System</h3>
-        <p class="tech">Java | Object-Oriented Programming</p>
-        <p>
-            A banking simulation demonstrating inheritance, abstraction, and polymorphism.
-            Multiple account types (Checking, Savings, Premium) inherit from an abstract
-            BankAccount class.
-        </p>
+        <!-- Projects -->
+        <section id="projects" class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
+                <span class="w-8 h-1 bg-purple-500 rounded"></span>
+                Projects
+            </h2>
 
-        <h4>Sample Code:</h4>
-        <pre><span class="keyword">public abstract class</span> <span class="function">BankAccount</span> <span class="keyword">implements</span> IAccountActions {
+            <div class="grid gap-6">
 
+                <!-- Bank Account System -->
+                <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-6 hover:border-purple-500/50 transition">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-xl font-semibold text-white">Bank Account System</h3>
+                            <p class="text-purple-400 text-sm mt-1">Java • Object-Oriented Programming</p>
+                        </div>
+                        <a href="https://github.com/LawSwan/schoolProjects/tree/java"
+                           class="px-4 py-2 bg-purple-600 hover:bg-purple-500 rounded-lg text-sm transition" target="_blank">
+                            View Code
+                        </a>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        A banking simulation demonstrating inheritance, abstraction, and polymorphism.
+                        Multiple account types inherit from an abstract BankAccount class.
+                    </p>
+                    <pre class="bg-slate-900 rounded-lg p-4 text-sm overflow-x-auto"><code><span class="keyword">public abstract class</span> <span class="function">BankAccount</span> <span class="keyword">implements</span> IAccountActions {
     <span class="keyword">protected</span> String accountNumber;
     <span class="keyword">protected double</span> balance;
 
     <span class="comment">// Abstract method - each account type implements this</span>
     <span class="keyword">public abstract void</span> <span class="function">processMonthlyUpdate</span>();
+}</code></pre>
+                </div>
 
-    <span class="keyword">public void</span> <span class="function">deposit</span>(<span class="keyword">double</span> amount) {
-        <span class="keyword">if</span> (amount > 0) {
-            balance += amount;
-        }
-    }
-}</pre>
-
-        <h4>Terminal Output:</h4>
-        <pre>==========================================
-   Week 3 Project – Bank Account App
-   Enhanced Banking System
-==========================================
-
-Created user with parameterized constructor: Amber Lawson
-
-=== Account Summaries ===
-Checking Account
-Account Number: CHK1001
-Balance: $1750.00
-Monthly Fee: $5.00</pre>
-
-        <p>
-            <a href="https://github.com/LawSwan/schoolProjects/tree/java" class="download">View Source on GitHub</a>
-            <a href="downloads/bank-account.zip" class="download">Download ZIP</a>
-        </p>
-    </div>
-
-    <!-- PYTHON PROJECT -->
-    <div class="project">
-        <h3>Catch the Turtle Game</h3>
-        <p class="tech">Python | Turtle Graphics</p>
-        <p>
-            An interactive game with 200 animated turtles. Each turtle chases the next,
-            creating a mesmerizing chain effect.
-        </p>
-
-        <h4>Sample Code:</h4>
-        <pre><span class="keyword">import</span> turtle
-<span class="keyword">import</span> random
-<span class="keyword">import</span> colorsys
+                <!-- Catch the Turtle -->
+                <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-6 hover:border-purple-500/50 transition">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-xl font-semibold text-white">Catch the Turtle Game</h3>
+                            <p class="text-purple-400 text-sm mt-1">Python • Turtle Graphics</p>
+                        </div>
+                        <a href="https://github.com/LawSwan/schoolProjects/tree/Python"
+                           class="px-4 py-2 bg-purple-600 hover:bg-purple-500 rounded-lg text-sm transition" target="_blank">
+                            View Code
+                        </a>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        An interactive game with 200 animated turtles. Each turtle chases the next,
+                        creating a mesmerizing chain effect with rainbow colors.
+                    </p>
+                    <pre class="bg-slate-900 rounded-lg p-4 text-sm overflow-x-auto"><code><span class="keyword">import</span> turtle, random, colorsys
 
 <span class="comment"># Create 200 turtles with rainbow colors</span>
 n = 200
-chasers = []
 <span class="keyword">for</span> i <span class="keyword">in</span> range(n):
     h = random.random()
     c = colorsys.hsv_to_rgb(h, 1, 0.8)
-    chasers[i].color(c)
-    chasers[i].goto(random.uniform(-400, 400),
-                    random.uniform(-400, 400))</pre>
+    chasers[i].color(c)</code></pre>
+                </div>
 
-        <!-- Screenshot goes here -->
-        <p><em>[Screenshot: catch-the-turtle.png]</em></p>
-
-        <p>
-            <a href="https://github.com/LawSwan/schoolProjects/tree/Python" class="download">View Source on GitHub</a>
-        </p>
-    </div>
-
-    <!-- PHP PROJECT -->
-    <div class="project">
-        <h3>Digital Products Store</h3>
-        <p class="tech">PHP | MVC Architecture | MySQL</p>
-        <p>
-            Full-stack e-commerce platform with product catalog, shopping cart,
-            and category filtering. Built with custom MVC framework.
-        </p>
-
-        <h4>Architecture:</h4>
-        <pre>Digital_Products_Store/
+                <!-- Digital Products Store -->
+                <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-6 hover:border-purple-500/50 transition">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-xl font-semibold text-white">Digital Products Store</h3>
+                            <p class="text-purple-400 text-sm mt-1">PHP • MVC Architecture • MySQL</p>
+                        </div>
+                        <a href="https://github.com/LawSwan/schoolProjects/tree/server-side-scripting"
+                           class="px-4 py-2 bg-purple-600 hover:bg-purple-500 rounded-lg text-sm transition" target="_blank">
+                            View Code
+                        </a>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Full-stack e-commerce platform with product catalog, shopping cart,
+                        and category filtering. Built with custom MVC framework.
+                    </p>
+                    <pre class="bg-slate-900 rounded-lg p-4 text-sm overflow-x-auto text-gray-400"><code>Digital_Products_Store/
 ├── Controller/
-│   ├── BaseController.php
 │   ├── ProductController.php
 │   └── CartController.php
 ├── Model/
 │   ├── ProductModel.php
 │   └── CartModel.php
-├── View/
-│   ├── product/index.php
-│   └── cart/index.php
-└── Router/Router.php</pre>
+└── View/
+    └── product/index.php</code></pre>
+                </div>
 
-        <p>
-            <a href="https://github.com/LawSwan/schoolProjects/tree/server-side-scripting" class="download">View Source on GitHub</a>
-        </p>
-    </div>
-
-    <!-- DATABASE PROJECT -->
-    <div class="project">
-        <h3>Game Store Database</h3>
-        <p class="tech">Oracle SQL | Database Design</p>
-        <p>
-            Relational database for a digital game distribution platform.
-            Includes user management, product catalog, orders, and reviews.
-        </p>
-
-        <h4>Schema:</h4>
-        <pre><span class="keyword">CREATE TABLE</span> UserBase (
+                <!-- Game Store Database -->
+                <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-6 hover:border-purple-500/50 transition">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-xl font-semibold text-white">Game Store Database</h3>
+                            <p class="text-purple-400 text-sm mt-1">Oracle SQL • Database Design</p>
+                        </div>
+                        <a href="https://github.com/LawSwan/schoolProjects/tree/sql"
+                           class="px-4 py-2 bg-purple-600 hover:bg-purple-500 rounded-lg text-sm transition" target="_blank">
+                            View Code
+                        </a>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Relational database for a digital game distribution platform.
+                        Includes user management, product catalog, orders, and reviews.
+                    </p>
+                    <pre class="bg-slate-900 rounded-lg p-4 text-sm overflow-x-auto"><code><span class="keyword">CREATE TABLE</span> UserBase (
     UserID      NUMBER(3),
     UserName    VARCHAR2(25),
     Email       VARCHAR2(100),
-    WalletFunds NUMBER(8,2),
     <span class="keyword">CONSTRAINT</span> PK_UserBase <span class="keyword">PRIMARY KEY</span> (UserID)
-);
+);</code></pre>
+                </div>
 
-<span class="keyword">CREATE TABLE</span> Orders (
-    OrderID      NUMBER(5),
-    UserID       NUMBER(3),
-    ProductCode  VARCHAR2(5),
-    Price        NUMBER(6,2),
-    PurchaseDate DATE
-);</pre>
+                <!-- NoSQL Suite -->
+                <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-6 hover:border-purple-500/50 transition">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-xl font-semibold text-white">NoSQL Database Suite</h3>
+                            <p class="text-purple-400 text-sm mt-1">MongoDB • Redis • Cassandra • Neo4j</p>
+                        </div>
+                        <a href="https://github.com/LawSwan/schoolProjects/tree/NOSQL"
+                           class="px-4 py-2 bg-purple-600 hover:bg-purple-500 rounded-lg text-sm transition" target="_blank">
+                            View Code
+                        </a>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Comprehensive exploration of four NoSQL paradigms with GitHub data integration.
+                        Includes Streamlit dashboards and Docker containerization.
+                    </p>
+                    <div class="flex gap-2 flex-wrap">
+                        <span class="px-2 py-1 bg-green-500/20 text-green-400 rounded text-xs">Document DB</span>
+                        <span class="px-2 py-1 bg-red-500/20 text-red-400 rounded text-xs">Key-Value</span>
+                        <span class="px-2 py-1 bg-blue-500/20 text-blue-400 rounded text-xs">Wide-Column</span>
+                        <span class="px-2 py-1 bg-cyan-500/20 text-cyan-400 rounded text-xs">Graph DB</span>
+                    </div>
+                </div>
 
-        <p>
-            <a href="https://github.com/LawSwan/schoolProjects/tree/sql" class="download">View Source on GitHub</a>
-        </p>
-    </div>
+            </div>
+        </section>
 
-</section>
+        <!-- Contact -->
+        <section id="contact" class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 flex items-center gap-3">
+                <span class="w-8 h-1 bg-purple-500 rounded"></span>
+                Contact
+            </h2>
+            <div class="flex gap-4">
+                <a href="mailto:amberjanelle33@gmail.com"
+                   class="px-6 py-3 bg-purple-600 hover:bg-purple-500 rounded-lg transition flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                    Email Me
+                </a>
+                <a href="https://github.com/LawSwan" target="_blank"
+                   class="px-6 py-3 bg-slate-700 hover:bg-slate-600 rounded-lg transition flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    GitHub
+                </a>
+            </div>
+        </section>
 
-<section id="contact">
-    <h2>Contact</h2>
-    <p>
-        Email: <a href="mailto:amberjanelle33@gmail.com">amberjanelle33@gmail.com</a><br>
-        GitHub: <a href="https://github.com/LawSwan">github.com/LawSwan</a>
-    </p>
-</section>
+    </main>
 
-<footer>
-    <p>&copy; 2026 Amber Janelle. Hand-coded with HTML and CSS.</p>
-</footer>
+    <!-- Footer -->
+    <footer class="border-t border-slate-700 py-6 text-center text-gray-500 text-sm">
+        <p>&copy; 2026 Amber Janelle. Built with HTML + Tailwind CSS.</p>
+    </footer>
 
 </body>
 </html>

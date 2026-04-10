@@ -13,32 +13,37 @@
         .function { color: #82aaff; }
     </style>
 </head>
-<body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 min-h-screen text-gray-100">
+<body class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 min-h-screen text-gray-100">
 
     <!-- Header -->
-    <header class="border-b border-purple-500/30 backdrop-blur-sm bg-slate-900/50 sticky top-0 z-50">
+    <header class="border-b border-orange-400/30 backdrop-blur-sm bg-slate-900/50 sticky top-0 z-50">
         <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
             <div>
-                <h1 class="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                <h1 class="text-2xl font-bold bg-gradient-to-r from-orange-300 to-amber-400 bg-clip-text text-transparent">
                     Amber Janelle
                 </h1>
                 <p class="text-sm text-gray-400">Software Developer</p>
             </div>
             <nav class="flex gap-6 text-sm">
-                <a href="#about" class="hover:text-purple-400 transition">About</a>
-                <a href="#projects" class="hover:text-purple-400 transition">Projects</a>
-                <a href="#contact" class="hover:text-purple-400 transition">Contact</a>
-                <a href="https://github.com/LawSwan" class="hover:text-purple-400 transition" target="_blank">GitHub</a>
+                <a href="#about" class="hover:text-orange-400 transition">About</a>
+                <a href="#projects" class="hover:text-orange-400 transition">Projects</a>
+                <a href="#contact" class="hover:text-orange-400 transition">Contact</a>
+                <a href="https://github.com/LawSwan" class="hover:text-orange-400 transition" target="_blank">GitHub</a>
             </nav>
         </div>
     </header>
+
+    <!-- Personalized Welcome Message - dynamically updated by JavaScript -->
+    <div id="welcomeBanner" class="bg-gradient-to-r from-orange-500 to-amber-500 text-white text-center py-3 px-6">
+        <p id="welcomeMessage" class="text-lg font-medium">Welcome to my portfolio!</p>
+    </div>
 
     <main class="max-w-5xl mx-auto px-6 py-12">
 
         <!-- About -->
         <section id="about" class="mb-16">
             <h2 class="text-3xl font-bold mb-6 flex items-center gap-3">
-                <span class="w-8 h-1 bg-purple-500 rounded"></span>
+                <span class="w-8 h-1 bg-orange-400 rounded"></span>
                 About Me
             </h2>
             <p class="text-lg text-gray-300 max-w-2xl">
@@ -46,33 +51,33 @@
                 This portfolio showcases projects from my computer science education.
             </p>
             <div class="flex gap-3 mt-6 flex-wrap">
-                <span class="px-3 py-1 bg-purple-500/20 border border-purple-500/30 rounded-full text-sm">Java</span>
-                <span class="px-3 py-1 bg-purple-500/20 border border-purple-500/30 rounded-full text-sm">Python</span>
-                <span class="px-3 py-1 bg-purple-500/20 border border-purple-500/30 rounded-full text-sm">PHP</span>
-                <span class="px-3 py-1 bg-purple-500/20 border border-purple-500/30 rounded-full text-sm">SQL</span>
-                <span class="px-3 py-1 bg-purple-500/20 border border-purple-500/30 rounded-full text-sm">MongoDB</span>
-                <span class="px-3 py-1 bg-purple-500/20 border border-purple-500/30 rounded-full text-sm">Neo4j</span>
+                <span class="px-3 py-1 bg-orange-400/20 border border-orange-400/30 rounded-full text-sm">Java</span>
+                <span class="px-3 py-1 bg-orange-400/20 border border-orange-400/30 rounded-full text-sm">Python</span>
+                <span class="px-3 py-1 bg-orange-400/20 border border-orange-400/30 rounded-full text-sm">PHP</span>
+                <span class="px-3 py-1 bg-orange-400/20 border border-orange-400/30 rounded-full text-sm">SQL</span>
+                <span class="px-3 py-1 bg-orange-400/20 border border-orange-400/30 rounded-full text-sm">MongoDB</span>
+                <span class="px-3 py-1 bg-orange-400/20 border border-orange-400/30 rounded-full text-sm">Neo4j</span>
             </div>
         </section>
 
         <!-- Projects -->
         <section id="projects" class="mb-16">
             <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
-                <span class="w-8 h-1 bg-purple-500 rounded"></span>
+                <span class="w-8 h-1 bg-orange-400 rounded"></span>
                 Projects
             </h2>
 
             <div class="grid gap-6">
 
                 <!-- Bank Account System -->
-                <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-6 hover:border-purple-500/50 transition">
+                <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-6 hover:border-orange-400/50 transition">
                     <div class="flex justify-between items-start mb-4">
                         <div>
                             <h3 class="text-xl font-semibold text-white">Bank Account System</h3>
-                            <p class="text-purple-400 text-sm mt-1">Java • Object-Oriented Programming</p>
+                            <p class="text-orange-400 text-sm mt-1">Java • Object-Oriented Programming</p>
                         </div>
                         <a href="https://github.com/LawSwan/schoolProjects/blob/java/java/LAB/Project%20/src/BankAccount.java"
-                           class="px-4 py-2 bg-purple-600 hover:bg-purple-500 rounded-lg text-sm transition" target="_blank">
+                           class="px-4 py-2 bg-orange-500 hover:bg-orange-400 rounded-lg text-sm transition" target="_blank">
                             View Code
                         </a>
                     </div>
@@ -90,14 +95,14 @@
                 </div>
 
                 <!-- Catch the Turtle -->
-                <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-6 hover:border-purple-500/50 transition">
+                <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-6 hover:border-orange-400/50 transition">
                     <div class="flex justify-between items-start mb-4">
                         <div>
                             <h3 class="text-xl font-semibold text-white">Catch the Turtle Game</h3>
-                            <p class="text-purple-400 text-sm mt-1">Python • Turtle Graphics</p>
+                            <p class="text-orange-400 text-sm mt-1">Python • Turtle Graphics</p>
                         </div>
                         <a href="https://github.com/LawSwan/schoolProjects/blob/Python/Python/myenv/Python/PYIntro/Week%204/Program%20Catch_The_Turtle.py"
-                           class="px-4 py-2 bg-purple-600 hover:bg-purple-500 rounded-lg text-sm transition" target="_blank">
+                           class="px-4 py-2 bg-orange-500 hover:bg-orange-400 rounded-lg text-sm transition" target="_blank">
                             View Code
                         </a>
                     </div>
@@ -116,14 +121,14 @@ n = 200
                 </div>
 
                 <!-- Digital Products Store -->
-                <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-6 hover:border-purple-500/50 transition">
+                <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-6 hover:border-orange-400/50 transition">
                     <div class="flex justify-between items-start mb-4">
                         <div>
                             <h3 class="text-xl font-semibold text-white">Digital Products Store</h3>
-                            <p class="text-purple-400 text-sm mt-1">PHP • MVC Architecture • MySQL</p>
+                            <p class="text-orange-400 text-sm mt-1">PHP • MVC Architecture • MySQL</p>
                         </div>
                         <a href="https://github.com/LawSwan/schoolProjects/tree/server-side-scripting/ServerSideScripting/src/Digital_Products_Store"
-                           class="px-4 py-2 bg-purple-600 hover:bg-purple-500 rounded-lg text-sm transition" target="_blank">
+                           class="px-4 py-2 bg-orange-500 hover:bg-orange-400 rounded-lg text-sm transition" target="_blank">
                             View Code
                         </a>
                     </div>
@@ -143,14 +148,14 @@ n = 200
                 </div>
 
                 <!-- Game Store Database -->
-                <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-6 hover:border-purple-500/50 transition">
+                <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-6 hover:border-orange-400/50 transition">
                     <div class="flex justify-between items-start mb-4">
                         <div>
                             <h3 class="text-xl font-semibold text-white">Game Store Database</h3>
-                            <p class="text-purple-400 text-sm mt-1">Oracle SQL • Database Design</p>
+                            <p class="text-orange-400 text-sm mt-1">Oracle SQL • Database Design</p>
                         </div>
                         <a href="https://github.com/LawSwan/schoolProjects/blob/sql/sql/WEEK%201/Project%20Build%20Script.sql"
-                           class="px-4 py-2 bg-purple-600 hover:bg-purple-500 rounded-lg text-sm transition" target="_blank">
+                           class="px-4 py-2 bg-orange-500 hover:bg-orange-400 rounded-lg text-sm transition" target="_blank">
                             View Code
                         </a>
                     </div>
@@ -167,14 +172,14 @@ n = 200
                 </div>
 
                 <!-- NoSQL Suite -->
-                <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-6 hover:border-purple-500/50 transition">
+                <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-6 hover:border-orange-400/50 transition">
                     <div class="flex justify-between items-start mb-4">
                         <div>
                             <h3 class="text-xl font-semibold text-white">NoSQL Database Suite</h3>
-                            <p class="text-purple-400 text-sm mt-1">MongoDB • Redis • Cassandra • Neo4j</p>
+                            <p class="text-orange-400 text-sm mt-1">MongoDB • Redis • Cassandra • Neo4j</p>
                         </div>
                         <a href="https://github.com/LawSwan/schoolProjects/tree/NOSQL/NOSQL"
-                           class="px-4 py-2 bg-purple-600 hover:bg-purple-500 rounded-lg text-sm transition" target="_blank">
+                           class="px-4 py-2 bg-orange-500 hover:bg-orange-400 rounded-lg text-sm transition" target="_blank">
                             View Code
                         </a>
                     </div>
@@ -193,19 +198,65 @@ n = 200
             </div>
         </section>
 
-        <!-- Contact -->
+        <!-- Contact Section with Form -->
         <section id="contact" class="mb-16">
             <h2 class="text-3xl font-bold mb-6 flex items-center gap-3">
-                <span class="w-8 h-1 bg-purple-500 rounded"></span>
+                <span class="w-8 h-1 bg-orange-400 rounded"></span>
                 Contact
             </h2>
-            <div class="flex gap-4">
-                <a href="mailto:amberjanelle33@gmail.com"
-                   class="px-6 py-3 bg-purple-600 hover:bg-purple-500 rounded-lg transition flex items-center gap-2">
+
+            <!-- Contact Form with required fields: name, email, subject, message, submit -->
+            <form id="contactForm" class="bg-slate-800/50 border border-slate-700 rounded-xl p-6 max-w-xl">
+                <!-- Sender Name Field -->
+                <div class="mb-4">
+                    <label for="senderName" class="block text-sm font-medium text-gray-300 mb-2">Your Name</label>
+                    <input type="text" id="senderName" name="senderName" required
+                           class="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-lg text-white focus:border-orange-400 focus:outline-none transition"
+                           placeholder="Enter your name">
+                </div>
+
+                <!-- Email Address Field -->
+                <div class="mb-4">
+                    <label for="emailAddress" class="block text-sm font-medium text-gray-300 mb-2">Email Address</label>
+                    <input type="email" id="emailAddress" name="emailAddress" required
+                           class="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-lg text-white focus:border-orange-400 focus:outline-none transition"
+                           placeholder="Enter your email">
+                </div>
+
+                <!-- Subject Field -->
+                <div class="mb-4">
+                    <label for="subject" class="block text-sm font-medium text-gray-300 mb-2">Subject</label>
+                    <input type="text" id="subject" name="subject" required
+                           class="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-lg text-white focus:border-orange-400 focus:outline-none transition"
+                           placeholder="Enter subject">
+                </div>
+
+                <!-- Message Field -->
+                <div class="mb-6">
+                    <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Message</label>
+                    <textarea id="message" name="message" rows="5" required
+                              class="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-lg text-white focus:border-orange-400 focus:outline-none transition resize-none"
+                              placeholder="Enter your message"></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit"
+                        class="w-full px-6 py-3 bg-orange-500 hover:bg-orange-400 rounded-lg transition font-medium flex items-center justify-center gap-2">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                     </svg>
-                    Email Me
+                    Send Message
+                </button>
+            </form>
+
+            <!-- Additional Contact Links -->
+            <div class="flex gap-4 mt-6">
+                <a href="mailto:amberjanelle33@gmail.com"
+                   class="px-6 py-3 bg-slate-700 hover:bg-slate-600 rounded-lg transition flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                    Direct Email
                 </a>
                 <a href="https://github.com/LawSwan" target="_blank"
                    class="px-6 py-3 bg-slate-700 hover:bg-slate-600 rounded-lg transition flex items-center gap-2">
@@ -223,6 +274,41 @@ n = 200
     <footer class="border-t border-slate-700 py-6 text-center text-gray-500 text-sm">
         <p>&copy; 2026 Amber Janelle. Built with HTML + Tailwind CSS.</p>
     </footer>
+
+    <!-- JavaScript for Personalized User Interaction -->
+    <script>
+        // Prompt the user for their name and store it in a variable
+        var userName = prompt("Welcome! Please enter your name:");
+
+        // Get reference to the welcome message element
+        var welcomeMessageElement = document.getElementById("welcomeMessage");
+
+        // Dynamically update the welcome message based on user input
+        if (userName !== null && userName.trim() !== "") {
+            // User entered a name - display personalized welcome message
+            welcomeMessageElement.textContent = "Welcome, " + userName + "! Thanks for visiting my portfolio.";
+        } else {
+            // User cancelled or left blank - display default message
+            welcomeMessageElement.textContent = "Welcome to my portfolio!";
+        }
+
+        // Contact form submission handler
+        document.getElementById("contactForm").addEventListener("submit", function(e) {
+            e.preventDefault(); // Prevent default form submission
+
+            // Get form field values
+            var senderName = document.getElementById("senderName").value;
+            var email = document.getElementById("emailAddress").value;
+            var subject = document.getElementById("subject").value;
+            var message = document.getElementById("message").value;
+
+            // Display confirmation alert
+            alert("Thank you, " + senderName + "! Your message has been received.\n\nSubject: " + subject);
+
+            // Reset the form
+            this.reset();
+        });
+    </script>
 
 </body>
 </html>

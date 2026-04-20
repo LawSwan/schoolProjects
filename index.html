@@ -6,307 +6,611 @@
     <title>Amber Janelle | Software Developer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Code syntax highlighting */
-        .keyword { color: #c792ea; }
-        .string { color: #c3e88d; }
-        .comment { color: #546e7a; }
-        .function { color: #82aaff; }
+        /* Lumen-style gradient */
+        .hero-gradient {
+            background: linear-gradient(180deg, #fdf2f8 0%, #fce7f3 50%, #fbcfe8 100%);
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #0f172a;
+            color: #f1f5f9;
+        }
+        body.dark-mode .hero-gradient {
+            background: linear-gradient(180deg, #1e1b4b 0%, #312e81 50%, #4c1d95 100%);
+        }
+        body.dark-mode .bg-white { background-color: #1e293b !important; }
+        body.dark-mode .bg-gray-50 { background-color: #0f172a !important; }
+        body.dark-mode .bg-gray-100 { background-color: #1e293b !important; }
+        body.dark-mode .text-gray-900 { color: #f1f5f9 !important; }
+        body.dark-mode .text-gray-800 { color: #e2e8f0 !important; }
+        body.dark-mode .text-gray-700 { color: #cbd5e1 !important; }
+        body.dark-mode .text-gray-600 { color: #94a3b8 !important; }
+        body.dark-mode .text-gray-500 { color: #64748b !important; }
+        body.dark-mode .border-gray-200 { border-color: #334155 !important; }
+        body.dark-mode .border-gray-100 { border-color: #1e293b !important; }
+        body.dark-mode .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.3) !important; }
+        body.dark-mode .hover\:bg-gray-50:hover { background-color: #334155 !important; }
+
+        /* Toggle Switch */
+        .toggle-switch {
+            position: relative;
+            width: 44px;
+            height: 24px;
+        }
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #cbd5e1;
+            transition: 0.3s;
+            border-radius: 24px;
+        }
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: 0.3s;
+            border-radius: 50%;
+        }
+        input:checked + .toggle-slider {
+            background-color: #1e293b;
+        }
+        input:checked + .toggle-slider:before {
+            transform: translateX(20px);
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Project card hover */
+        .project-card {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .project-card:hover {
+            transform: translateY(-4px);
+        }
     </style>
 </head>
-<body class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 min-h-screen text-gray-100">
+<body class="bg-gray-50 text-gray-900">
 
-    <!-- Header -->
-    <header class="border-b border-orange-400/30 backdrop-blur-sm bg-slate-900/50 sticky top-0 z-50">
-        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div>
-                <h1 class="text-2xl font-bold bg-gradient-to-r from-orange-300 to-amber-400 bg-clip-text text-transparent">
-                    Amber Janelle
-                </h1>
-                <p class="text-sm text-gray-400">Software Developer</p>
+    <!-- Navigation -->
+    <nav class="bg-white/80 backdrop-blur-sm border-b border-gray-100 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-gray-900 rounded-lg flex items-center justify-center">
+                    <span class="text-white font-bold text-sm">AJ</span>
+                </div>
+                <span class="font-semibold text-gray-900">Amber Janelle</span>
+            </a>
+
+            <!-- Nav Links -->
+            <div class="hidden md:flex items-center gap-8 text-sm text-gray-600">
+                <a href="#about" class="hover:text-gray-900 transition">About</a>
+                <a href="#projects" class="hover:text-gray-900 transition">Projects</a>
+                <a href="#featured" class="hover:text-gray-900 transition">Resources</a>
+                <a href="#contact" class="hover:text-gray-900 transition">Contact</a>
             </div>
-            <nav class="flex gap-6 text-sm">
-                <a href="#about" class="hover:text-orange-400 transition">About</a>
-                <a href="#projects" class="hover:text-orange-400 transition">Projects</a>
-                <a href="#contact" class="hover:text-orange-400 transition">Contact</a>
-                <a href="https://github.com/LawSwan" class="hover:text-orange-400 transition" target="_blank">GitHub</a>
-            </nav>
-        </div>
-    </header>
 
-    <!-- Personalized Welcome Message - dynamically updated by JavaScript -->
-    <div id="welcomeBanner" class="bg-gradient-to-r from-orange-500 to-amber-500 text-white text-center py-3 px-6">
-        <p id="welcomeMessage" class="text-lg font-medium">Welcome to my portfolio!</p>
-    </div>
-
-    <main class="max-w-5xl mx-auto px-6 py-12">
-
-        <!-- About -->
-        <section id="about" class="mb-16">
-            <h2 class="text-3xl font-bold mb-6 flex items-center gap-3">
-                <span class="w-8 h-1 bg-orange-400 rounded"></span>
-                About Me
-            </h2>
-            <p class="text-lg text-gray-300 max-w-2xl">
-                Software developer with experience in Java, Python, PHP, SQL, and NoSQL databases.
-                This portfolio showcases projects from my computer science education.
-            </p>
-            <div class="flex gap-3 mt-6 flex-wrap">
-                <span class="px-3 py-1 bg-orange-400/20 border border-orange-400/30 rounded-full text-sm">Java</span>
-                <span class="px-3 py-1 bg-orange-400/20 border border-orange-400/30 rounded-full text-sm">Python</span>
-                <span class="px-3 py-1 bg-orange-400/20 border border-orange-400/30 rounded-full text-sm">PHP</span>
-                <span class="px-3 py-1 bg-orange-400/20 border border-orange-400/30 rounded-full text-sm">SQL</span>
-                <span class="px-3 py-1 bg-orange-400/20 border border-orange-400/30 rounded-full text-sm">MongoDB</span>
-                <span class="px-3 py-1 bg-orange-400/20 border border-orange-400/30 rounded-full text-sm">Neo4j</span>
-            </div>
-        </section>
-
-        <!-- Projects -->
-        <section id="projects" class="mb-16">
-            <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
-                <span class="w-8 h-1 bg-orange-400 rounded"></span>
-                Projects
-            </h2>
-
-            <div class="grid gap-6">
-
-                <!-- Bank Account System -->
-                <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-6 hover:border-orange-400/50 transition">
-                    <div class="flex justify-between items-start mb-4">
-                        <div>
-                            <h3 class="text-xl font-semibold text-white">Bank Account System</h3>
-                            <p class="text-orange-400 text-sm mt-1">Java • Object-Oriented Programming</p>
-                        </div>
-                        <a href="https://github.com/LawSwan/schoolProjects/blob/java/java/LAB/Project%20/src/BankAccount.java"
-                           class="px-4 py-2 bg-orange-500 hover:bg-orange-400 rounded-lg text-sm transition" target="_blank">
-                            View Code
-                        </a>
-                    </div>
-                    <p class="text-gray-300 mb-4">
-                        A banking simulation demonstrating inheritance, abstraction, and polymorphism.
-                        Multiple account types inherit from an abstract BankAccount class.
-                    </p>
-                    <pre class="bg-slate-900 rounded-lg p-4 text-sm overflow-x-auto"><code><span class="keyword">public abstract class</span> <span class="function">BankAccount</span> <span class="keyword">implements</span> IAccountActions {
-    <span class="keyword">protected</span> String accountNumber;
-    <span class="keyword">protected double</span> balance;
-
-    <span class="comment">// Abstract method - each account type implements this</span>
-    <span class="keyword">public abstract void</span> <span class="function">processMonthlyUpdate</span>();
-}</code></pre>
-                </div>
-
-                <!-- Catch the Turtle -->
-                <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-6 hover:border-orange-400/50 transition">
-                    <div class="flex justify-between items-start mb-4">
-                        <div>
-                            <h3 class="text-xl font-semibold text-white">Catch the Turtle Game</h3>
-                            <p class="text-orange-400 text-sm mt-1">Python • Turtle Graphics</p>
-                        </div>
-                        <a href="https://github.com/LawSwan/schoolProjects/blob/Python/Python/myenv/Python/PYIntro/Week%204/Program%20Catch_The_Turtle.py"
-                           class="px-4 py-2 bg-orange-500 hover:bg-orange-400 rounded-lg text-sm transition" target="_blank">
-                            View Code
-                        </a>
-                    </div>
-                    <p class="text-gray-300 mb-4">
-                        An interactive game with 200 animated turtles. Each turtle chases the next,
-                        creating a mesmerizing chain effect with rainbow colors.
-                    </p>
-                    <pre class="bg-slate-900 rounded-lg p-4 text-sm overflow-x-auto"><code><span class="keyword">import</span> turtle, random, colorsys
-
-<span class="comment"># Create 200 turtles with rainbow colors</span>
-n = 200
-<span class="keyword">for</span> i <span class="keyword">in</span> range(n):
-    h = random.random()
-    c = colorsys.hsv_to_rgb(h, 1, 0.8)
-    chasers[i].color(c)</code></pre>
-                </div>
-
-                <!-- Digital Products Store -->
-                <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-6 hover:border-orange-400/50 transition">
-                    <div class="flex justify-between items-start mb-4">
-                        <div>
-                            <h3 class="text-xl font-semibold text-white">Digital Products Store</h3>
-                            <p class="text-orange-400 text-sm mt-1">PHP • MVC Architecture • MySQL</p>
-                        </div>
-                        <a href="https://github.com/LawSwan/schoolProjects/tree/server-side-scripting/ServerSideScripting/src/Digital_Products_Store"
-                           class="px-4 py-2 bg-orange-500 hover:bg-orange-400 rounded-lg text-sm transition" target="_blank">
-                            View Code
-                        </a>
-                    </div>
-                    <p class="text-gray-300 mb-4">
-                        Full-stack e-commerce platform with product catalog, shopping cart,
-                        and category filtering. Built with custom MVC framework.
-                    </p>
-                    <pre class="bg-slate-900 rounded-lg p-4 text-sm overflow-x-auto text-gray-400"><code>Digital_Products_Store/
-├── Controller/
-│   ├── ProductController.php
-│   └── CartController.php
-├── Model/
-│   ├── ProductModel.php
-│   └── CartModel.php
-└── View/
-    └── product/index.php</code></pre>
-                </div>
-
-                <!-- Game Store Database -->
-                <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-6 hover:border-orange-400/50 transition">
-                    <div class="flex justify-between items-start mb-4">
-                        <div>
-                            <h3 class="text-xl font-semibold text-white">Game Store Database</h3>
-                            <p class="text-orange-400 text-sm mt-1">Oracle SQL • Database Design</p>
-                        </div>
-                        <a href="https://github.com/LawSwan/schoolProjects/blob/sql/sql/WEEK%201/Project%20Build%20Script.sql"
-                           class="px-4 py-2 bg-orange-500 hover:bg-orange-400 rounded-lg text-sm transition" target="_blank">
-                            View Code
-                        </a>
-                    </div>
-                    <p class="text-gray-300 mb-4">
-                        Relational database for a digital game distribution platform.
-                        Includes user management, product catalog, orders, and reviews.
-                    </p>
-                    <pre class="bg-slate-900 rounded-lg p-4 text-sm overflow-x-auto"><code><span class="keyword">CREATE TABLE</span> UserBase (
-    UserID      NUMBER(3),
-    UserName    VARCHAR2(25),
-    Email       VARCHAR2(100),
-    <span class="keyword">CONSTRAINT</span> PK_UserBase <span class="keyword">PRIMARY KEY</span> (UserID)
-);</code></pre>
-                </div>
-
-                <!-- NoSQL Suite -->
-                <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-6 hover:border-orange-400/50 transition">
-                    <div class="flex justify-between items-start mb-4">
-                        <div>
-                            <h3 class="text-xl font-semibold text-white">NoSQL Database Suite</h3>
-                            <p class="text-orange-400 text-sm mt-1">MongoDB • Redis • Cassandra • Neo4j</p>
-                        </div>
-                        <a href="https://github.com/LawSwan/schoolProjects/tree/NOSQL/NOSQL"
-                           class="px-4 py-2 bg-orange-500 hover:bg-orange-400 rounded-lg text-sm transition" target="_blank">
-                            View Code
-                        </a>
-                    </div>
-                    <p class="text-gray-300 mb-4">
-                        Comprehensive exploration of four NoSQL paradigms with GitHub data integration.
-                        Includes Streamlit dashboards and Docker containerization.
-                    </p>
-                    <div class="flex gap-2 flex-wrap">
-                        <span class="px-2 py-1 bg-green-500/20 text-green-400 rounded text-xs">Document DB</span>
-                        <span class="px-2 py-1 bg-red-500/20 text-red-400 rounded text-xs">Key-Value</span>
-                        <span class="px-2 py-1 bg-blue-500/20 text-blue-400 rounded text-xs">Wide-Column</span>
-                        <span class="px-2 py-1 bg-cyan-500/20 text-cyan-400 rounded text-xs">Graph DB</span>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Contact Section with Form -->
-        <section id="contact" class="mb-16">
-            <h2 class="text-3xl font-bold mb-6 flex items-center gap-3">
-                <span class="w-8 h-1 bg-orange-400 rounded"></span>
-                Contact
-            </h2>
-
-            <!-- Contact Form with required fields: name, email, subject, message, submit -->
-            <form id="contactForm" class="bg-slate-800/50 border border-slate-700 rounded-xl p-6 max-w-xl">
-                <!-- Sender Name Field -->
-                <div class="mb-4">
-                    <label for="senderName" class="block text-sm font-medium text-gray-300 mb-2">Your Name</label>
-                    <input type="text" id="senderName" name="senderName" required
-                           class="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-lg text-white focus:border-orange-400 focus:outline-none transition"
-                           placeholder="Enter your name">
-                </div>
-
-                <!-- Email Address Field -->
-                <div class="mb-4">
-                    <label for="emailAddress" class="block text-sm font-medium text-gray-300 mb-2">Email Address</label>
-                    <input type="email" id="emailAddress" name="emailAddress" required
-                           class="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-lg text-white focus:border-orange-400 focus:outline-none transition"
-                           placeholder="Enter your email">
-                </div>
-
-                <!-- Subject Field -->
-                <div class="mb-4">
-                    <label for="subject" class="block text-sm font-medium text-gray-300 mb-2">Subject</label>
-                    <input type="text" id="subject" name="subject" required
-                           class="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-lg text-white focus:border-orange-400 focus:outline-none transition"
-                           placeholder="Enter subject">
-                </div>
-
-                <!-- Message Field -->
-                <div class="mb-6">
-                    <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Message</label>
-                    <textarea id="message" name="message" rows="5" required
-                              class="w-full px-4 py-3 bg-slate-900 border border-slate-600 rounded-lg text-white focus:border-orange-400 focus:outline-none transition resize-none"
-                              placeholder="Enter your message"></textarea>
-                </div>
-
-                <!-- Submit Button -->
-                <button type="submit"
-                        class="w-full px-6 py-3 bg-orange-500 hover:bg-orange-400 rounded-lg transition font-medium flex items-center justify-center gap-2">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            <!-- Right Side: Dark Mode + CTA -->
+            <div class="flex items-center gap-4">
+                <!-- Dark Mode Toggle -->
+                <div class="flex items-center gap-2">
+                    <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"/>
                     </svg>
-                    Send Message
-                </button>
-            </form>
-
-            <!-- Additional Contact Links -->
-            <div class="flex gap-4 mt-6">
-                <a href="mailto:amberjanelle33@gmail.com"
-                   class="px-6 py-3 bg-slate-700 hover:bg-slate-600 rounded-lg transition flex items-center gap-2">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="darkModeToggle">
+                        <span class="toggle-slider"></span>
+                    </label>
+                    <svg class="w-4 h-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
                     </svg>
-                    Direct Email
-                </a>
+                </div>
+
                 <a href="https://github.com/LawSwan" target="_blank"
-                   class="px-6 py-3 bg-slate-700 hover:bg-slate-600 rounded-lg transition flex items-center gap-2">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                    </svg>
+                   class="bg-gray-900 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-800 transition">
                     GitHub
                 </a>
             </div>
-        </section>
+        </div>
+    </nav>
 
-    </main>
+    <!-- Hero Section with Gradient -->
+    <section class="hero-gradient">
+        <div class="max-w-4xl mx-auto px-6 py-24 text-center">
+            <!-- Welcome Banner -->
+            <p id="welcomeMessage" class="text-sm text-pink-600 font-medium mb-4">Welcome to my portfolio</p>
+
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+                Building software that<br>
+                <span class="text-gray-600">solves real problems</span>
+            </h1>
+
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+                Software developer with experience in Java, Python, PHP, SQL, and NoSQL databases.
+                Creating clean, efficient, and maintainable code.
+            </p>
+
+            <div class="flex justify-center gap-4">
+                <a href="#projects"
+                   class="bg-gray-900 text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-gray-800 transition inline-flex items-center gap-2">
+                    View Projects
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                </a>
+                <a href="#contact"
+                   class="bg-white text-gray-900 px-6 py-3 rounded-full text-sm font-medium border border-gray-200 hover:bg-gray-50 transition">
+                    Contact Me
+                </a>
+            </div>
+        </div>
+
+        <!-- Preview Card (like Lumen's product preview) -->
+        <div class="max-w-4xl mx-auto px-6 pb-12">
+            <div class="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
+                <div class="bg-gray-100 px-4 py-3 flex items-center gap-2 border-b border-gray-200">
+                    <div class="flex gap-1.5">
+                        <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                    </div>
+                    <div class="flex-1 flex justify-center">
+                        <div class="bg-white rounded-md px-4 py-1 text-xs text-gray-500 border border-gray-200">
+                            github.com/LawSwan
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-pink-400 to-purple-500 rounded-full flex items-center justify-center text-white font-bold">
+                            AJ
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Amber Janelle</h3>
+                            <p class="text-sm text-gray-500">@LawSwan</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-4 text-center">
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <p class="text-2xl font-bold text-gray-900">5+</p>
+                            <p class="text-sm text-gray-500">Projects</p>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <p class="text-2xl font-bold text-gray-900">6+</p>
+                            <p class="text-sm text-gray-500">Languages</p>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <p class="text-2xl font-bold text-gray-900">4</p>
+                            <p class="text-sm text-gray-500">Databases</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-white py-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">About Me</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    I'm a software developer passionate about creating efficient solutions.
+                    Currently pursuing my Computer Science degree at ECPI University.
+                </p>
+            </div>
+
+            <!-- Skills List - Generated by JavaScript loop -->
+            <div class="max-w-2xl mx-auto">
+                <h3 class="text-lg font-semibold text-gray-900 mb-4 text-center">Skills & Technologies</h3>
+                <ul id="skillsList" class="flex flex-wrap justify-center gap-3">
+                    <!-- Skills will be populated by JavaScript -->
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="bg-gray-50 py-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Projects</h2>
+                <p class="text-gray-600">A collection of my work from coursework and personal exploration</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="projectsGrid">
+
+                <!-- Bank Account System -->
+                <div class="project-card bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg">
+                    <div class="h-32 bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center">
+                        <svg class="w-12 h-12 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
+                        </svg>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-medium">Java</span>
+                            <span class="px-2 py-1 bg-gray-100 text-gray-600 rounded text-xs">OOP</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Bank Account System</h3>
+                        <p class="text-sm text-gray-600 mb-4">Banking simulation with inheritance, abstraction, and polymorphism.</p>
+                        <a href="https://github.com/LawSwan/schoolProjects/blob/java/java/LAB/Project%20/src/BankAccount.java"
+                           target="_blank"
+                           class="text-sm font-medium text-gray-900 hover:text-pink-600 transition inline-flex items-center gap-1">
+                            View Code
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Catch the Turtle -->
+                <div class="project-card bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg">
+                    <div class="h-32 bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center">
+                        <svg class="w-12 h-12 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-medium">Python</span>
+                            <span class="px-2 py-1 bg-gray-100 text-gray-600 rounded text-xs">Turtle</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Catch the Turtle Game</h3>
+                        <p class="text-sm text-gray-600 mb-4">Interactive game with 200 animated turtles in rainbow colors.</p>
+                        <a href="https://github.com/LawSwan/schoolProjects/blob/Python/Python/myenv/Python/PYIntro/Week%204/Program%20Catch_The_Turtle.py"
+                           target="_blank"
+                           class="text-sm font-medium text-gray-900 hover:text-pink-600 transition inline-flex items-center gap-1">
+                            View Code
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Digital Products Store -->
+                <div class="project-card bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg">
+                    <div class="h-32 bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center">
+                        <svg class="w-12 h-12 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+                        </svg>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="px-2 py-1 bg-purple-100 text-purple-700 rounded text-xs font-medium">PHP</span>
+                            <span class="px-2 py-1 bg-gray-100 text-gray-600 rounded text-xs">MVC</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Digital Products Store</h3>
+                        <p class="text-sm text-gray-600 mb-4">Full-stack e-commerce with custom MVC framework.</p>
+                        <a href="https://github.com/LawSwan/schoolProjects/tree/server-side-scripting/ServerSideScripting/src/Digital_Products_Store"
+                           target="_blank"
+                           class="text-sm font-medium text-gray-900 hover:text-pink-600 transition inline-flex items-center gap-1">
+                            View Code
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Game Store Database -->
+                <div class="project-card bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg">
+                    <div class="h-32 bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center">
+                        <svg class="w-12 h-12 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/>
+                        </svg>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="px-2 py-1 bg-orange-100 text-orange-700 rounded text-xs font-medium">SQL</span>
+                            <span class="px-2 py-1 bg-gray-100 text-gray-600 rounded text-xs">Oracle</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Game Store Database</h3>
+                        <p class="text-sm text-gray-600 mb-4">Relational database for digital game distribution.</p>
+                        <a href="https://github.com/LawSwan/schoolProjects/blob/sql/sql/WEEK%201/Project%20Build%20Script.sql"
+                           target="_blank"
+                           class="text-sm font-medium text-gray-900 hover:text-pink-600 transition inline-flex items-center gap-1">
+                            View Code
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- NoSQL Suite -->
+                <div class="project-card bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-lg">
+                    <div class="h-32 bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center">
+                        <svg class="w-12 h-12 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                        </svg>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="px-2 py-1 bg-cyan-100 text-cyan-700 rounded text-xs font-medium">NoSQL</span>
+                            <span class="px-2 py-1 bg-gray-100 text-gray-600 rounded text-xs">4 DBs</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">NoSQL Database Suite</h3>
+                        <p class="text-sm text-gray-600 mb-4">MongoDB, Redis, Cassandra, Neo4j with Streamlit.</p>
+                        <a href="https://github.com/LawSwan/schoolProjects/tree/NOSQL/NOSQL"
+                           target="_blank"
+                           class="text-sm font-medium text-gray-900 hover:text-pink-600 transition inline-flex items-center gap-1">
+                            View Code
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Content Section -->
+    <section id="featured" class="bg-white py-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Featured Content</h2>
+                <p class="text-gray-600">Resources and links to explore more</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- University Resources Div -->
+                <div id="universityResources" class="bg-gray-50 rounded-2xl p-8 border border-gray-200">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 bg-pink-100 rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900">University Resources</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="https://www.ecpi.edu/programs/computer-science-bachelor-degree" target="_blank"
+                               class="flex items-center gap-3 text-gray-700 hover:text-pink-600 transition group">
+                                <span class="w-8 h-8 bg-white rounded-lg border border-gray-200 flex items-center justify-center group-hover:border-pink-300 transition">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                                    </svg>
+                                </span>
+                                ECPI Computer Science Program
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.ecpi.edu/" target="_blank"
+                               class="flex items-center gap-3 text-gray-700 hover:text-pink-600 transition group">
+                                <span class="w-8 h-8 bg-white rounded-lg border border-gray-200 flex items-center justify-center group-hover:border-pink-300 transition">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                                    </svg>
+                                </span>
+                                ECPI University Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://ecpi.brightspace.com/" target="_blank"
+                               class="flex items-center gap-3 text-gray-700 hover:text-pink-600 transition group">
+                                <span class="w-8 h-8 bg-white rounded-lg border border-gray-200 flex items-center justify-center group-hover:border-pink-300 transition">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                                    </svg>
+                                </span>
+                                Brightspace Learning Portal
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Personal Projects Div -->
+                <div id="personalProjects" class="bg-gray-50 rounded-2xl p-8 border border-gray-200">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 bg-gray-900 rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900">Personal Projects</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <a href="https://github.com/LawSwan/schoolProjects" target="_blank"
+                           class="block bg-white rounded-xl p-4 border border-gray-200 hover:border-pink-300 hover:shadow-md transition group">
+                            <div class="flex items-center gap-3">
+                                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+                                     alt="GitHub" class="w-10 h-10 rounded-lg">
+                                <div>
+                                    <p class="font-medium text-gray-900 group-hover:text-pink-600 transition">School Projects Repository</p>
+                                    <p class="text-sm text-gray-500">Java, Python, PHP, SQL, NoSQL</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="https://github.com/LawSwan" target="_blank"
+                           class="block bg-white rounded-xl p-4 border border-gray-200 hover:border-pink-300 hover:shadow-md transition group">
+                            <div class="flex items-center gap-3">
+                                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+                                     alt="GitHub" class="w-10 h-10 rounded-lg">
+                                <div>
+                                    <p class="font-medium text-gray-900 group-hover:text-pink-600 transition">GitHub Profile</p>
+                                    <p class="text-sm text-gray-500">View all repositories</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-gray-50 py-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Get in Touch</h2>
+                <p class="text-gray-600">Have a question or want to work together?</p>
+            </div>
+
+            <div class="max-w-lg mx-auto">
+                <form id="contactForm" class="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm">
+                    <div class="mb-5">
+                        <label for="senderName" class="block text-sm font-medium text-gray-700 mb-2">Your Name</label>
+                        <input type="text" id="senderName" name="senderName" required
+                               class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 focus:border-pink-400 focus:ring-2 focus:ring-pink-100 focus:outline-none transition"
+                               placeholder="John Doe">
+                    </div>
+
+                    <div class="mb-5">
+                        <label for="emailAddress" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                        <input type="email" id="emailAddress" name="emailAddress" required
+                               class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 focus:border-pink-400 focus:ring-2 focus:ring-pink-100 focus:outline-none transition"
+                               placeholder="john@example.com">
+                    </div>
+
+                    <div class="mb-5">
+                        <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+                        <input type="text" id="subject" name="subject" required
+                               class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 focus:border-pink-400 focus:ring-2 focus:ring-pink-100 focus:outline-none transition"
+                               placeholder="Project inquiry">
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                        <textarea id="message" name="message" rows="4" required
+                                  class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-900 focus:border-pink-400 focus:ring-2 focus:ring-pink-100 focus:outline-none transition resize-none"
+                                  placeholder="Your message here..."></textarea>
+                    </div>
+
+                    <button type="submit" id="submitBtn"
+                            class="w-full bg-gray-900 text-white px-6 py-3 rounded-full font-medium hover:bg-gray-800 transition inline-flex items-center justify-center gap-2">
+                        Send Message
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                        </svg>
+                    </button>
+                </form>
+
+                <div class="flex justify-center gap-4 mt-8">
+                    <a href="mailto:amberjanelle33@gmail.com"
+                       class="px-5 py-2.5 bg-white border border-gray-200 rounded-full text-sm text-gray-700 hover:border-pink-300 hover:text-pink-600 transition inline-flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                        Email
+                    </a>
+                    <a href="https://github.com/LawSwan" target="_blank"
+                       class="px-5 py-2.5 bg-white border border-gray-200 rounded-full text-sm text-gray-700 hover:border-pink-300 hover:text-pink-600 transition inline-flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="border-t border-slate-700 py-6 text-center text-gray-500 text-sm">
-        <p>&copy; 2026 Amber Janelle. Built with HTML + Tailwind CSS.</p>
+    <footer class="bg-white border-t border-gray-200 py-8">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <p class="text-sm text-gray-500">&copy; 2026 Amber Janelle. Built with HTML + Tailwind CSS.</p>
+        </div>
     </footer>
 
-    <!-- JavaScript for Personalized User Interaction -->
+    <!-- JavaScript for All Interactive Features -->
     <script>
-        // Prompt the user for their name and store it in a variable
-        var userName = prompt("Welcome! Please enter your name:");
+        // ============================================
+        // 1. DARK MODE TOGGLE
+        // ============================================
+        var darkModeToggle = document.getElementById("darkModeToggle");
 
-        // Get reference to the welcome message element
-        var welcomeMessageElement = document.getElementById("welcomeMessage");
+        darkModeToggle.addEventListener("change", function() {
+            if (this.checked) {
+                document.body.classList.add("dark-mode");
+            } else {
+                document.body.classList.remove("dark-mode");
+            }
+        });
 
-        // Dynamically update the welcome message based on user input
-        if (userName !== null && userName.trim() !== "") {
-            // User entered a name - display personalized welcome message
-            welcomeMessageElement.textContent = "Welcome, " + userName + "! Thanks for visiting my portfolio.";
+        // ============================================
+        // 2. SKILLS LOOP - Using forEach()
+        // ============================================
+        var skills = ["HTML", "CSS", "JavaScript", "Java", "Python", "PHP", "SQL", "MongoDB", "Git", "GitHub"];
+
+        var skillsList = document.getElementById("skillsList");
+
+        skills.forEach(function(skill) {
+            var skillBadge = document.createElement("li");
+            skillBadge.className = "px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium";
+            skillBadge.textContent = skill;
+            skillsList.appendChild(skillBadge);
+        });
+
+        // ============================================
+        // 3. FEATURED CONTENT - Conditional Logic
+        // ============================================
+        var projectCards = document.querySelectorAll(".project-card");
+        var projectCount = projectCards.length;
+
+        var universityResources = document.getElementById("universityResources");
+        var personalProjects = document.getElementById("personalProjects");
+
+        if (projectCount < 3) {
+            universityResources.style.display = "block";
+            personalProjects.style.display = "block";
         } else {
-            // User cancelled or left blank - display default message
-            welcomeMessageElement.textContent = "Welcome to my portfolio!";
+            universityResources.style.display = "none";
+            personalProjects.style.display = "block";
         }
 
-        // Contact form submission handler
-        document.getElementById("contactForm").addEventListener("submit", function(e) {
-            e.preventDefault(); // Prevent default form submission
+        // ============================================
+        // 4. PERSONALIZED WELCOME MESSAGE
+        // ============================================
+        var userName = prompt("Welcome! Please enter your name:");
 
-            // Get form field values
+        var welcomeMessageElement = document.getElementById("welcomeMessage");
+
+        if (userName !== null && userName.trim() !== "") {
+            welcomeMessageElement.textContent = "Welcome, " + userName + "! Thanks for visiting.";
+        } else {
+            welcomeMessageElement.textContent = "Welcome to my portfolio";
+        }
+
+        // ============================================
+        // 5. FORM SUBMIT BUTTON INTERACTIVITY
+        // ============================================
+        var submitButton = document.querySelector("#submitBtn");
+
+        submitButton.addEventListener("click", function(event) {
+            event.preventDefault();
+
             var senderName = document.getElementById("senderName").value;
-            var email = document.getElementById("emailAddress").value;
-            var subject = document.getElementById("subject").value;
-            var message = document.getElementById("message").value;
 
-            // Display confirmation alert
-            alert("Thank you, " + senderName + "! Your message has been received.\n\nSubject: " + subject);
-
-            // Reset the form
-            this.reset();
+            if (senderName.trim() !== "") {
+                alert("Thank you, " + senderName + ", your message has been sent!");
+                document.getElementById("contactForm").reset();
+            } else {
+                alert("Please enter your name before submitting.");
+            }
         });
     </script>
 

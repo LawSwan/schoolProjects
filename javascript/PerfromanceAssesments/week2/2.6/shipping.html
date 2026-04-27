@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!-- Amber Lawson
+Date: 17APR2026
+This is a simple HTML page with embedded JavaScript to
+ calculate shipping and handling fees based on the purchase price. -->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipping and Handling Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 250px auto;
+            padding: 40px;
+        }
+        h1 {
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+        .card {
+            background-color: #f1d7f7;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(147, 33, 147, 0.1);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Shipping and Handling Calculator</h1>
+        <h2> Amber Lawson</h2>
+        <form id="shippingForm">
+            <label for="purchasePrice">Enter Purchase Price: $</label>
+            <input type="text" id="purchasePrice" name="purchasePrice" placeholder="0.00">
+            <button type="button" onclick="calculateShipping()">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function calculateShipping() {
+            // Get the purchase price from the input field
+            var purchasePrice = parseFloat(document.getElementById("purchasePrice").value);
+
+            // Validate input
+            if (isNaN(purchasePrice) || purchasePrice < 0) {
+                alert("Please enter a valid purchase price.");
+                return;
+            }
+
+            var shippingFee;
+
+            // Calculate shipping and handling fee
+            if (purchasePrice <= 25) {
+                // If order total is $25 or less, the fee is $1.50
+                shippingFee = 1.50;
+            } else {
+                // If order total is more than $25, the fee is 10% of the order total
+                shippingFee = purchasePrice * 0.10;
+            }
+
+            // Calculate the order total
+            var orderTotal = purchasePrice + shippingFee;
+
+            // Display the order total in an alert box
+            alert("Your order total is: $" + orderTotal.toFixed(2));
+        }
+    </script>
+</body>
+</html>

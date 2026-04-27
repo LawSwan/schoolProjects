@@ -1,0 +1,11 @@
+Log Entry 01
+By: Amber J.Lawson
+Date: 20262302
+Time: 1030
+Incident: Customer account locked
+Description: Customer called because she
+had accidentally locked herself out of 
+her account.
+Technician:
+Resolution Date:
+Resolution Description:

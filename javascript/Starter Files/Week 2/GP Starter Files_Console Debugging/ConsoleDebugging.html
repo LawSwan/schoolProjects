@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <!--
+         Author: Amber Lawson
+         Date:  17APR2026
+         Purpose: Fix mistakes in the JavaScript code to make the console debugging work correctly. i.e missing quotation marks. String concatenation, etc.
+         Conversions were only being showed after the 5th submission, but now they will be displayed immediately after each submission. 
+         The conversion factor for miles to kilometers was also updated to be more accurate.
+        -->
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <title>Console Debugging</title>
+   <link rel="stylesheet" href="styles.css" />
+   <script src="modernizr.custom.05819.js"></script>
+</head>
+
+<body>
+   <header>
+      <h1>
+         amblaw9047, Console Debugging 
+      </h1>
+   </header>
+
+   <article>
+      <div id="results">
+          <p id="resultsExpl"></p>
+          <ul>
+             <li id="item1"></li>
+             <li id="item2"></li>
+             <li id="item3"></li>
+             <li id="item4"></li>
+             <li id="item5"></li>
+          </ul>
+      </div>
+      <form>
+          <fieldset>
+            <label for="mValue" id="mLabel">
+              Type the number of miles to convert to kilometers, then click Submit:
+            </label>
+            <input type="text" id="mValue" />
+          </fieldset>
+          <fieldset>
+            <button type="button" id="button">Submit</button>
+          </fieldset>
+      </form>
+   </article>
+   <script>
+      //"use strict"
+      var places = []; // new array to store entered places
+      var i = 1; // counter variable to track array indexes
+      var milesElement = document.getElementById("mValue");
+      
+      function convert(){
+        var miles = parseFloat(milesElement.value);
+        if (isNaN(miles)) {
+          alert("Please enter a valid number for miles.");
+          return 0;
+        }
+        return miles * 1.609344; // More accurate conversion factor
+      }
+
+      // function to add input to array and then generate list after 5th submission
+      function processInput() {
+         var convertedValue = convert();
+         var convStr = milesElement.value + " miles is " + convertedValue + " km";
+         places[i] = convStr; // convert message to array
+         milesElement.value = ""; // clear text box
+         
+         // Display the current conversion immediately
+         var currentItem = "item" + i;
+         document.getElementById(currentItem).innerHTML = convStr;
+         
+         if (i < 5) { // iterate counter variable
+            i++;
+         }
+         else { // add entered value to array and write results to document
+            document.getElementById("resultsExpl").innerHTML = "Converted Values:";
+         }
+      }
+
+      // Add backward compatible event listener to Submit button
+      var submitButton = document.getElementById("button");
+      if (submitButton.addEventListener) {
+        submitButton.addEventListener("click", processInput, false); 
+      } else if (submitButton.attachEvent)  {
+        submitButton.attachEvent("onclick", processInput);
+      }
+   </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--
+Author: Amber Lawson    
+Date: 2026/04/09
+Purpose:    
+-->
+<meta charset="utf-8" />
+<!-- Ensures proper scaling and layout on mobile devices -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Sending Alerts</title>
+<!-- Link to external CSS stylesheet -->
+<link rel="stylesheet" href="styles.css" />
+<!-- Modernizr helps ensure compatibility with older browsers -->
+<script src="modernizr.custom.05819.js"></script>
+</head>
+
+<body>
+<!-- Page header displaying the title -->
+<header>
+    <h1>
+        Amber Lawson - Sending Alerts
+    </h1>
+</header>
+<!-- Main content area -->
+<article>
+    <h2>Lunch selections</h2>
+    <!-- Form containing lunch item choices as checkboxes -->
+    <form>
+        <!-- Each checkbox has a value representing its price -->
+        <input type="checkbox" id="item1" value="8" />
+        <label for="item1">Fried chicken ($8.00)</label><br>
+        
+        <input type="checkbox" id="item2" value="9" />
+        <label for="item2">Fried halibut ($9.00)</label><br>
+        
+        <input type="checkbox" id="item3" value="8" />
+        <label for="item3">Hamburger ($8.00)</label><br>
+        
+        <input type="checkbox" id="item4" value="13" />
+        <label for="item4">Grilled salmon ($13.00)</label><br>
+        
+        <input type="checkbox" id="item5" value="6" />
+        <label for="item5">Caesar salad ($6.00)</label><br>
+        
+        <input type="submit" id="submit" value="Submit Order" />
+    </form>
+</article>
+
+<script>
+// Function to calculate the total cost of selected items
+function calcTotal() {
+    // Get references to all checkbox elements
+    var item1 = document.getElementById("item1");
+    var item2 = document.getElementById("item2");
+    var item3 = document.getElementById("item3");
+    var item4 = document.getElementById("item4");
+    var item5 = document.getElementById("item5");
+    
+    // Initialize total to 0
+    var itemTotal = 0;
+    
+    // Add item costs if checked, using ternary operator
+    (item1.checked) ? (itemTotal += 8) : (itemTotal += 0);
+    (item2.checked) ? (itemTotal += 9) : (itemTotal += 0);
+    (item3.checked) ? (itemTotal += 8) : (itemTotal += 0);
+    (item4.checked) ? (itemTotal += 13) : (itemTotal += 0);
+    (item5.checked) ? (itemTotal += 6) : (itemTotal += 0);
+    
+    // Define a fixed sales tax rate (7%)
+    var salesTaxRate = 0.07;
+    
+    // Calculate total with tax
+    var orderTotal = itemTotal + (itemTotal * salesTaxRate);
+    
+    // Show alert with total if any items were selected, else ask user to make a selection
+    orderTotal > 0 ?
+        alert("Your order total is $" + orderTotal.toFixed(2)) : // Show total rounded to 2 decimal places
+        alert("Please select at least one item.");
+}
+
+// Add an event listener to the Submit button that triggers the calcTotal function
+document.getElementById("submit").addEventListener("click", function(e) {
+    e.preventDefault(); // Prevent form from refreshing the page
+    calcTotal();
+}, false);
+</script>
+</body>
+</html>
+

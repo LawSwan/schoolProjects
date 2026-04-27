@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <!--
+         Author: Amber Lawson
+         Date:   April 25, 2026
+         Purpose: This exercise demonstrates the use of JavaScript window.open()
+                  to create pop-up windows that display math tables (addition or
+                  multiplication) based on user button selection.
+      -->
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <title>Pop-Up Windows</title>
+      <style>
+         body {
+            font-family: Georgia, serif;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            background-color: white;
+         }
+         header {
+            background: #2c3e50;
+            padding: 30px;
+            color: white;
+         }
+         h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: normal;
+         }
+         .buttons {
+            padding: 20px;
+         }
+         button {
+            font-size: 1em;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            background-color: white;
+            color: black;
+            border: 1px solid #999;
+         }
+         button:hover {
+            background-color: #f0f0f0;
+         }
+      </style>
+   </head>
+   <body>
+      <header>
+         <h1>Amber Lawson, Pop-Up Windows</h1>
+      </header>
+
+      <div class="buttons">
+         <!-- Button to open Addition Table popup -->
+         <button onclick="openMathTable('addition')">Addition Table</button>
+
+         <!-- Button to open Multiplication Table popup -->
+         <button onclick="openMathTable('multiplication')">Multiplication Table</button>
+      </div>
+
+      <script>
+         // Function to open the MathTableDisplay.html popup window
+         function openMathTable(type) {
+            // Open MathTableDisplay.html with the type passed as a URL parameter
+            window.open("MathTableDisplay.html?type=" + type, "MathTableDisplay", "width=550,height=500");
+         }
+      </script>
+   </body>
+</html>

@@ -1,0 +1,111 @@
+Here is your updated `styles.css` file with **detailed comments** added to explain the purpose of each style block and key declarations:
+
+```css
+/*  JavaScript 7th Edition
+    Assignment: Sending Alerts
+*/
+
+/* Apply a natural box layout model to all elements.
+   This includes padding and border within the element's total width and height. */
+* {
+   -moz-box-sizing: border-box;       /* Firefox-specific prefix */
+   -webkit-box-sizing: border-box;    /* WebKit-specific prefix (Chrome, Safari) */
+   box-sizing: border-box;            /* Standard property */
+}
+
+/* Reset default styles to ensure consistent appearance across all browsers. 
+   Removes default margins, padding, borders, font sizes, and vertical alignment. */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: 100%;
+   font: inherit;
+   vertical-align: baseline;
+}
+
+/* Set HTML5 structural elements to display as block for better support in older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+   display: block;
+}
+
+/* Style the body to center the content and apply consistent font and width.
+   Provides a white background and uses a sans-serif font for clarity. */
+body {
+   line-height: 1;                           /* Sets uniform line spacing */
+   width: 960px;                             /* Fixed width container */
+   background: white;
+   margin: 0 auto;                           /* Center body content horizontally */
+   font-family: Verdana, Geneva, sans-serif; /* Fallback sans-serif fonts */
+}
+
+/* Remove bullets or numbering from lists */
+ol, ul {
+   list-style: none;
+}
+
+/* Style for the page header:
+   - Dark purple background
+   - White text
+   - Large, centered title */
+header {
+   background: #330570;
+   width: 100%;
+   color: #FFFFFF;
+   font-size: 48px;
+   text-align: center;
+   line-height: 1.5em; /* Adds vertical spacing between lines of header text */
+}
+
+/* Main content styling for the article section */
+article {
+   width: 960px;
+   height: 250px;
+   text-align: left;
+   background: #FFCF40; /* Bright yellow background for visibility */
+}
+
+/* Styling for the main heading inside the article.
+   Makes it bold, larger, and adds padding around it. */
+article h2 {
+   font-weight: bold;
+   font-size: 24px;
+   padding: 10px;
+}
+
+/* Style the form container to center it on the page */
+form {
+   margin: 0 auto;
+}
+
+/* Style text input fields:
+   - Align them vertically down the left side of the form
+   - Adds space around each field */
+input {
+   float: left;
+   clear: left;       /* Forces each input to appear on a new line */
+   margin: 10px;
+}
+
+/* Style labels to align with their corresponding inputs.
+   Makes the label text larger and aligns to the left. */
+label {
+   float: left;
+   font-size: 1.4em;
+}
+```
+
+Let me know if you would like this saved to a new file or further help connecting these styles to an HTML form.

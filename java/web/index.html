@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amber's Java Portfolio</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Arial', sans-serif; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh; color: #333; 
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        .hero { text-align: center; color: white; margin-bottom: 3rem; }
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; }
+        .project-card { 
+            background: white; padding: 2rem; border-radius: 12px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2); margin-bottom: 2rem; 
+        }
+        .truth-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        .truth-table th, .truth-table td { 
+            padding: 0.75rem; border: 1px solid #ddd; text-align: center; 
+        }
+        .truth-table th { background: #6366f1; color: white; }
+        .true { background: #d4edda; color: #155724; font-weight: bold; }
+        .false { background: #f8d7da; color: #721c24; font-weight: bold; }
+        .grade-calc { 
+            background: #f8f9fa; padding: 1.5rem; border-radius: 8px; 
+            text-align: center; margin: 2rem 0; 
+        }
+        .grade-calc input, .grade-calc button {
+            padding: 0.75rem; margin: 0.5rem; border-radius: 6px; border: 1px solid #ddd;
+        }
+        .grade-calc button { 
+            background: #6366f1; color: white; border: none; cursor: pointer; 
+        }
+        .result { margin-top: 1rem; font-size: 1.2rem; font-weight: bold; }
+        pre { 
+            background: #2d3748; color: #e2e8f0; padding: 1.5rem; 
+            border-radius: 8px; overflow-x: auto; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="hero">
+            <h1>🚀 Amber's Java Portfolio</h1>
+            <p>Logic Operations & Truth Tables Demo</p>
+        </header>
+
+        <div class="project-card">
+            <h2>🧠 Logic Operations Demo</h2>
+            <p>Interactive demonstration of Java logical operators</p>
+            
+            <h3>Truth Tables</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div>
+                    <h4>Conditional AND (&&)</h4>
+                    <table class="truth-table">
+                        <tr><th>A</th><th>B</th><th>A && B</th></tr>
+                        <tr><td>false</td><td>false</td><td class="false">false</td></tr>
+                        <tr><td>false</td><td>true</td><td class="false">false</td></tr>
+                        <tr><td>true</td><td>false</td><td class="false">false</td></tr>
+                        <tr><td>true</td><td>true</td><td class="true">true</td></tr>
+                    </table>
+                </div>
+                
+                <div>
+                    <h4>Conditional OR (||)</h4>
+                    <table class="truth-table">
+                        <tr><th>A</th><th>B</th><th>A || B</th></tr>
+                        <tr><td>false</td><td>false</td><td class="false">false</td></tr>
+                        <tr><td>false</td><td>true</td><td class="true">true</td></tr>
+                        <tr><td>true</td><td>false</td><td class="true">true</td></tr>
+                        <tr><td>true</td><td>true</td><td class="true">true</td></tr>
+                    </table>
+                </div>
+
+                <div>
+                    <h4>Exclusive OR (^)</h4>
+                    <table class="truth-table">
+                        <tr><th>A</th><th>B</th><th>A ^ B</th></tr>
+                        <tr><td>false</td><td>false</td><td class="false">false</td></tr>
+                        <tr><td>false</td><td>true</td><td class="true">true</td></tr>
+                        <tr><td>true</td><td>false</td><td class="true">true</td></tr>
+                        <tr><td>true</td><td>true</td><td class="false">false</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="grade-calc">
+                <h3>🎓 Grade Calculator (Java Logic)</h3>
+                <input type="number" id="gradeInput" placeholder="Enter grade (0-100)" min="0" max="100">
+                <button onclick="calculateGrade()">Calculate Grade</button>
+                <div id="result" class="result"></div>
+            </div>
+
+            <h3>📝 Java Source Code</h3>
+            <pre><code>package logicOps;
+import java.util.Scanner;
+
+public class logicOps {
+    public static void main(String[] args) throws Exception {
+        System.out.println("Amber - Week 2 GP - Decisions & Logical Operators");
+        
+        // Truth tables for logical operators
+        System.out.printf("Conditional AND (&&):%n%s: %b%n%s: %b%n%s: %b%n%s: %b%n",
+            "false && false", false && false,
+            "false && true",  false && true,
+            "true && false",  true  && false,
+            "true && true",   true  && true);
+
+        // Grade evaluation
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter an integer grade in range 0 - 100: ");
+        int grade = input.nextInt();
+
+        // If-else logic
+        if (grade >= 90) {
+            System.out.println("The grade entered is an A.");
+        } else if (grade >= 80) {
+            System.out.println("The grade entered is a B.");
+        } else if (grade >= 70) {
+            System.out.println("The grade entered is a C.");
+        } else if (grade >= 60) {
+            System.out.println("The grade entered is a D.");
+        } else {
+            System.out.println("The grade entered is an F.");
+        }
+
+        // Switch logic
+        switch (grade / 10) {
+            case 10:
+            case 9: System.out.println("The grade entered is an A."); break;
+            case 8: System.out.println("The grade entered is a B."); break;
+            case 7: System.out.println("The grade entered is a C."); break;
+            case 6: System.out.println("The grade entered is a D."); break;
+            default: System.out.println("The grade entered is an F."); break;
+        }
+    }
+}</code></pre>
+        </div>
+    </div>
+
+    <script>
+        function calculateGrade() {
+            const grade = parseInt(document.getElementById('gradeInput').value);
+            const resultDiv = document.getElementById('result');
+            
+            if (isNaN(grade) || grade < 0 || grade > 100) {
+                resultDiv.innerHTML = '<span style="color: #dc3545;">Please enter a valid grade (0-100)</span>';
+                return;
+            }
+            
+            let letter, color;
+            
+            // If-else logic (same as Java)
+            if (grade >= 90) {
+                letter = 'A'; color = '#28a745';
+            } else if (grade >= 80) {
+                letter = 'B'; color = '#17a2b8';
+            } else if (grade >= 70) {
+                letter = 'C'; color = '#ffc107';
+            } else if (grade >= 60) {
+                letter = 'D'; color = '#fd7e14';
+            } else {
+                letter = 'F'; color = '#dc3545';
+            }
+            
+            resultDiv.innerHTML = `
+                <div style="color: ${color};">
+                    Grade: ${letter} (${grade}%)
+                    <br><small>Using Java if-else logic</small>
+                </div>
+            `;
+        }
+
+        // Allow Enter key
+        document.getElementById('gradeInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') calculateGrade();
+        });
+    </script>
+</body>
+</html>

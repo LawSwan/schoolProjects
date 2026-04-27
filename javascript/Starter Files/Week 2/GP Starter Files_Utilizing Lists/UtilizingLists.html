@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--
+Author:Amber Lawson
+Date:10/10/2023
+Purpose: To create a tool suggestion form using JavaScript and HTML, creating classes instead of IDs for the list items to provide a more efficient way 
+to target them with JavaScript. this also allows the code to be flexible and reusable,
+ as the same class can be applied to multiple elements without needing to create unique IDs for each one, mimicking a professional approach
+similar to the way that classes are used in CSS to apply styles to multiple elements. I realize this is a robust approach.
+-->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Utilizing Lists</title>
+<link rel="stylesheet" href="styles.css" />
+<script src="modernizr.custom.05819.js"></script>
+</head>
+<body>
+<header>
+<h1>Amblaw9047, Utilizing Lists</h1>
+</header>
+<article>
+<div id="results">
+<ul>
+<li class="tool-suggestion"></li>
+<li class="tool-suggestion"></li>
+<li class="tool-suggestion"></li>
+<li class="tool-suggestion"></li>
+<li class="tool-suggestion"></li>
+</ul>
+<p id="resultsExpl"></p>
+</div>
+<form>
+<fieldset>
+<label for="toolBox" id="placeLabel"> Type the name of a
+tool, then click Submit: </label> <input type="text" id="toolBox" />
+</fieldset>
+<fieldset>
+<button type="button" id="button">Submit</button>
+</fieldset>
+</form>
+</article>
+
+<!-- JavaScript Modules -->
+<script src="js/toolSuggestions.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

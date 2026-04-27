@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--
+        Name: Amber
+        Date: April 20, 2026
+        Purpose: This exercise demonstrates the use of a while loop in JavaScript.
+                 The program prints all even numbers between 1 and 101 to the screen.
+                 When a number is divisible by 10, a new line is started for readability.
+    -->
+    <title>While Loop Exercise</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        h1 {
+            color: #333;
+        }
+        #output {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header displaying name and exercise title -->
+    <h1>Amblaw9047 - While Loop Exercise</h1>
+
+    <!-- Container for the output -->
+    <div id="output"></div>
+
+    <script>
+        // Get the output container
+        var output = document.getElementById("output");
+
+        // Initialize counter variable starting at 2 (first even number)
+        var number = 2;
+
+        // Variable to store the output string
+        var result = "";
+
+        // While loop to iterate through numbers from 2 to 100
+        while (number <= 100) {
+            // Add the current even number to the result
+            result += number;
+
+            // Check if number is divisible by 10
+            if (number % 10 === 0) {
+                // If divisible by 10, add a line break
+                result += "<br>";
+            } else {
+                // Otherwise, add a space between numbers
+                result += " ";
+            }
+
+            // Increment by 2 to get the next even number
+            number += 2;
+        }
+
+        // Display the result on the page
+        output.innerHTML = result;
+    </script>
+</body>
+</html>

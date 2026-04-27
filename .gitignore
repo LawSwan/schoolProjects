@@ -1,0 +1,42 @@
+# Virtual environments
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Build outputs
+*.class
+target/
+out/
+build/
+
+# Archives (optional - comment out if you want to track zips)
+*.zip
+
+# Logs
+*.log
+
+# Temp files
+*.tmp
+*.temp
+
+# Large data files (exceed GitHub 100MB limit)
+NOSQL/mongodb/lab/GitHubArchive-Dataset/Contents.json
+NOSQL/mongodb/lab/GitHubArchive-Dataset/Languages.json
+NOSQL/mongodb/lab/GitHubArchive-Dataset/Sample_Contents.json
+NOSQL/mongodb/lab/GitHubArchive-Dataset/Sample_Commits.json
+NOSQL/neo4j/Lab/Part4/data/*.json.gz
+NOSQL/redis/week1-redis/GitHubArchive-Dataset/Contents.json
+NOSQL/redis/week1-redis/GitHubArchive-Dataset/Languages.json
+NOSQL/redis/week1-redis/GitHubArchive-Dataset/Sample_Contents.json
+NOSQL/redis/week1-redis/GitHubArchive-Dataset/Sample_Commits.json

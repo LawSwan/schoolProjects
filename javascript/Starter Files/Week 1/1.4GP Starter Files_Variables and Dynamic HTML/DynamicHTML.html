@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--
+Author: Amber Lawson
+Date: 2023-10-05
+Purpose: Demonstrate the use of variables and dynamic HTML
+-->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Variables and Dynamic HTML</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header>
+        <h1>Amber Lawson - Dynamic HTML</h1>
+    </header>
+    
+    <article>
+        <h1>Internet Speed Considerations</h1>
+        <script>
+            // Add HTML dynamically to the page
+            document.write("<ol>");
+            document.write("<li>How many devices use the internet at the same time?</li>");
+            document.write("<li>How often do you stream videos?</li>");
+            document.write("<li>Do you use a VPN?</li>");
+            document.write("<li>How often do you download files larger than 50 MB?</li>");
+            document.write("</ol>");
+        </script>
+        
+        <h2>High-Speed Internet Tiers</h2>
+        <script>
+            // Initialize variables for service names and speeds
+            var service1Name = "Basic";
+            var service2Name = "Express";
+            var service3Name = "Extreme";
+            var service4Name = "Ultimate";
+            var service1Speed = 5;
+                        var service2Speed = 25;
+            var service3Speed = 50;
+            var service4Speed = 150;
+            
+            // Write table structure dynamically
+            document.write("<table>");
+            document.write("<caption>Currently Available Plans</caption>");
+            document.write("<tr><th>Service</th><th>Speed (Mbps)</th></tr>");
+            document.write("<tr><td>" + service1Name + "</td><td>" + service1Speed + "</td></tr>");
+            document.write("<tr><td>" + service2Name + "</td><td>" + service2Speed + "</td></tr>");
+            document.write("<tr><td>" + service3Name + "</td><td>" + service3Speed + "</td></tr>");
+            document.write("<tr><td>" + service4Name + "</td><td>" + service4Speed + "</td></tr>");
+            document.write("</table>");
+        </script>
+    </article>
+</body>
+</html>

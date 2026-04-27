@@ -1,0 +1,186 @@
+/*  JavaScript 7th Edition
+    Assignment: Event Handler
+*/
+
+/* Apply a natural box layout model to all elements. 
+   This ensures padding and borders are included in an element’s total width and height. */
+* {
+   -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+/* Reset default margin, padding, and other styles for a wide range of elements 
+   to ensure consistency across different browsers. */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: 100%;
+   font: inherit;
+   vertical-align: baseline;
+}
+
+/* Define HTML5 elements as block elements for older browsers that may not support them. */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+   display: block;
+}
+
+/* Basic body styling: set a readable line height, limit the width for readability,
+   center the layout, and apply a clean sans-serif font. */
+body {
+   line-height: 1;
+   max-width: 600px;
+   background: white;
+   margin: 0 auto;
+   font-family: Arial, Helvetica, sans-serif; 
+}
+
+/* Remove bullet points from ordered and unordered lists. */
+ol, ul {
+   list-style: none;
+}
+
+/* Style the header section with a bold background color, centered large text, 
+   and borders on three sides. */
+header {
+   background: #FFC340;
+   width: 100%;
+   color: black;
+   font-size: 48px;
+   text-align: center;
+   line-height: 1.5em;
+   border-bottom: 1px solid black;
+   border-left: 1px solid black;
+   border-right: 1px solid black;
+}
+
+/* Style the article section with centered text and border matching the header. */
+article {
+   text-align: center;
+   background: white;
+   border-bottom: 1px solid black;
+   border-left: 1px solid black;
+   border-right: 1px solid black;
+}
+
+/* Style the subheading inside the article with bold font, larger size, and padding. */
+article h2 {
+   font-weight: bold;
+   font-size: 24px;
+   padding: 10px;
+}
+
+/* Form background and padding styling for visual separation. */
+form {
+  background: #A67100;
+  padding: 5px;
+  margin: 0 auto;
+}
+
+/* Fieldset styling: internal padding and background color for separation of form sections. */
+fieldset {
+  position: relative;
+  padding: 1em 1em 0.5em 1em;
+  background: #FFAE00;
+  text-align: left;
+}
+
+/* Style span inside legend to position it relative to fieldset corner. */
+legend span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.25em;
+  margin-top: 0.5em;
+  margin-left: 0.5em;
+}
+
+/* Set font for form legends to a serif font for stylistic contrast. */
+legend {
+  font-family: georgia, "times new roman", times, serif;
+}
+
+/* Set base font size for inputs and textareas. */
+input, textarea {
+  font-size: 1em;
+}
+
+/* Highlight inputs and textareas when they are in focus for better user experience. */
+input:focus, textarea:focus {
+  background: #e3d5ba;
+}
+
+/* Force textarea to be displayed as a block-level element. */
+textarea {
+  display: block;
+}
+
+/* Add margin and top padding to the address options section. */
+#addroptions {
+  margin-bottom: 5px;
+  padding-top: 2.5em;
+  color: black
+}
+
+/* Make labels in the address options section bold for emphasis. */
+#addroptions label span {
+   font-weight: bold;
+}
+
+/* Style labels to float left with spacing for form layout alignment. */
+#addroptions label {
+  display: block;
+  margin: 0 20px;
+  position: relative;
+  float: left;
+}
+
+/* Position radio or checkbox inputs to the left of labels. */
+#addroptions label input {
+   display: block;
+   position: absolute;
+   left: -20px;
+   top: 0px;
+}
+
+/* Style labels within contact info section to stack vertically. */
+#contactinfo label {
+  display: block;
+  position: relative;
+  margin: 15px 0;
+}
+
+/* Position text inputs to align with their labels. */
+#contactinfo input {
+  position: absolute;
+  left: 120px;
+  outline: oklab(from black l a b);
+}
+
+/* Set specific widths for different address input fields for alignment and consistency. */
+#streetinput {
+   width: 25em;
+}
+#cityinput {
+   width: 15em;
+}
+#stateinput {
+   width: 3em;
+}
+#zipinput {
+   width: 5em;
+}

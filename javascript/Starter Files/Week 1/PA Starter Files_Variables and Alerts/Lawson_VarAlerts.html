@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--
+Author: Amber Lawson
+Date: 2026-04-09
+Purpose: This exercise demonstrates the use of JavaScript variables and alert boxes.
+         When a user selects a Home or Work radio button, an alert message is displayed
+         showing which address option was selected.
+-->
+<meta charset="utf-8" />
+<!-- Ensures proper scaling and layout on mobile devices -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<!-- Title set to the name of this exercise -->
+<title>Variables and Alerts</title>
+<!-- Link to external CSS stylesheet -->
+<link rel="stylesheet" href="styles.css" />
+<!-- Modernizr helps ensure compatibility with older browsers -->
+<script src="modernizr.custom.05819.js"></script>
+
+</head>
+
+<body>
+<!-- Page header displaying name and exercise title -->
+<header>
+    <h1>
+        Amber Lawson - Variables and Alerts
+    </h1>
+</header>
+
+<!-- Main content area -->
+<article>
+    <h2>Shipping Address</h2>
+    <!-- Form containing address options as radio buttons -->
+    <form>
+        <fieldset id="addroptions">
+            <legend><span>Choose an address</span></legend>
+
+            <!-- Home address option - changed from 1 Main St. to 100 Main St. -->
+            <label for="homeoption" id="homeaddr">
+                <span>Home</span><br/>
+                100 Main St.<br />
+                Sicilia, MA 02103
+                <input type="radio" id="homeoption" name="shippingaddr" />
+            </label>
+
+            <!-- Work address option -->
+            <label for="workoption" id="workaddr">
+                <span>Work</span><br/>
+                123 Robin Ln.<br />
+                Crab City, MA 02104
+                <input type="radio" id="workoption" name="shippingaddr" />
+            </label>
+        </fieldset>
+
+        <!-- Form fields for address input -->
+        <fieldset id="contactinfo">
+            <label for="streetinput">
+                Street Address
+                <input type="text" id="streetinput" />
+            </label>
+
+            <label for="cityinput">
+                City
+                <input type="text" id="cityinput" />
+            </label>
+
+            <label for="stateinput">
+                State
+                <input type="text" id="stateinput" />
+            </label>
+
+            <label for="zipinput">
+                Zip
+                <input type="text" id="zipinput" />
+            </label>
+        </fieldset>
+    </form>
+</article>
+
+<script>
+// Variable to store message when Home address is selected
+var homeMsg = "You selected the Home address";
+
+// Variable to store message when Work address is selected
+var workMsg = "You selected the Work address";
+
+// Get reference to the Home radio button
+var homeOption = document.getElementById("homeoption");
+
+// Get reference to the Work radio button
+var workOption = document.getElementById("workoption");
+
+// Add click event listener to Home radio button
+// When clicked, displays an alert with the homeMsg text
+homeOption.addEventListener("click", function() {
+    alert(homeMsg);
+    // Also populate the form fields with home address
+    document.getElementById("streetinput").value = "100 Main St.";
+    document.getElementById("cityinput").value = "Sicilia";
+    document.getElementById("stateinput").value = "MA";
+    document.getElementById("zipinput").value = "02103";
+}, false);
+
+// Add click event listener to Work radio button
+// When clicked, displays an alert with the workMsg text
+workOption.addEventListener("click", function() {
+    alert(workMsg);
+    // Also populate the form fields with work address
+    document.getElementById("streetinput").value = "123 Robin Ln.";
+    document.getElementById("cityinput").value = "Crab City";
+    document.getElementById("stateinput").value = "MA";
+    document.getElementById("zipinput").value = "02104";
+}, false);
+</script>
+</body>
+</html>

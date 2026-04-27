@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--
+Author: Amber Lawson
+Date: 2026-04-10
+Purpose: This exercise demonstrates updating alert messages based on conditions.
+         When a user selects lunch items and submits their order, the alert displayed
+         depends on the total: orders $20 or less show a simple total, while orders
+         over $20 automatically include a 20% gratuity in the final bill.
+-->
+<meta charset="utf-8" />
+<!-- Ensures proper scaling and layout on mobile devices -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<!-- Title set to the name of this exercise -->
+<title>Updating Alerts</title>
+<!-- Link to external CSS stylesheet -->
+<link rel="stylesheet" href="styles.css" />
+<!-- Modernizr helps ensure compatibility with older browsers -->
+<script src="modernizr.custom.05819.js"></script>
+</head>
+
+<body>
+<!-- Page header displaying name and exercise title -->
+<header>
+    <h1>
+        Amber Lawson - Updating Alerts
+    </h1>
+</header>
+
+<!-- Main content area -->
+<article>
+    <h2>Lunch Selections</h2>
+    <!-- Form containing lunch item choices as checkboxes -->
+    <form>
+        <!-- Each checkbox has a value representing its price -->
+        <input type="checkbox" id="item1" value="8" />
+        <label for="item1">Fried chicken ($8.00)</label><br>
+
+        <input type="checkbox" id="item2" value="9" />
+        <label for="item2">Fried halibut ($9.00)</label><br>
+
+        <input type="checkbox" id="item3" value="8" />
+        <label for="item3">Hamburger ($8.00)</label><br>
+
+        <input type="checkbox" id="item4" value="13" />
+        <label for="item4">Grilled salmon ($13.00)</label><br>
+
+        <input type="checkbox" id="item5" value="6" />
+        <label for="item5">Caesar salad ($6.00)</label><br>
+
+        <!-- Submit button to calculate and display order total -->
+        <input type="submit" id="submit" value="Submit Order" />
+    </form>
+</article>
+
+<script>
+// Function to calculate the total cost of selected items
+function calcTotal() {
+    // Get references to all checkbox elements
+    var item1 = document.getElementById("item1");
+    var item2 = document.getElementById("item2");
+    var item3 = document.getElementById("item3");
+    var item4 = document.getElementById("item4");
+    var item5 = document.getElementById("item5");
+
+    // Initialize total to 0
+    var itemTotal = 0;
+
+    // Add item costs if checked, using ternary operator
+    (item1.checked) ? (itemTotal += 8) : (itemTotal += 0);
+    (item2.checked) ? (itemTotal += 9) : (itemTotal += 0);
+    (item3.checked) ? (itemTotal += 8) : (itemTotal += 0);
+    (item4.checked) ? (itemTotal += 13) : (itemTotal += 0);
+    (item5.checked) ? (itemTotal += 6) : (itemTotal += 0);
+
+    // Check if any items were selected
+    if (itemTotal === 0) {
+        // No items selected - prompt user to make a selection
+        alert("Please select at least one item.");
+    } else if (itemTotal <= 20) {
+        // Order total is $20 or less - display simple total
+        alert("Your order total is $" + itemTotal.toFixed(2));
+    } else {
+        // Order total is more than $20 - add 20% gratuity
+        // Calculate the gratuity rate (20%)
+        var gratuityRate = 0.20;
+
+        // Calculate the final total with gratuity
+        var finalTotal = itemTotal + (itemTotal * gratuityRate);
+
+        // Display alert with original total and final total with gratuity
+        alert("Your order total before gratuity is $" + itemTotal.toFixed(2) +
+              ". A 20% Gratuity has been added to your final bill, bringing the total to $" +
+              finalTotal.toFixed(2));
+    }
+}
+
+// Add an event listener to the Submit button that triggers the calcTotal function
+document.getElementById("submit").addEventListener("click", function(e) {
+    e.preventDefault(); // Prevent form from refreshing the page
+    calcTotal(); // Call the calcTotal function
+}, false);
+</script>
+</body>
+</html>

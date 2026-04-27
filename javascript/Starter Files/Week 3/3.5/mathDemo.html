@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Math and DOM Practice</title>
+</head>
+<body>
+    <h1>Math and DOM Practice</h1>
+    <p>amblaw9047: <div amblaw9047=""></div></p>
+    <p id="randomNum"></p>
+    <p id="squareRoot"></p>
+    <p id="powerCalc"></p>
+    <p id="roundedValue"></p>
+    <button id="calculateBtn">Calculate</button>
+
+    <script>
+        // Add event listener to the calculate button
+        document.getElementById('calculateBtn').addEventListener('click', function() {
+            // Generate a random number between 1 and 100
+            const randomNumber = Math.random() * 100 + 1;
+            
+            // Calculate square root of the random number
+            const sqrtResult = Math.sqrt(randomNumber);
+            
+            // Calculate power (random number to the power of 2)
+            const powerResult = Math.pow(randomNumber, 2);
+            
+            // Round the random number to 2 decimal places
+            const roundedResult = Math.round(randomNumber * 100) / 100;
+            
+            // Update the DOM elements with calculated values
+            document.getElementById('randomNum').textContent = `Random Number: ${roundedResult}`;
+            document.getElementById('squareRoot').textContent = `Square Root: ${sqrtResult.toFixed(2)}`;
+            document.getElementById('powerCalc').textContent = `Power of 2: ${powerResult.toFixed(2)}`;
+            document.getElementById('roundedValue').textContent = `Rounded Value: ${roundedResult}`;
+        });
+    </script>
+</body>
+</html>

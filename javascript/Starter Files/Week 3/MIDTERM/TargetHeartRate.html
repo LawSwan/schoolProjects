@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <!--
+         Assignment: Midterm - Target Heart Rate Calculator
+         Author: Amber Lawson
+         Date: April 26, 2026
+      -->
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <title>Target Heart Rate Calculator</title>
+      <style>
+         body {
+            font-family: Georgia, serif;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            background-color: white;
+         }
+         header {
+            background: #2c3e50;
+            padding: 30px;
+            color: white;
+         }
+         h1 {
+            margin: 0;
+            font-size: 2em;
+            font-weight: normal;
+         }
+         .container {
+            padding: 30px;
+         }
+         label {
+            font-size: 1.2em;
+            margin-right: 10px;
+         }
+         input[type="text"] {
+            font-size: 1em;
+            padding: 8px;
+            width: 80px;
+            text-align: center;
+            border: 1px solid #999;
+         }
+         button {
+            font-size: 1em;
+            padding: 10px 20px;
+            margin-top: 20px;
+            cursor: pointer;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+         }
+         button:hover {
+            background-color: #2980b9;
+         }
+         #result {
+            font-size: 1.3em;
+            margin-top: 25px;
+            padding: 15px;
+            background-color: #ecf0f1;
+            border-radius: 5px;
+            display: inline-block;
+         }
+      </style>
+   </head>
+   <body>
+      <header>
+         <h1>Amber Lawson, Target Heart Rate Calculator</h1>
+      </header>
+
+      <div class="container">
+         <!-- Label and text box for user's age -->
+         <label for="age">Your Age:</label>
+         <input type="text" id="age" name="age">
+
+         <br>
+
+         <!-- Button to calculate target heart rate -->
+         <button onclick="calculateTargetHeartRate()">Calculate Target Heart Rate</button>
+
+         <!-- Element to display the calculated result -->
+         <div id="result">Target Heart Rate:</div>
+      </div>
+
+      <script>
+         // Function to handle age validation errors
+         function isValidAge(age) {
+            // Check if age is not a number
+            if (isNaN(age)) {
+               alert("Please enter a valid number for your age.");
+               return false;
+            }
+
+            // Check if age is 0
+            if (age === 0) {
+               alert("Age cannot be 0. Please enter a valid age.");
+               return false;
+            }
+
+            // Check if age is below 0 (negative)
+            if (age < 0) {
+               alert("Age cannot be negative. Please enter a valid age.");
+               return false;
+            }
+
+            // Check if age is above 125
+            if (age > 125) {
+               alert("Age cannot be above 125. Please enter a valid age.");
+               return false;
+            }
+
+            // Age is valid
+            return true;
+         }
+
+         // Function to calculate the user's target heart rate range
+         function calculateTargetHeartRate() {
+            // Get the user's age from the text box
+            const age = parseInt(document.getElementById("age").value);
+
+            // Validate age using error handling function
+            if (!isValidAge(age)) {
+               return;
+            }
+
+            // Calculate maximum heart rate: maxHR = 220 - age
+            const maxHR = 220 - age;
+
+            // Calculate minimum target heart rate (50% of maxHR)
+            const minTHR = maxHR * 0.5;
+
+            // Calculate maximum target heart rate (85% of maxHR)
+            const maxTHR = maxHR * 0.85;
+
+            // Format values using Math.floor() and display result
+            const result = Math.floor(minTHR) + " to " + Math.floor(maxTHR) + " Beats Per Minute";
+
+            // Display the result
+            document.getElementById("result").textContent = "Target Heart Rate: " + result;
+         }
+      </script>
+   </body>
+</html>

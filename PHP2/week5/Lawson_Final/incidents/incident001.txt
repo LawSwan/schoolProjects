@@ -1,0 +1,9 @@
+Incident Report 001
+Date: 2026-02-26
+Status: Open
+
+Description:
+Sample incident file for testing the incident management system.
+
+Resolution:
+Pending investigation.

@@ -1,0 +1,391 @@
+<mxfile host="app.diagrams.net" modified="2024-01-15T12:00:00.000Z" agent="Mozilla/5.0" version="22.1.0" type="device">
+  <diagram name="Oil Refinery Network" id="oil-refinery-network">
+    <mxGraphModel dx="1434" dy="836" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title" value="&lt;b&gt;High-Level Network Model&lt;/b&gt;&lt;br&gt;Oil Refinery Efficiency Tracking System" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="550" y="20" width="500" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Corporate HQ Box -->
+        <mxCell id="hq-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="620" y="100" width="360" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="hq-label" value="&lt;b&gt;Corporate Headquarters&lt;/b&gt;&lt;br&gt;Dallas, Texas" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="700" y="105" width="200" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Mainframe Server -->
+        <mxCell id="mainframe" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/mscae/Mainframe.svg;" vertex="1" parent="1">
+          <mxGeometry x="680" y="150" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="mainframe-label" value="Corporate&lt;br&gt;Mainframe" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="675" y="230" width="90" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Web Server -->
+        <mxCell id="webserver" value="" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/mscae/Web_Server.svg;" vertex="1" parent="1">
+          <mxGeometry x="840" y="150" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="webserver-label" value="Web Server" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="845" y="230" width="70" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Connection between Mainframe and Web Server -->
+        <mxCell id="hq-connection" value="" style="endArrow=none;html=1;rounded=0;strokeWidth=2;strokeColor=#333333;" edge="1" parent="1" source="mainframe" target="webserver">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Satellite Cloud -->
+        <mxCell id="satellite" value="" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="280" y="320" width="200" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="satellite-label" value="&lt;b&gt;Satellite&lt;br&gt;Communication&lt;br&gt;Network&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="310" y="355" width="140" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Internet Cloud -->
+        <mxCell id="internet" value="" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="320" width="200" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="internet-label" value="&lt;b&gt;Internet&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="360" width="80" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Connection from Satellite to Mainframe -->
+        <mxCell id="sat-to-mainframe" value="&lt;i&gt;Performance Data&lt;/i&gt;" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;strokeColor=#d6b656;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1">
+          <mxGeometry x="-0.2" y="20" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="480" y="360" as="sourcePoint" />
+            <mxPoint x="680" y="190" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Connection from Internet to Web Server -->
+        <mxCell id="internet-to-web" value="&lt;i&gt;Web Reports&lt;/i&gt;" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;strokeColor=#9673a6;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1">
+          <mxGeometry x="-0.2" y="-20" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1120" y="360" as="sourcePoint" />
+            <mxPoint x="920" y="190" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ========== REFINERY SITES ========== -->
+
+        <!-- Valdez, Alaska -->
+        <mxCell id="r1-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="520" width="130" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="r1-label" value="&lt;b&gt;Valdez, Alaska&lt;/b&gt;&lt;br&gt;(Farthest)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="50" y="525" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="r1-sat" value="Satellite&lt;br&gt;Uplink" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iIzMzNjYwMCI+PHBhdGggZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bTAgMThjLTQuNDEgMC04LTMuNTktOC04czMuNTktOCA4LTggOCAzLjU5IDggOC0zLjU5IDgtOCA4eiIvPjxwYXRoIGQ9Ik0xMiA2Yy0zLjMxIDAtNiAyLjY5LTYgNnMyLjY5IDYgNiA2IDYtMi42OSA2LTYtMi42OS02LTYtNnptMCAxMGMtMi4yMSAwLTQtMS43OS00LTRzMS43OS00IDQtNCA0IDEuNzkgNCA0LTEuNzkgNC00IDR6Ii8+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMiIvPjwvc3ZnPg==;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="55" y="555" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r1-pc" value="PC" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iIzAwNjZjYyI+PHBhdGggZD0iTTIwIDNoLTE2Yy0xLjEgMC0yIC45LTIgMnYxMGMwIDEuMS45IDIgMiAyaDZsLTIgMnYxaDhsLjAyLTF2LTFsLTItMmg2YzEuMS4wMSAyLS44OSAyLTJ2LTEwYzAtMS4xLS45LTItMi0yem0wIDEyaC0xNnYtMTBoMTZ2MTB6Ii8+PC9zdmc+;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="115" y="555" width="40" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Edmonton, Alberta -->
+        <mxCell id="r2-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="190" y="520" width="130" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="r2-label" value="&lt;b&gt;Edmonton&lt;/b&gt;&lt;br&gt;Alberta, Canada" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="200" y="525" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="r2-sat" value="Satellite&lt;br&gt;Uplink" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iIzMzNjYwMCI+PHBhdGggZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bTAgMThjLTQuNDEgMC04LTMuNTktOC04czMuNTktOCA4LTggOCAzLjU5IDggOC0zLjU5IDgtOCA4eiIvPjxwYXRoIGQ9Ik0xMiA2Yy0zLjMxIDAtNiAyLjY5LTYgNnMyLjY5IDYgNiA2IDYtMi42OSA2LTYtMi42OS02LTYtNnptMCAxMGMtMi4yMSAwLTQtMS43OS00LTRzMS43OS00IDQtNCA0IDEuNzkgNCA0LTEuNzkgNC00IDR6Ii8+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMiIvPjwvc3ZnPg==;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="205" y="555" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r2-pc" value="PC" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iIzAwNjZjYyI+PHBhdGggZD0iTTIwIDNoLTE2Yy0xLjEgMC0yIC45LTIgMnYxMGMwIDEuMS45IDIgMiAyaDZsLTIgMnYxaDhsLjAyLTF2LTFsLTItMmg2YzEuMS4wMSAyLS44OSAyLTJ2LTEwYzAtMS4xLS45LTItMi0yem0wIDEyaC0xNnYtMTBoMTZ2MTB6Ii8+PC9zdmc+;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="265" y="555" width="40" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Los Angeles -->
+        <mxCell id="r3-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="520" width="130" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="r3-label" value="&lt;b&gt;Los Angeles&lt;/b&gt;&lt;br&gt;California" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="350" y="525" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="r3-sat" value="Satellite&lt;br&gt;Uplink" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iIzMzNjYwMCI+PHBhdGggZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bTAgMThjLTQuNDEgMC04LTMuNTktOC04czMuNTktOCA4LTggOCAzLjU5IDggOC0zLjU5IDgtOCA4eiIvPjxwYXRoIGQ9Ik0xMiA2Yy0zLjMxIDAtNiAyLjY5LTYgNnMyLjY5IDYgNiA2IDYtMi42OSA2LTYtMi42OS02LTYtNnptMCAxMGMtMi4yMSAwLTQtMS43OS00LTRzMS43OS00IDQtNCA0IDEuNzkgNCA0LTEuNzkgNC00IDR6Ii8+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMiIvPjwvc3ZnPg==;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="355" y="555" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r3-pc" value="PC" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iIzAwNjZjYyI+PHBhdGggZD0iTTIwIDNoLTE2Yy0xLjEgMC0yIC45LTIgMnYxMGMwIDEuMS45IDIgMiAyaDZsLTIgMnYxaDhsLjAyLTF2LTFsLTItMmg2YzEuMS4wMSAyLS44OSAyLTJ2LTEwYzAtMS4xLS45LTItMi0yem0wIDEyaC0xNnYtMTBoMTZ2MTB6Ii8+PC9zdmc+;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="415" y="555" width="40" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Salt Lake City -->
+        <mxCell id="r4-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="490" y="520" width="130" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="r4-label" value="&lt;b&gt;Salt Lake City&lt;/b&gt;&lt;br&gt;Utah" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="500" y="525" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="r4-sat" value="Satellite&lt;br&gt;Uplink" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iIzMzNjYwMCI+PHBhdGggZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bTAgMThjLTQuNDEgMC04LTMuNTktOC04czMuNTktOCA4LTggOCAzLjU5IDggOC0zLjU5IDgtOCA4eiIvPjxwYXRoIGQ9Ik0xMiA2Yy0zLjMxIDAtNiAyLjY5LTYgNnMyLjY5IDYgNiA2IDYtMi42OSA2LTYtMi42OS02LTYtNnptMCAxMGMtMi4yMSAwLTQtMS43OS00LTRzMS43OS00IDQtNCA0IDEuNzkgNCA0LTEuNzkgNC00IDR6Ii8+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMiIvPjwvc3ZnPg==;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="505" y="555" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r4-pc" value="PC" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iIzAwNjZjYyI+PHBhdGggZD0iTTIwIDNoLTE2Yy0xLjEgMC0yIC45LTIgMnYxMGMwIDEuMS45IDIgMiAyaDZsLTIgMnYxaDhsLjAyLTF2LTFsLTItMmg2YzEuMS4wMSAyLS44OSAyLTJ2LTEwYzAtMS4xLS45LTItMi0yem0wIDEyaC0xNnYtMTBoMTZ2MTB6Ii8+PC9zdmc+;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="565" y="555" width="40" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Denver -->
+        <mxCell id="r5-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="640" y="520" width="130" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="r5-label" value="&lt;b&gt;Denver&lt;/b&gt;&lt;br&gt;Colorado" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="650" y="525" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="r5-sat" value="Satellite&lt;br&gt;Uplink" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iIzMzNjYwMCI+PHBhdGggZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bTAgMThjLTQuNDEgMC04LTMuNTktOC04czMuNTktOCA4LTggOCAzLjU5IDggOC0zLjU5IDgtOCA4eiIvPjxwYXRoIGQ9Ik0xMiA2Yy0zLjMxIDAtNiAyLjY5LTYgNnMyLjY5IDYgNiA2IDYtMi42OSA2LTYtMi42OS02LTYtNnptMCAxMGMtMi4yMSAwLTQtMS43OS00LTRzMS43OS00IDQtNCA0IDEuNzkgNCA0LTEuNzkgNC00IDR6Ii8+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMiIvPjwvc3ZnPg==;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="655" y="555" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r5-pc" value="PC" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iIzAwNjZjYyI+PHBhdGggZD0iTTIwIDNoLTE2Yy0xLjEgMC0yIC45LTIgMnYxMGMwIDEuMS45IDIgMiAyaDZsLTIgMnYxaDhsLjAyLTF2LTFsLTItMmg2YzEuMS4wMSAyLS44OSAyLTJ2LTEwYzAtMS4xLS45LTItMi0yem0wIDEyaC0xNnYtMTBoMTZ2MTB6Ii8+PC9zdmc+;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="715" y="555" width="40" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Oklahoma City -->
+        <mxCell id="r6-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="790" y="520" width="130" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="r6-label" value="&lt;b&gt;Oklahoma City&lt;/b&gt;&lt;br&gt;Oklahoma" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="800" y="525" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="r6-sat" value="Satellite&lt;br&gt;Uplink" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iIzMzNjYwMCI+PHBhdGggZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bTAgMThjLTQuNDEgMC04LTMuNTktOC04czMuNTktOCA4LTggOCAzLjU5IDggOC0zLjU5IDgtOCA4eiIvPjxwYXRoIGQ9Ik0xMiA2Yy0zLjMxIDAtNiAyLjY5LTYgNnMyLjY5IDYgNiA2IDYtMi42OSA2LTYtMi42OS02LTYtNnptMCAxMGMtMi4yMSAwLTQtMS43OS00LTRzMS43OS00IDQtNCA0IDEuNzkgNCA0LTEuNzkgNC00IDR6Ii8+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMiIvPjwvc3ZnPg==;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="805" y="555" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r6-pc" value="PC" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iIzAwNjZjYyI+PHBhdGggZD0iTTIwIDNoLTE2Yy0xLjEgMC0yIC45LTIgMnYxMGMwIDEuMS45IDIgMiAyaDZsLTIgMnYxaDhsLjAyLTF2LTFsLTItMmg2YzEuMS4wMSAyLS44OSAyLTJ2LTEwYzAtMS4xLS45LTItMi0yem0wIDEyaC0xNnYtMTBoMTZ2MTB6Ii8+PC9zdmc+;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="865" y="555" width="40" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Houston -->
+        <mxCell id="r7-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="940" y="520" width="130" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="r7-label" value="&lt;b&gt;Houston&lt;/b&gt;&lt;br&gt;Texas" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="950" y="525" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="r7-sat" value="Satellite&lt;br&gt;Uplink" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iIzMzNjYwMCI+PHBhdGggZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bTAgMThjLTQuNDEgMC04LTMuNTktOC04czMuNTktOCA4LTggOCAzLjU5IDggOC0zLjU5IDgtOCA4eiIvPjxwYXRoIGQ9Ik0xMiA2Yy0zLjMxIDAtNiAyLjY5LTYgNnMyLjY5IDYgNiA2IDYtMi42OSA2LTYtMi42OS02LTYtNnptMCAxMGMtMi4yMSAwLTQtMS43OS00LTRzMS43OS00IDQtNCA0IDEuNzkgNCA0LTEuNzkgNC00IDR6Ii8+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMiIvPjwvc3ZnPg==;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="955" y="555" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r7-pc" value="PC" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iIzAwNjZjYyI+PHBhdGggZD0iTTIwIDNoLTE2Yy0xLjEgMC0yIC45LTIgMnYxMGMwIDEuMS45IDIgMiAyaDZsLTIgMnYxaDhsLjAyLTF2LTFsLTItMmg2YzEuMS4wMSAyLS44OSAyLTJ2LTEwYzAtMS4xLS45LTItMi0yem0wIDEyaC0xNnYtMTBoMTZ2MTB6Ii8+PC9zdmc+;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1015" y="555" width="40" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Corpus Christi -->
+        <mxCell id="r8-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="1090" y="520" width="130" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="r8-label" value="&lt;b&gt;Corpus Christi&lt;/b&gt;&lt;br&gt;Texas" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="525" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="r8-sat" value="Satellite&lt;br&gt;Uplink" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iIzMzNjYwMCI+PHBhdGggZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bTAgMThjLTQuNDEgMC04LTMuNTktOC04czMuNTktOCA4LTggOCAzLjU5IDggOC0zLjU5IDgtOCA4eiIvPjxwYXRoIGQ9Ik0xMiA2Yy0zLjMxIDAtNiAyLjY5LTYgNnMyLjY5IDYgNiA2IDYtMi42OSA2LTYtMi42OS02LTYtNnptMCAxMGMtMi4yMSAwLTQtMS43OS00LTRzMS43OS00IDQtNCA0IDEuNzkgNCA0LTEuNzkgNC00IDR6Ii8+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMiIvPjwvc3ZnPg==;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1105" y="555" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r8-pc" value="PC" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iIzAwNjZjYyI+PHBhdGggZD0iTTIwIDNoLTE2Yy0xLjEgMC0yIC45LTIgMnYxMGMwIDEuMS45IDIgMiAyaDZsLTIgMnYxaDhsLjAyLTF2LTFsLTItMmg2YzEuMS4wMSAyLS44OSAyLTJ2LTEwYzAtMS4xLS45LTItMi0yem0wIDEyaC0xNnYtMTBoMTZ2MTB6Ii8+PC9zdmc+;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1165" y="555" width="40" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- New Orleans -->
+        <mxCell id="r9-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="520" width="130" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="r9-label" value="&lt;b&gt;New Orleans&lt;/b&gt;&lt;br&gt;Louisiana" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1250" y="525" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="r9-sat" value="Satellite&lt;br&gt;Uplink" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iIzMzNjYwMCI+PHBhdGggZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bTAgMThjLTQuNDEgMC04LTMuNTktOC04czMuNTktOCA4LTggOCAzLjU5IDggOC0zLjU5IDgtOCA4eiIvPjxwYXRoIGQ9Ik0xMiA2Yy0zLjMxIDAtNiAyLjY5LTYgNnMyLjY5IDYgNiA2IDYtMi42OSA2LTYtMi42OS02LTYtNnptMCAxMGMtMi4yMSAwLTQtMS43OS00LTRzMS43OS00IDQtNCA0IDEuNzkgNCA0LTEuNzkgNC00IDR6Ii8+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMiIvPjwvc3ZnPg==;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1255" y="555" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r9-pc" value="PC" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iIzAwNjZjYyI+PHBhdGggZD0iTTIwIDNoLTE2Yy0xLjEgMC0yIC45LTIgMnYxMGMwIDEuMS45IDIgMiAyaDZsLTIgMnYxaDhsLjAyLTF2LTFsLTItMmg2YzEuMS4wMSAyLS44OSAyLTJ2LTEwYzAtMS4xLS45LTItMi0yem0wIDEyaC0xNnYtMTBoMTZ2MTB6Ii8+PC9zdmc+;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1315" y="555" width="40" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- San Antonio -->
+        <mxCell id="r10-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="1390" y="520" width="130" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="r10-label" value="&lt;b&gt;San Antonio&lt;/b&gt;&lt;br&gt;Texas (Nearest)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="525" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="r10-sat" value="Satellite&lt;br&gt;Uplink" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iIzMzNjYwMCI+PHBhdGggZD0iTTEyIDJDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bTAgMThjLTQuNDEgMC04LTMuNTktOC04czMuNTktOCA4LTggOCAzLjU5IDggOC0zLjU5IDgtOCA4eiIvPjxwYXRoIGQ9Ik0xMiA2Yy0zLjMxIDAtNiAyLjY5LTYgNnMyLjY5IDYgNiA2IDYtMi42OSA2LTYtMi42OS02LTYtNnptMCAxMGMtMi4yMSAwLTQtMS43OS00LTRzMS43OS00IDQtNCA0IDEuNzkgNCA0LTEuNzkgNC00IDR6Ii8+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMiIvPjwvc3ZnPg==;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1405" y="555" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r10-pc" value="PC" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iIzAwNjZjYyI+PHBhdGggZD0iTTIwIDNoLTE2Yy0xLjEgMC0yIC45LTIgMnYxMGMwIDEuMS45IDIgMiAyaDZsLTIgMnYxaDhsLjAyLTF2LTFsLTItMmg2YzEuMS4wMSAyLS44OSAyLTJ2LTEwYzAtMS4xLS45LTItMi0yem0wIDEyaC0xNnYtMTBoMTZ2MTB6Ii8+PC9zdmc+;fontSize=9;" vertex="1" parent="1">
+          <mxGeometry x="1465" y="555" width="40" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ========== SATELLITE CONNECTIONS ========== -->
+        <mxCell id="sat-conn-1" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1;strokeColor=#d6b656;dashed=1;dashPattern=5 5;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="75" y="555" as="sourcePoint" />
+            <mxPoint x="310" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sat-conn-2" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1;strokeColor=#d6b656;dashed=1;dashPattern=5 5;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="225" y="555" as="sourcePoint" />
+            <mxPoint x="330" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sat-conn-3" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1;strokeColor=#d6b656;dashed=1;dashPattern=5 5;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="375" y="555" as="sourcePoint" />
+            <mxPoint x="350" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sat-conn-4" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1;strokeColor=#d6b656;dashed=1;dashPattern=5 5;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="525" y="555" as="sourcePoint" />
+            <mxPoint x="380" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sat-conn-5" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1;strokeColor=#d6b656;dashed=1;dashPattern=5 5;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="675" y="555" as="sourcePoint" />
+            <mxPoint x="410" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sat-conn-6" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1;strokeColor=#d6b656;dashed=1;dashPattern=5 5;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="825" y="555" as="sourcePoint" />
+            <mxPoint x="430" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sat-conn-7" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1;strokeColor=#d6b656;dashed=1;dashPattern=5 5;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="975" y="555" as="sourcePoint" />
+            <mxPoint x="450" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sat-conn-8" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1;strokeColor=#d6b656;dashed=1;dashPattern=5 5;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1125" y="555" as="sourcePoint" />
+            <mxPoint x="460" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sat-conn-9" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1;strokeColor=#d6b656;dashed=1;dashPattern=5 5;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1275" y="555" as="sourcePoint" />
+            <mxPoint x="470" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sat-conn-10" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1;strokeColor=#d6b656;dashed=1;dashPattern=5 5;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1425" y="555" as="sourcePoint" />
+            <mxPoint x="480" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ========== INTERNET CONNECTIONS ========== -->
+        <mxCell id="inet-conn-1" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1;strokeColor=#9673a6;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="135" y="575" as="sourcePoint" />
+            <mxPoint x="1150" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="inet-conn-2" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1;strokeColor=#9673a6;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="285" y="575" as="sourcePoint" />
+            <mxPoint x="1160" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="inet-conn-3" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1;strokeColor=#9673a6;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="435" y="575" as="sourcePoint" />
+            <mxPoint x="1170" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="inet-conn-4" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1;strokeColor=#9673a6;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="585" y="575" as="sourcePoint" />
+            <mxPoint x="1180" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="inet-conn-5" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1;strokeColor=#9673a6;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="735" y="575" as="sourcePoint" />
+            <mxPoint x="1190" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="inet-conn-6" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1;strokeColor=#9673a6;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="885" y="575" as="sourcePoint" />
+            <mxPoint x="1200" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="inet-conn-7" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1;strokeColor=#9673a6;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1035" y="575" as="sourcePoint" />
+            <mxPoint x="1210" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="inet-conn-8" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1;strokeColor=#9673a6;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1185" y="575" as="sourcePoint" />
+            <mxPoint x="1220" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="inet-conn-9" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1;strokeColor=#9673a6;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1335" y="575" as="sourcePoint" />
+            <mxPoint x="1250" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="inet-conn-10" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=1;strokeColor=#9673a6;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1485" y="575" as="sourcePoint" />
+            <mxPoint x="1280" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Legend -->
+        <mxCell id="legend-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="700" width="400" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-title" value="&lt;b&gt;Legend&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="50" y="705" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-sat-line" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;strokeColor=#d6b656;dashed=1;dashPattern=5 5;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="60" y="745" as="sourcePoint" />
+            <mxPoint x="120" y="745" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="legend-sat-text" value="Weekly Satellite Upload" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="130" y="735" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-inet-line" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;strokeColor=#9673a6;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="60" y="775" as="sourcePoint" />
+            <mxPoint x="120" y="775" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="legend-inet-text" value="ISP/Internet Connection" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="130" y="765" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-data-line" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;strokeColor=#333333;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="60" y="805" as="sourcePoint" />
+            <mxPoint x="120" y="805" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="legend-data-text" value="Internal Network Connection" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="130" y="795" width="170" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Notes Box -->
+        <mxCell id="notes-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="700" width="500" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="notes-title" value="&lt;b&gt;System Overview&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="490" y="705" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="notes-content" value="&lt;ul style=&quot;margin:0;padding-left:20px;&quot;&gt;&lt;li&gt;&lt;b&gt;10 refineries&lt;/b&gt; across North America&lt;/li&gt;&lt;li&gt;&lt;b&gt;Weekly satellite upload&lt;/b&gt; of performance data to Dallas mainframe&lt;/li&gt;&lt;li&gt;&lt;b&gt;Production managers&lt;/b&gt; access reports via ISP/Web browser&lt;/li&gt;&lt;li&gt;&lt;b&gt;Farthest:&lt;/b&gt; Valdez, Alaska | &lt;b&gt;Nearest:&lt;/b&gt; San Antonio, Texas&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="490" y="725" width="480" height="90" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

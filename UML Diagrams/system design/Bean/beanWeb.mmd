@@ -1,0 +1,23 @@
+flowchart TB
+    Internet[Internet]
+    Router[Campus Border Router]
+    Firewall[Campus Firewall]
+    Core[Campus Core Switch]
+    LabSwitch[Computer Lab Access Switch]
+    Email[Campus Email Server]
+    PC1[Student Workstation 1]
+    PC2[Student Workstation 2]
+    PC3[Student Workstation 3]
+    PC4[Student Workstation 4]
+    Printer[Network Printer]
+
+    Internet --> Router
+    Router --> Firewall
+    Firewall --> Core
+    Core --> LabSwitch
+    Core --> Email
+    LabSwitch --> PC1
+    LabSwitch --> PC2
+    LabSwitch --> PC3
+    LabSwitch --> PC4
+    LabSwitch --> Printer

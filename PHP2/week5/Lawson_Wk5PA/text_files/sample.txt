@@ -1,0 +1,6 @@
+This is a sample text file.
+
+You can view, edit, and create text files using this application.
+
+"The issue today is the same as it has been throughout all history, whether man shall be allowed to govern himself or be ruled by a
+small elite."

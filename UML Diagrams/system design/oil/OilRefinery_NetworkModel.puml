@@ -1,0 +1,168 @@
+@startuml OilRefinery_HighLevel_NetworkModel
+
+title High-Level Network Model\nOil Refinery Efficiency Tracking System
+
+skinparam backgroundColor #FEFEFE
+skinparam componentStyle rectangle
+skinparam defaultFontSize 11
+
+' Define colors
+skinparam cloud {
+    BackgroundColor #E8F4FD
+    BorderColor #2E86AB
+}
+skinparam node {
+    BackgroundColor #FFF8E7
+    BorderColor #D4A373
+}
+skinparam database {
+    BackgroundColor #E8F8E8
+    BorderColor #2E8B57
+}
+skinparam rectangle {
+    BackgroundColor #F5F5F5
+    BorderColor #666666
+}
+
+' ========== CORPORATE HEADQUARTERS ==========
+package "Corporate Headquarters - Dallas, Texas" as HQ #LightBlue {
+    database "Corporate\nMainframe" as mainframe
+    node "Web Server" as webserver
+    rectangle "Corporate\nNetwork" as corpnet
+
+    mainframe <--> corpnet
+    webserver <--> corpnet
+}
+
+' ========== SATELLITE NETWORK ==========
+cloud "Satellite\nCommunication\nNetwork" as satellite #LightCyan
+
+' ========== INTERNET ==========
+cloud "Internet" as internet #LightGray
+
+' ========== REFINERY LOCATIONS ==========
+
+' Far locations
+package "Valdez Refinery - Alaska" as valdez #LightYellow {
+    rectangle "Satellite\nUplink" as sat1
+    rectangle "PC" as pc1
+    rectangle "Production\nSensors/Data" as data1
+    data1 --> sat1
+}
+
+package "Edmonton Refinery - Alberta, Canada" as edmonton #LightYellow {
+    rectangle "Satellite\nUplink" as sat2
+    rectangle "PC" as pc2
+    rectangle "Production\nSensors/Data" as data2
+    data2 --> sat2
+}
+
+package "Los Angeles Refinery - California" as la #LightYellow {
+    rectangle "Satellite\nUplink" as sat3
+    rectangle "PC" as pc3
+    rectangle "Production\nSensors/Data" as data3
+    data3 --> sat3
+}
+
+package "Salt Lake City Refinery - Utah" as slc #LightYellow {
+    rectangle "Satellite\nUplink" as sat4
+    rectangle "PC" as pc4
+    rectangle "Production\nSensors/Data" as data4
+    data4 --> sat4
+}
+
+package "Denver Refinery - Colorado" as denver #LightYellow {
+    rectangle "Satellite\nUplink" as sat5
+    rectangle "PC" as pc5
+    rectangle "Production\nSensors/Data" as data5
+    data5 --> sat5
+}
+
+package "Oklahoma City Refinery - Oklahoma" as okc #LightYellow {
+    rectangle "Satellite\nUplink" as sat6
+    rectangle "PC" as pc6
+    rectangle "Production\nSensors/Data" as data6
+    data6 --> sat6
+}
+
+package "Houston Refinery - Texas" as houston #LightYellow {
+    rectangle "Satellite\nUplink" as sat7
+    rectangle "PC" as pc7
+    rectangle "Production\nSensors/Data" as data7
+    data7 --> sat7
+}
+
+package "Corpus Christi Refinery - Texas" as corpus #LightYellow {
+    rectangle "Satellite\nUplink" as sat8
+    rectangle "PC" as pc8
+    rectangle "Production\nSensors/Data" as data8
+    data8 --> sat8
+}
+
+package "New Orleans Refinery - Louisiana" as nola #LightYellow {
+    rectangle "Satellite\nUplink" as sat9
+    rectangle "PC" as pc9
+    rectangle "Production\nSensors/Data" as data9
+    data9 --> sat9
+}
+
+' Close location
+package "San Antonio Refinery - Texas" as sanantonio #LightYellow {
+    rectangle "Satellite\nUplink" as sat10
+    rectangle "PC" as pc10
+    rectangle "Production\nSensors/Data" as data10
+    data10 --> sat10
+}
+
+' ========== CONNECTIONS ==========
+
+' Satellite uplinks to satellite network (Weekly data upload)
+sat1 ..> satellite : Weekly\nUpload
+sat2 ..> satellite : Weekly\nUpload
+sat3 ..> satellite : Weekly\nUpload
+sat4 ..> satellite : Weekly\nUpload
+sat5 ..> satellite : Weekly\nUpload
+sat6 ..> satellite : Weekly\nUpload
+sat7 ..> satellite : Weekly\nUpload
+sat8 ..> satellite : Weekly\nUpload
+sat9 ..> satellite : Weekly\nUpload
+sat10 ..> satellite : Weekly\nUpload
+
+' Satellite to HQ mainframe
+satellite ==> mainframe : Performance\nData
+
+' PCs connect to Internet via ISP
+pc1 --> internet : ISP
+pc2 --> internet : ISP
+pc3 --> internet : ISP
+pc4 --> internet : ISP
+pc5 --> internet : ISP
+pc6 --> internet : ISP
+pc7 --> internet : ISP
+pc8 --> internet : ISP
+pc9 --> internet : ISP
+pc10 --> internet : ISP
+
+' Internet to Web Server for report access
+internet ==> webserver : Web Reports\nAccess
+
+' ========== LEGEND ==========
+legend right
+    |= Symbol |= Description |
+    | Satellite Uplink | Weekly performance data upload |
+    | PC | Production manager workstation |
+    | ISP Connection | Internet access for web reports |
+    | Mainframe | Central data storage & processing |
+    | Web Server | Report delivery via HTTP/HTTPS |
+endlegend
+
+note bottom
+    **System Overview:**
+    - 10 refineries across North America
+    - Weekly satellite data upload to Dallas HQ
+    - Production managers access reports via ISP/Web
+    - Farthest: Valdez, Alaska
+    - Nearest: San Antonio, Texas
+end note
+
+@enduml

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--
+Author:
+Date:
+Purpose:
+-->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StudentID, Confirmation</title>
+<style>
+/* Center all inline content on the page */
+body {
+text-align: center;
+}
+/* Style the "Close" element to look like a button */
+#closeB {
+display: inline-block;
+background: green;
+color: white;
+font-size: 10pt;
+padding: 5px;
+}
+/* On hover, show default cursor */
+#closeB:hover {
+cursor: default;
+}
+</style>
+</head>
+<body>
+<p>Your address has been updated.</p>
+<!-- Clickable element that acts like a close button -->
+<p id="closeB">Close</p>
+<script>
+/**
+* Attempts to close the current browser window/tab.
+* Note: Most browsers only allow window.close() if the window
+* was opened by script (e.g., via window.open()).
+*/
+function closeWindow() {
+window.close();
+}
+function createEventListener() {
+var submitButton = document.getElementById("closeB");
+if (submitButton.addEventListener) {
+submitButton.addEventListener("click", closeWindow, false);
+}
+else if (submitButton.attachEvent) {
+submitButton.attachEvent("onclick", closeWindow);
+}
+}
+if (window.addEventListener) {
+window.addEventListener("load", createEventListener, false);
+}
+else if (window.attachEvent) {
+window.attachEvent("onload", createEventListener);
+}
+</script>
+</body>
+</html>

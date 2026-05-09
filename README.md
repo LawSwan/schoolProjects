@@ -1,101 +1,90 @@
-# My Software Development Portfolio
+# Amber Janelle | Portfolio
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-amberjanelle.com-blue?style=for-the-badge)](https://amberjanelle.com)
+[![Live Site](https://img.shields.io/badge/Live%20Site-amberjanelle.com-ec4899?style=for-the-badge)](https://amberjanelle.com)
 [![GitHub](https://img.shields.io/badge/GitHub-LawSwan-181717?style=for-the-badge&logo=github)](https://github.com/LawSwan)
 
-A comprehensive collection of software development projects completed during my computer science education. This repository showcases my growth as a developer across multiple programming paradigms, languages, and technologies.
+A single-page developer portfolio built with vanilla JavaScript and Tailwind CSS. Projects are defined as custom JavaScript objects, serialized with `JSON.stringify()`, stored in `sessionStorage`, and rendered dynamically into the DOM on every page load.
 
 ---
 
-## Featured Projects
+## Overview
 
-### Web Applications
-| Project | Description | Technologies |
-|---------|-------------|--------------|
-| [Digital Products Store](https://github.com/LawSwan/schoolProjects/tree/server-side-scripting/ServerSideScripting/Digital_Products_Store) | Full-stack e-commerce platform with product catalog, shopping cart, and admin management | PHP, MVC, MySQL, HTML/CSS |
-| [Server-Side Final Project](https://github.com/LawSwan/schoolProjects/tree/server-side-scripting/ServerSideScripting/FinalProject) | Multi-feature web app with session management, CRUD operations, and dashboard | PHP, MVC Architecture |
+The portfolio page demonstrates several JavaScript concepts applied in a real project:
 
-### Console Applications
-| Project | Description | Technologies |
-|---------|-------------|--------------|
-| [Bank Account System](https://github.com/LawSwan/schoolProjects/tree/java/java/LAB/Project) | OOP banking simulation demonstrating inheritance, abstraction, and polymorphism | Java |
-| [KawaiiCalc](https://github.com/LawSwan/schoolProjects/tree/java/java/LAB/KawaiiCalc) | Interactive calculator application | Java |
-| [Python GUI Suite](https://github.com/LawSwan/schoolProjects/tree/Python/Python/myenv/Python/PYIntro) | Desktop apps including Notepad, Excel viewer, and Paint program | Python, Tkinter |
-| [Catch The Turtle](https://github.com/LawSwan/schoolProjects/tree/Python/Python/myenv/Python/PYIntro/Week%204) | Interactive turtle graphics game | Python, Turtle |
-
-### Database Projects
-| Project | Description | Technologies |
-|---------|-------------|--------------|
-| [Game Store Database](https://github.com/LawSwan/schoolProjects/tree/sql/sql) | Relational database design with user management, product catalog, and order processing | SQL, Oracle |
-| [NoSQL Database Suite](https://github.com/LawSwan/schoolProjects/tree/NOSQL/NOSQL) | Four NoSQL paradigms with GitHub data integration | MongoDB, Redis, Cassandra, Neo4j |
-
-### Visual Programming
-| Project | Description | Technologies |
-|---------|-------------|--------------|
-| [Algorithm Flowcharts](https://github.com/LawSwan/schoolProjects/tree/FLOW/FLOW) | Visual algorithm designs including BMI calculator, airline booking, and data structures | Flowgorithm |
+- **Custom JS objects** — each project is defined as an object with `title`, `summary`, `image`, and `repo` properties
+- **Array iteration** — projects are stored in an array and rendered using `forEach()`
+- **sessionStorage** — the project array is serialized and stored on first load; subsequent loads read and parse the stored data
+- **Dynamic DOM rendering** — project cards are created entirely in JavaScript using `createElement` and `innerHTML`
+- **localStorage** — dark mode preference persists across browser sessions
+- **Conditional logic** — featured content section adapts based on project count
+- **setTimeout** — used for the delayed notification banner and form submission feedback
 
 ---
 
-## Technology Stack
+## Languages & Libraries
 
-### Languages
-![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![PHP](https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![C](https://img.shields.io/badge/C-00599C?style=flat-square&logo=c&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
-
-### Databases
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white)
-![Neo4j](https://img.shields.io/badge/Neo4j-008CC1?style=flat-square&logo=neo4j&logoColor=white)
-![Cassandra](https://img.shields.io/badge/Cassandra-1287B1?style=flat-square&logo=apache-cassandra&logoColor=white)
-
-### Tools & Frameworks
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
-![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white)
+| Technology | Purpose |
+|---|---|
+| HTML5 | Page structure and semantic markup |
+| CSS3 | Custom styles (toggle switch, modal, gradient, card hover) |
+| JavaScript (ES5/ES6) | All interactivity, DOM manipulation, and data storage |
+| [Tailwind CSS](https://tailwindcss.com/) | Utility-first styling via CDN |
 
 ---
 
-## Repository Structure
+## Dependencies
 
-Each branch represents coursework from a specific class:
+All dependencies are loaded via CDN — no build step or package manager required.
 
-| Branch | Course | Description |
-|--------|--------|-------------|
-| `main` | Overview | Portfolio landing with consolidated resources |
-| `java` | Java Programming | Object-oriented programming fundamentals |
-| `Python` | Python Introduction | GUI apps, web scraping, file processing |
-| `server-side-scripting` | Server-Side Development | PHP MVC web applications |
-| `sql` | Database Design | Relational database fundamentals |
-| `NOSQL` | NoSQL Databases | Document, key-value, column, and graph databases |
-| `FLOW` | Visual Programming | Algorithm design with flowcharts |
-| `WebDesign` | Web Design | HTML/CSS frontend development |
+| Dependency | Version | CDN |
+|---|---|---|
+| Tailwind CSS | Latest | `https://cdn.tailwindcss.com` |
+
+No `npm install` or local setup needed.
 
 ---
 
-## Skills Demonstrated
+## Running the Page
 
-- **Object-Oriented Programming**: Inheritance, polymorphism, encapsulation, abstraction
-- **Web Development**: Full-stack MVC applications, RESTful design
-- **Database Design**: Schema design, normalization, complex queries, multiple paradigms
-- **Software Architecture**: MVC pattern, modular design, clean code practices
-- **Version Control**: Git branching, collaborative development
-- **Containerization**: Docker for database deployment
+This is a static site hosted on **GitHub Pages**.
+
+**To view live:** [amberjanelle.com](https://amberjanelle.com)
+
+**To run locally:**
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/LawSwan/amberjanelle.com.git
+   ```
+2. Open `index.html` in any modern browser — no server required.
 
 ---
 
-## View My Portfolio
+## Features
 
-Visit [amberjanelle.com](https://amberjanelle.com) to see interactive demos of these projects with embedded code execution.
+- Dark mode toggle with `localStorage` persistence
+- Welcome modal on page load
+- Skills list generated dynamically from a JavaScript array
+- Project cards built from JS objects stored in `sessionStorage`
+- Delayed notification banner using `setTimeout`
+- Contact form with simulated send and success/reset feedback
+- Fully responsive layout via Tailwind CSS grid
+
+---
+
+## Projects Displayed
+
+| Project | Language | Repository |
+|---|---|---|
+| Bank Account System | Java | [View](https://github.com/LawSwan/schoolProjects/blob/java/java/LAB/Project%20/src/BankAccount.java) |
+| Catch the Turtle Game | Python | [View](https://github.com/LawSwan/schoolProjects/blob/Python/Python/myenv/Python/PYIntro/Week%204/Program%20Catch_The_Turtle.py) |
+| Digital Products Store | PHP / MVC | [View](https://github.com/LawSwan/schoolProjects/tree/server-side-scripting/ServerSideScripting/src/Digital_Products_Store) |
+| Game Store Database | SQL / Oracle | [View](https://github.com/LawSwan/schoolProjects/blob/sql/sql/WEEK%201/Project%20Build%20Script.sql) |
+| NoSQL Database Suite | MongoDB / Redis / Cassandra / Neo4j | [View](https://github.com/LawSwan/schoolProjects/tree/NOSQL/NOSQL) |
+| JavaScript Portfolio Site | JavaScript / HTML / CSS | [View](https://github.com/LawSwan/amberjanelle.com) |
 
 ---
 
 ## Contact
 
-- Portfolio: [amberjanelle.com](https://amberjanelle.com)
+- Email: [amberjanelle33@gmail.com](mailto:amberjanelle33@gmail.com)
 - GitHub: [@LawSwan](https://github.com/LawSwan)

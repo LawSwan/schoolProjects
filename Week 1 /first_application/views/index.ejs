@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Welcome, <%= myname %>!</h1>
+    <h2>My Favorite Places</h2>
+    <ul>
+      <% favoritePlaces.forEach(function(place) { %>
+        <li><%= place %></li>
+      <% }); %>
+    </ul>
+  </body>
+</html>

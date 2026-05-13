@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" width="400" height="200">
+  <rect width="400" height="200" rx="16" fill="#1e293b"/>
+  <text x="40" y="80" font-family="Arial" font-size="64" font-weight="bold" fill="#10b981">M</text>
+  <text x="110" y="80" font-family="Arial" font-size="64" font-weight="bold" fill="#f59e0b">E</text>
+  <text x="178" y="80" font-family="Arial" font-size="64" font-weight="bold" fill="#ef4444">A</text>
+  <text x="248" y="80" font-family="Arial" font-size="64" font-weight="bold" fill="#3b82f6">N</text>
+  <text x="40" y="140" font-family="Arial" font-size="18" fill="#94a3b8">MongoDB · Express · Angular · Node</text>
+  <text x="40" y="170" font-family="Arial" font-size="14" fill="#64748b">MVC Application Structure</text>
+</svg>

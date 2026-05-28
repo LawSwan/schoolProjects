@@ -1,0 +1,16 @@
+<main class="card">
+  <h2 class="display">{{ displayText }}</h2>
+
+  <label for="messageInput">Message to Display</label>
+  <input
+    #messageInput
+    id="messageInput"
+    type="text"
+    placeholder="type your message..." />
+
+  <button
+    type="button"
+    (click)="displayText = messageInput.value || displayText">
+    Display Message
+  </button>
+</main>

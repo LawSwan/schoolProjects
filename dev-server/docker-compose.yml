@@ -1,0 +1,21 @@
+services:
+  landing:
+    image: nginx:alpine
+    container_name: webdev-landing
+    ports:
+      - "8001:80"
+    volumes:
+      - ./index.html:/usr/share/nginx/html/index.html:ro
+    restart: unless-stopped
+
+  week1-1.3:
+    image: node:alpine
+    container_name: webdev-1.3
+    working_dir: /app
+    ports:
+      - "3003:3003"
+    volumes:
+      - "../Week 1 /first_application:/app"
+    command: sh -c "npm install --quiet && npm start"
+    restart: unless-stopped
+    # add new week 1 apps below this line

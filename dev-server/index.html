@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Dev Assignments</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: #f3f4f6;
+      color: #111827;
+    }
+
+    header {
+      background: #1e293b;
+      color: #f8fafc;
+      padding: 24px 32px;
+    }
+
+    header h1 {
+      margin: 0 0 4px;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    header p {
+      margin: 0;
+      font-size: 0.875rem;
+      color: #94a3b8;
+    }
+
+    main {
+      padding: 32px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    a.card {
+      display: block;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 24px 20px;
+      text-decoration: none;
+      color: inherit;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: box-shadow 0.15s, transform 0.15s;
+    }
+
+    a.card:hover {
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      transform: translateY(-2px);
+    }
+
+    .card-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #10b981;
+      margin-bottom: 8px;
+    }
+
+    .card h2 {
+      margin: 0 0 6px;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 0.875rem;
+      color: #6b7280;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Web Dev Assignments</h1>
+    <p>Click any card to open that week's assignment</p>
+  </header>
+  <main>
+    <a class="card" href="http://localhost:3003">
+      <div class="card-label">1.3</div>
+      <h2>First Node &amp; Express App</h2>
+      <p>Express/EJS app on port 3003 displaying a list of favorite places.</p>
+    </a>
+    <!-- add new assignments below this line -->
+  </main>
+</body>
+</html>

@@ -18,4 +18,11 @@ export class BooksListComponent implements OnInit {
       this.Books =res;
     });    
   }
+
+  onDelete(id: any): void {
+    this.crudService.DeleteBook(id)
+      .subscribe(() => {
+        this.Books = this.Books.filter((book: any) => book._id !== id);
+      });
+  }
 }

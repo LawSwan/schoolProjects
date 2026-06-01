@@ -26,4 +26,17 @@ bookRoute.route('/add-book').post((req, res) => {
   })
 })
 
+// Delete a book
+bookRoute.route('/delete-book/:id').delete((req, res) => {
+  console.log(`Preparing to delete: ${req.params.id}`);
+  Book.findByIdAndDelete(req.params.id).then((response) => {
+    console.log('Book deleted successfully.');
+    res.status(200).json(response);
+  })
+  .catch((error) => {
+    console.error(`Could not delete book: ${error}`);
+    res.status(500).json({ message: 'Could not delete book' });
+  })
+})
+
 module.exports = bookRoute;

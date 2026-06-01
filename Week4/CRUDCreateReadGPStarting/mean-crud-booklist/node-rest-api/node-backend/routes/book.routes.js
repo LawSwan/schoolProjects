@@ -16,12 +16,13 @@ bookRoute.route('/').get((req, res) => {
 
 // Add a book
 bookRoute.route('/add-book').post((req, res) => {
-  Book.create(req.body).then(() => {
+  Book.create(req.body).then((response) => {
     console.log('Book added successfully.');
-    res.status(200);
+    res.status(201).json(response);
   })
   .catch((error) => {
     console.error(`Could not save book: ${error}`);
+    res.status(500).json({ message: 'Could not save book' });
   })
 })
 

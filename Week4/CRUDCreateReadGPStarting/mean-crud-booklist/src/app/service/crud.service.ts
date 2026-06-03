@@ -32,6 +32,24 @@ export class CrudService {
       );
   }
 
+  // Get a single book by id
+  GetBook(id: any): Observable<any> {
+    let API_URL = `${this.REST_API}/read-book/${id}`;
+    return this.httpClient.get(API_URL, { headers: this.httpHeaders })
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  // Update
+  UpdateBook(id: any, data: Book): Observable<any> {
+    let API_URL = `${this.REST_API}/update-book/${id}`;
+    return this.httpClient.put(API_URL, data, { headers: this.httpHeaders })
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
   // Delete
   DeleteBook(id: any): Observable<any> {
     let API_URL = `${this.REST_API}/delete-book/${id}`;

@@ -1,0 +1,28 @@
+❯ Building...
+✔ Building...
+Initial chunk files              | Names                         |  Raw size
+chunk-CGZBV6BD.js                | -                             |   4.07 kB | 
+spec-app-home-home.js            | spec-app-home-home            |   3.85 kB | 
+spec-app-services-users-users.js | spec-app-services-users-users |   1.55 kB | 
+spec-app-app.js                  | spec-app-app                  |   1.49 kB | 
+chunk-REFWWDGT.js                | -                             |   1.30 kB | 
+init-testbed.js                  | init-testbed                  |   1.21 kB | 
+vitest-mock-patch.js             | vitest-mock-patch             | 969 bytes | 
+styles.css                       | styles                        |  56 bytes | 
+
+                                 | Initial total                 |  14.51 kB
+
+Application bundle generation complete. [0.583 seconds] - 2026-06-08T15:33:20.428Z
+
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.8 [39m[90m/Users/amberlawson/School/webdev/week5/5.2/angular-testing[39m
+
+ [32m✓[39m [30m[42m angular-testing [49m[39m src/app/services/users/users.spec.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 13[2mms[22m[39m
+ [32m✓[39m [30m[42m angular-testing [49m[39m src/app/home/home.spec.ts [2m([22m[2m1 test[22m[2m)[22m[32m 27[2mms[22m[39m
+ [32m✓[39m [30m[42m angular-testing [49m[39m src/app/app.spec.ts [2m([22m[2m1 test[22m[2m)[22m[32m 19[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m3 passed[39m[22m[90m (3)[39m
+[2m      Tests [22m [1m[32m5 passed[39m[22m[90m (5)[39m
+[2m   Start at [22m 11:33:20
+[2m   Duration [22m 758ms[2m (transform 72ms, setup 356ms, import 79ms, tests 58ms, environment 1.33s)[22m
+

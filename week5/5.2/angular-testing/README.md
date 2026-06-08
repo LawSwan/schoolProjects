@@ -57,3 +57,10 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## Assignment Documentation
+
+- GitHub-readable report (Markdown): [docs/5.2.md](docs/5.2.md)
+- Original Word document: [docs/5.2.docx](docs/5.2.docx)
+- Vitest terminal proof output: [vitest-test-proof.txt](vitest-test-proof.txt)
+- App screenshot: [app-users-list.png](app-users-list.png)

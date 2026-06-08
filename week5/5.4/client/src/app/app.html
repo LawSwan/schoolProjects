@@ -1,0 +1,102 @@
+<main class="page-shell">
+  <section class="hero">
+    <p class="eyebrow">Final Practical Exam</p>
+    <h1>Census Records</h1>
+    <p class="subtitle">Create, review, update, and delete census entries stored in MongoDB.</p>
+  </section>
+
+  <section class="content-grid">
+    <article class="panel form-panel">
+      <div class="panel-heading">
+        <h2>{{ editingId ? 'Update Census Record' : 'Add Census Record' }}</h2>
+        <button type="button" class="ghost-button" (click)="resetForm()" *ngIf="editingId">Cancel Edit</button>
+      </div>
+
+      <form #censusForm="ngForm" (ngSubmit)="saveRecord()" class="census-form">
+        <label>
+          <span>Number of People in Household</span>
+          <input type="number" min="1" name="householdSize" [(ngModel)]="form.householdSize" required />
+        </label>
+
+        <label>
+          <span>Street</span>
+          <input type="text" name="street" [(ngModel)]="form.address.street" required />
+        </label>
+
+        <label>
+          <span>City</span>
+          <input type="text" name="city" [(ngModel)]="form.address.city" required />
+        </label>
+
+        <label>
+          <span>State</span>
+          <input type="text" name="state" [(ngModel)]="form.address.state" required />
+        </label>
+
+        <label>
+          <span>Zip Code</span>
+          <input type="text" name="zipCode" [(ngModel)]="form.address.zipCode" required />
+        </label>
+
+        <label>
+          <span>Year of the Census</span>
+          <input type="number" min="1900" name="year" [(ngModel)]="form.year" required />
+        </label>
+
+        <label>
+          <span>Census Taker's Name</span>
+          <input type="text" name="censusTakerName" [(ngModel)]="form.censusTakerName" required />
+        </label>
+
+        <button type="submit" class="primary-button" [disabled]="censusForm.invalid || isSaving">
+          {{ isSaving ? 'Saving...' : editingId ? 'Update Record' : 'Add Record' }}
+        </button>
+      </form>
+
+      <p class="error-banner" *ngIf="errorMessage">{{ errorMessage }}</p>
+    </article>
+
+    <article class="panel list-panel">
+      <div class="panel-heading">
+        <h2>Saved Census Records</h2>
+        <button type="button" class="ghost-button" (click)="loadRecords()">Refresh</button>
+      </div>
+
+      <p class="loading" *ngIf="isLoading">Loading records...</p>
+
+      <div class="empty-state" *ngIf="!isLoading && records.length === 0">
+        No records found yet.
+      </div>
+
+      <div class="record-list" *ngIf="!isLoading && records.length > 0">
+        <article class="record-card" *ngFor="let record of records">
+          <div class="record-row">
+            <span class="label">Year of the Census</span>
+            <span>{{ record.year }}</span>
+          </div>
+          <div class="record-row">
+            <span class="label">Census Taker's Name</span>
+            <span>{{ record.censusTakerName }}</span>
+          </div>
+          <div class="record-row">
+            <span class="label">Number of People in Household</span>
+            <span>{{ record.householdSize }}</span>
+          </div>
+          <div class="record-row">
+            <span class="label">Household State</span>
+            <span>{{ record.address.state }}</span>
+          </div>
+          <div class="record-row">
+            <span class="label">Household City</span>
+            <span>{{ record.address.city }}</span>
+          </div>
+
+          <div class="card-actions">
+            <button type="button" class="ghost-button" (click)="editRecord(record)">Edit</button>
+            <button type="button" class="danger-button" (click)="deleteRecord(record._id)">Delete</button>
+          </div>
+        </article>
+      </div>
+    </article>
+  </section>
+</main>

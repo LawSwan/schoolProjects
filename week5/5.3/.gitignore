@@ -1,0 +1,14 @@
+node_modules/
+backend/node_modules/
+frontend/node_modules/
+coverage/
+backend/coverage/
+frontend/coverage/
+.nyc_output/
+backend/.nyc_output/
+frontend/.nyc_output/
+.env
+backend/.env
+frontend/.env
+*.log
+.DS_Store

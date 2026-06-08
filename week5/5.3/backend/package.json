@@ -1,0 +1,24 @@
+{
+  "name": "mean-backend",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "NODE_ENV=test mocha \"test/**/*.test.js\" --timeout 10000 --exit",
+    "test:watch": "NODE_ENV=test mocha \"test/**/*.test.js\" --watch",
+    "test:coverage": "NODE_ENV=test nyc --reporter=text --reporter=lcov --all --include=src/**/*.js mocha \"test/**/*.test.js\" --timeout 10000 --exit"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongoose": "^8.6.1"
+  },
+  "devDependencies": {
+    "sinon": "^18.0.0",
+    "mocha": "^11.7.1",
+    "mongodb-memory-server": "^10.1.0",
+    "nyc": "^17.1.0",
+    "should": "^13.2.3",
+    "supertest": "^7.0.0"
+  }
+}

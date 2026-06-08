@@ -1,0 +1,29 @@
+{
+  "name": "mean-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "mocha \"test/**/*.test.js\" --require test/setup.js --timeout 10000",
+    "test:watch": "mocha \"test/**/*.test.js\" --require test/setup.js --watch",
+    "test:coverage": "nyc --reporter=text --reporter=lcov --all --include=src/**/*.js mocha \"test/**/*.test.js\" --require test/setup.js --timeout 10000"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.26.2"
+  },
+  "devDependencies": {
+    "chai": "^4.5.0",
+    "cheerio": "1.0.0-rc.12",
+    "enzyme": "^3.11.0",
+    "jsdom": "^24.1.3",
+    "jsdom-global": "^3.0.2",
+    "mocha": "^11.7.1",
+    "nyc": "^17.1.0",
+    "sinon": "^18.0.0",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.8.0"
+  },
+  "overrides": {
+    "cheerio": "1.0.0-rc.12"
+  }
+}

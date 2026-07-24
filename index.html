@@ -170,54 +170,7 @@
                 <p class="text-gray-600">Resources and links to explore more</p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <!-- University Resources Div -->
-                <div id="universityResources" class="bg-gray-50 rounded-2xl p-8 border border-gray-200">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-10 h-10 bg-pink-100 rounded-lg flex items-center justify-center">
-                            <svg class="w-5 h-5 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                            </svg>
-                        </div>
-                        <h3 class="text-lg font-semibold text-gray-900">University Resources</h3>
-                    </div>
-                    <ul class="space-y-4">
-                        <li>
-                            <a href="https://www.ecpi.edu/programs/computer-science-bachelor-degree" target="_blank"
-                               class="flex items-center gap-3 text-gray-700 hover:text-pink-600 transition group">
-                                <span class="w-8 h-8 bg-white rounded-lg border border-gray-200 flex items-center justify-center group-hover:border-pink-300 transition">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-                                    </svg>
-                                </span>
-                                ECPI Computer Science Program
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.ecpi.edu/" target="_blank"
-                               class="flex items-center gap-3 text-gray-700 hover:text-pink-600 transition group">
-                                <span class="w-8 h-8 bg-white rounded-lg border border-gray-200 flex items-center justify-center group-hover:border-pink-300 transition">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-                                    </svg>
-                                </span>
-                                ECPI University Home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://ecpi.brightspace.com/" target="_blank"
-                               class="flex items-center gap-3 text-gray-700 hover:text-pink-600 transition group">
-                                <span class="w-8 h-8 bg-white rounded-lg border border-gray-200 flex items-center justify-center group-hover:border-pink-300 transition">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-                                    </svg>
-                                </span>
-                                Brightspace Learning Portal
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
+            <div class="max-w-md mx-auto">
                 <!-- Personal Projects Div -->
                 <div id="personalProjects" class="bg-gray-50 rounded-2xl p-8 border border-gray-200">
                     <div class="flex items-center gap-3 mb-6">
@@ -398,20 +351,6 @@
 
             projectsGrid.appendChild(card);
         });
-
-        // ============================================
-        // 3. FEATURED CONTENT — Conditional using projects array length
-        // ============================================
-        var universityResources = document.getElementById("universityResources");
-        var personalProjects    = document.getElementById("personalProjects");
-
-        if (projects.length < 3) {
-            universityResources.style.display = "block";
-            personalProjects.style.display    = "block";
-        } else {
-            universityResources.style.display = "none";
-            personalProjects.style.display    = "block";
-        }
 
         // ============================================
         // 6. MODIFY EXISTING ELEMENTS WITH SELECTORS

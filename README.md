@@ -3,7 +3,7 @@
 [![Live Site](https://img.shields.io/badge/Live%20Site-amberjanelle.com-ec4899?style=for-the-badge)](https://amberjanelle.com)
 [![GitHub](https://img.shields.io/badge/GitHub-LawSwan-181717?style=for-the-badge&logo=github)](https://github.com/LawSwan)
 
-A single-page developer portfolio built with vanilla JavaScript and Tailwind CSS. Projects are defined as custom JavaScript objects, serialized with `JSON.stringify()`, stored in `sessionStorage`, and rendered dynamically into the DOM on every page load.
+A single-page software engineering portfolio built with vanilla JavaScript and Tailwind CSS. Projects are defined as custom JavaScript objects, serialized with `JSON.stringify()`, stored in `sessionStorage`, and rendered dynamically into the DOM on every page load.
 
 ---
 

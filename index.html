@@ -113,6 +113,70 @@
             visibility: visible;
             opacity: 1;
         }
+
+        /* iPhone frame + vertical screenshot carousel (Door to Door) */
+        .iphone {
+            position: relative;
+            width: 270px;
+            padding: 11px;
+            border-radius: 54px;
+            background: #0b0b0f;
+            box-shadow:
+                0 0 0 2px #3a3a42,
+                0 0 0 5px #1c1c22,
+                0 30px 60px -20px rgba(76, 29, 149, 0.45);
+        }
+        .iphone-screen {
+            position: relative;
+            aspect-ratio: 1206 / 2622;
+            border-radius: 43px;
+            overflow: hidden;
+            background: #000;
+        }
+        .iphone-island {
+            position: absolute;
+            z-index: 2;
+            top: 1.6%;
+            left: 38.2%;
+            width: 23.6%;
+            height: 4.2%;
+            border-radius: 999px;
+            background: #000;
+            pointer-events: none;
+        }
+        .iphone-track {
+            height: 100%;
+            overflow-y: auto;
+            scroll-snap-type: y mandatory;
+            scrollbar-width: none;
+        }
+        .iphone-track::-webkit-scrollbar { display: none; }
+        .iphone-track:focus-visible { outline: 3px solid #db2777; outline-offset: -3px; }
+        .iphone-track img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+        }
+        .carousel-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 999px;
+            background: #d1d5db;
+            transition: height 0.25s, background-color 0.25s;
+        }
+        .carousel-dot.active {
+            height: 24px;
+            background: #db2777;
+        }
+        body.dark-mode .carousel-dot { background: #475569; }
+        body.dark-mode .carousel-dot.active { background: #f472b6; }
+        @media (max-width: 400px) {
+            .iphone { width: 230px; border-radius: 46px; }
+            .iphone-screen { border-radius: 36px; }
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
@@ -173,28 +237,60 @@
                 <p class="text-gray-600">A collection of my work from coursework and personal exploration</p>
             </div>
 
-            <!-- Door to Door Donations — Android app case study -->
+            <!-- Door to Door Donations — iOS app case study with vertical screenshot carousel -->
             <div class="bg-white rounded-2xl border border-gray-200 shadow-sm p-8 mb-8">
-                <div class="mb-6">
-                    <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-2">
-                        <h3 class="text-2xl font-bold text-gray-900">Door to Door Donations</h3>
-                        <span class="text-xs font-medium text-pink-600 bg-pink-50 px-2 py-0.5 rounded-full">In development</span>
+                <div class="grid md:grid-cols-2 gap-10 items-center">
+                    <div>
+                        <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-2">
+                            <h3 class="text-2xl font-bold text-gray-900">Door to Door Donations</h3>
+                            <span class="text-xs font-medium text-pink-600 bg-pink-50 px-2 py-0.5 rounded-full">In development</span>
+                        </div>
+                        <p class="text-gray-600">
+                            iPhone app that helps parents donate outgrown clothes, toys, gear and diapers
+                            to local families. Pick a recipient, schedule a pickup, and the donation is
+                            collected right from your door.
+                        </p>
+                        <ul class="mt-5 space-y-2 text-sm text-gray-700 list-disc list-inside">
+                            <li>Recipients matched to your ZIP code or GPS location by service area</li>
+                            <li>Acceptance tags show what each organization takes before you donate</li>
+                            <li>Maps-style "Services Near Me" screen with category filters</li>
+                            <li>Donation history and pickup status saved on the device</li>
+                        </ul>
+                        <p class="text-xs text-gray-500 mt-5">Swift · SwiftUI · MapKit · Core Location · also built natively for Android (Java)</p>
+                        <p class="text-sm text-gray-600 mt-6">
+                            <span class="font-medium text-gray-900" id="d2dCaption">Launch screen</span>
+                            <span class="text-gray-400" id="d2dCounter">1 / 6</span>
+                        </p>
                     </div>
-                    <p class="text-gray-600 max-w-3xl">
-                        Android app that connects donors with nearby recipients — hospitals, day cares,
-                        shelters — for scheduled pickup of clothes, food, toys, or cash donations.
-                    </p>
-                    <p class="text-xs text-gray-500 mt-3">Java · Android</p>
-                </div>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <img src="images/doortodoor/donate.png" alt="Donate screen"
-                         class="w-full rounded-2xl shadow-md border border-gray-100">
-                    <img src="images/doortodoor/services.png" alt="Services Near Me screen"
-                         class="w-full rounded-2xl shadow-md border border-gray-100">
-                    <img src="images/doortodoor/profile.png" alt="Profile screen"
-                         class="w-full rounded-2xl shadow-md border border-gray-100">
-                    <img src="images/doortodoor/settings.png" alt="Settings screen"
-                         class="w-full rounded-2xl shadow-md border border-gray-100">
+
+                    <div class="flex items-center justify-center gap-6">
+                        <div class="iphone">
+                            <div class="iphone-screen">
+                                <div class="iphone-island"></div>
+                                <div class="iphone-track" id="d2dTrack" tabindex="0"
+                                     aria-label="Door to Door Donations screenshots. Scroll or use the arrow keys to browse.">
+                                    <img src="images/doortodoor/ios/splash.jpg" alt="Launch screen" data-caption="Launch screen">
+                                    <img src="images/doortodoor/ios/donate.jpg" alt="Donate screen listing local recipients" data-caption="Choose a recipient" loading="lazy">
+                                    <img src="images/doortodoor/ios/services.jpg" alt="Services Near Me map" data-caption="Services near me" loading="lazy">
+                                    <img src="images/doortodoor/ios/history.jpg" alt="Donation history" data-caption="Donation history" loading="lazy">
+                                    <img src="images/doortodoor/ios/profile.jpg" alt="Profile screen" data-caption="Profile" loading="lazy">
+                                    <img src="images/doortodoor/ios/settings.jpg" alt="Settings screen" data-caption="Settings" loading="lazy">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col items-center gap-4">
+                            <button type="button" id="d2dPrev" aria-label="Previous screen"
+                                    class="w-9 h-9 rounded-full border border-gray-200 bg-white text-gray-700 hover:bg-gray-50 flex items-center justify-center disabled:opacity-30">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/></svg>
+                            </button>
+                            <div class="flex flex-col items-center gap-2" id="d2dDots"></div>
+                            <button type="button" id="d2dNext" aria-label="Next screen"
+                                    class="w-9 h-9 rounded-full border border-gray-200 bg-white text-gray-700 hover:bg-gray-50 flex items-center justify-center disabled:opacity-30">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -428,6 +524,49 @@
                 setTimeout(function() { statusMessage.remove(); }, 5000);
             }, 3000);
         });
+
+        // ============================================
+        // 9. DOOR TO DOOR CAROUSEL — vertical screenshot carousel inside the iPhone frame
+        // ============================================
+        var d2dTrack = document.getElementById("d2dTrack");
+        var d2dSlides = d2dTrack.querySelectorAll("img");
+        var d2dDots = document.getElementById("d2dDots");
+        var d2dPrev = document.getElementById("d2dPrev");
+        var d2dNext = document.getElementById("d2dNext");
+        var d2dIndex = 0;
+
+        function d2dGoTo(index) {
+            index = Math.max(0, Math.min(index, d2dSlides.length - 1));
+            // Remember the target right away so quick repeat clicks keep advancing
+            d2dIndex = index;
+            d2dTrack.scrollTo({ top: index * d2dTrack.clientHeight, behavior: "smooth" });
+        }
+
+        function d2dUpdate() {
+            d2dIndex = Math.round(d2dTrack.scrollTop / d2dTrack.clientHeight);
+            d2dDots.querySelectorAll("button").forEach(function(dot, i) {
+                dot.classList.toggle("active", i === d2dIndex);
+                dot.setAttribute("aria-current", i === d2dIndex ? "true" : "false");
+            });
+            document.getElementById("d2dCaption").textContent = d2dSlides[d2dIndex].dataset.caption;
+            document.getElementById("d2dCounter").textContent = (d2dIndex + 1) + " / " + d2dSlides.length;
+            d2dPrev.disabled = d2dIndex === 0;
+            d2dNext.disabled = d2dIndex === d2dSlides.length - 1;
+        }
+
+        d2dSlides.forEach(function(slide, i) {
+            var dot = document.createElement("button");
+            dot.type = "button";
+            dot.className = "carousel-dot";
+            dot.setAttribute("aria-label", "Show " + slide.dataset.caption);
+            dot.addEventListener("click", function() { d2dGoTo(i); });
+            d2dDots.appendChild(dot);
+        });
+
+        d2dPrev.addEventListener("click", function() { d2dGoTo(d2dIndex - 1); });
+        d2dNext.addEventListener("click", function() { d2dGoTo(d2dIndex + 1); });
+        d2dTrack.addEventListener("scroll", d2dUpdate, { passive: true });
+        d2dUpdate();
     </script>
 
 </body>
